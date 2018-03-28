@@ -23,20 +23,20 @@
                                     </li>
                                      <li class='has-submenu'><a href="#">PRODUCTOS</a>
                                         <ul>
-                                            <li class='has-submenu'><a href="#">Software para Hoteles</a></li>
-                                            <li><a href="#">Software para Bares, Discotecas y Casinos</a></li>
-                                            <li><a href="#">Software para Retail</a></li>
-                                            <li><a href="#">Software de Facturación Eléctrónica</a></li>
-                                            <li><a href="#">Pasarella de Pagos Online</a></li>
+                                            <li><a href="servicio-detalle.php">Software para Hoteles</a></li>
+                                            <li><a href="servicio-detalle.php">Software para Bares, Discotecas y Casinos</a></li>
+                                            <li><a href="servicio-detalle.php">Software para Retail</a></li>
+                                            <li><a href="servicio-detalle.php">Software de Facturación Eléctrónica</a></li>
+                                            <li><a href="servicio-detalle.php">Pasarella de Pagos Online</a></li>
                                         </ul>
                                     </li>
                                     <li class='has-submenu'>
                                         <a href="#">SERVICIOS</a>
                                         <ul>
-                                            <li><a href="#">Consultoría informática</a></li>
-                                            <li><a href="#">Consultoría en Gestión Hotelera</a></li>
-                                            <li><a href="#">Implementación de Software</a></li>
-                                            <li><a href="#">Desarrollo de Sistemas a medida</a></li>
+                                            <li><a href="servicio-detalle.php">Consultoría informática</a></li>
+                                            <li><a href="servicio-detalle.php">Consultoría en Gestión Hotelera</a></li>
+                                            <li><a href="servicio-detalle.php">Implementación de Software</a></li>
+                                            <li><a href="servicio-detalle.php">Desarrollo de Sistemas a medida</a></li>
                                         </ul>
                                     </li>
                                     <li class='has-submenu'><a href="#">SOPORTE</a>
@@ -67,18 +67,18 @@
                                     </li>
                                     <li><a href="#">SERVICIOS</a>
                                         <ul>
-                                            <li><a href="#">Service 1</a></li>
-                                            <li><a href="#">Service 2</a></li>
-                                            <li><a href="#">Service 3</a></li>
+                                            <li><a href="servicio-detalle.php">Service 1</a></li>
+                                            <li><a href="servicio-detalle.php">Service 2</a></li>
+                                            <li><a href="servicio-detalle.php">Service 3</a></li>
                                         </ul>
                                     </li>
                                     
                                     <li><a href="#">PRODUCTO</a>
                                         <ul>
-                                            <li><a href="#">Producto 1</a></li>
-                                            <li><a href="#">Producto 2</a></li>
-                                            <li><a href="#">Producto 3</a></li>
-                                            <li><a href="#">Producto 4</a></li>
+                                            <li><a href="servicio-detalle.php">Producto 1</a></li>
+                                            <li><a href="servicio-detalle.php">Producto 2</a></li>
+                                            <li><a href="servicio-detalle.php">Producto 3</a></li>
+                                            <li><a href="servicio-detalle.php">Producto 4</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">SOPORTE</a>
