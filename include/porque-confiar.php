@@ -1,36 +1,37 @@
-<!-- Home 3 Slider Bottom area start  here -->
-    <div class="home3-slider-bottom-service-area">
-        <div class="container">
-            <div class="row">
-                <div class="home3-slider-bottom">
-                    <div class="section-styling-area">
-                        <h2>Porque Confiar en Majock</h2>
-                        <p class="icon-border"><i class="fa fa-clone" aria-hidden="true"></i></p>
-                        <p class="section-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum excepturi quibusdam temporibus in corporis eos rerum, distinctio, repudiandae quam expedita consectetur quos possimus sint ratione reiciendis doloribus unde tenetur! Neque.</p>
-                    </div>
+<!-- About Page4 Inner Section Start Here -->
+    <div class="about-us4-area">
+<div class="row">
+                <div class="section-styling-area">
+                    <h2>Porqué confiar en Majock</h2>
+                    <p class="icon-border"><i class="fa fa-clone" aria-hidden="true"></i></p>
+                </div>
+        </div>
+        <div class="about-us4-second-part-area">
+            <div class="container">
+                <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="single-service">
-                            <a href="single-service.html"><img src="img/service/1.jpg" alt=""></a>
-                            <h3><a href="index2.html#">Razón 1</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sapiente ea doloribus, obcaecati nihil provident suscipit soluta eius. Dolor aut debitis sunt, cumque aliquid, sequi soluta! Sint eligendi maiores assumenda.</p>
+                        <div class="single-about-us4">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            <h3>Somos Especialistas en Gestión hotelera</h3>
+                            <p>Bimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy when an unknown printer took a galley of type and scrao make.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="single-service">
-                            <a href="single-service.html"><img src="img/service/2.jpg" alt=""></a>
-                            <h3><a href="index2.html#">Razón 2</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sapiente ea doloribus, obcaecati nihil provident suscipit soluta eius. Dolor aut debitis sunt, cumque aliquid, sequi soluta! Sint eligendi maiores assumenda.</p>
+                        <div class="single-about-us4">
+                            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                            <h3>Cumplimos estadares internacionales</h3>
+                            <p>Bimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy when an unknown printer took a galley of type and scrao make.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="single-service">
-                            <a href="single-service.html"><img src="img/service/3.jpg" alt=""></a>
-                            <h3><a href="index2.html#">Razón 3</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sapiente ea doloribus, obcaecati nihil provident suscipit soluta eius. Dolor aut debitis sunt, cumque aliquid, sequi soluta! Sint eligendi maiores assumenda.</p>
+                        <div class="single-about-us4">
+                            <i class="fa fa-trophy" aria-hidden="true"></i>
+                            <h3>Venimos del futuro a tu empresa</h3>
+                            <p>Bimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy when an unknown printer took a galley of type and scrao make.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Home 3 Slider Bottom area end  here -->
+    <!-- About Page4 Inner Section End Here -->
