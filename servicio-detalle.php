@@ -59,109 +59,22 @@ include 'include/header.php'
                                         <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane" id="profile">
-                                    <div class="single-service">
-                                        <h2>Software para Bares, Discotecas y Casinos</h2>
-                                        <img src="img/service/single-servce3.jpg" alt="service">
-                                        
-                                        <blockquote>
-                                            <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but a Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                        </blockquote>
-                                        <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Simply dummy text of the printing and typesetting industry.
-
-                                        <ol>
-                                          <li>Lorem ipsum dolor sit amet</li>
-                                          <li>Consectetur adipiscing elit</li>
-                                          <li>Integer molestie lorem at massa</li>
-                                          <li>Facilisis in pretium nisl aliquet</li>
-                                          <li>Nulla volutpat aliquam velit
-                                        </ol>
-
-                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                        <img src="img/service/single-servce4.jpg" alt="service">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque beatae voluptatem nemo, nesciunt soluta vitae, nisi, cum dolor officia veniam maxime earum id enim. Ratione, nihil, corrupti. Illum, aspernatur, magnam.</p>
-                                        <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="messages">
-                                    <div class="single-service">
-                                        <h2>Software para Retail</h2>
-                                        <img src="img/service/single-servce1.jpg" alt="service">
-                                        
-                                        <blockquote>
-                                            <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but a Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                        </blockquote>
-                                        <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Simply dummy text of the printing and typesetting industry.
-
-                                        <ol>
-                                          <li>Lorem ipsum dolor sit amet</li>
-                                          <li>Consectetur adipiscing elit</li>
-                                          <li>Integer molestie lorem at massa</li>
-                                          <li>Facilisis in pretium nisl aliquet</li>
-                                          <li>Nulla volutpat aliquam velit
-                                        </ol>
-
-                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                        <img src="img/service/single-servce4.jpg" alt="service">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque beatae voluptatem nemo, nesciunt soluta vitae, nisi, cum dolor officia veniam maxime earum id enim. Ratione, nihil, corrupti. Illum, aspernatur, magnam.</p>
-                                        <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="settings">
-                                    <div class="single-service">
-                                        <h2>Software de Facturación Eléctrónica</h2>
-                                        <img src="img/service/single-servce2.jpg" alt="service">
-                                        
-                                        <blockquote>
-                                            <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but a Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                        </blockquote>
-                                        <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Simply dummy text of the printing and typesetting industry.
-
-                                        <ol>
-                                          <li>Lorem ipsum dolor sit amet</li>
-                                          <li>Consectetur adipiscing elit</li>
-                                          <li>Integer molestie lorem at massa</li>
-                                          <li>Facilisis in pretium nisl aliquet</li>
-                                          <li>Nulla volutpat aliquam velit
-                                        </ol>
-
-                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                        <img src="img/service/single-servce4.jpg" alt="service">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque beatae voluptatem nemo, nesciunt soluta vitae, nisi, cum dolor officia veniam maxime earum id enim. Ratione, nihil, corrupti. Illum, aspernatur, magnam.</p>
-                                        <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="fund">
-                                    <div class="single-service">
-                                        <h2>Pasarella de Pagos Online</h2>
-                                        <img src="img/service/single-servce3.jpg" alt="service">
-                                        
-                                        <blockquote>
-                                            <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but a Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                        </blockquote>
-                                        <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Simply dummy text of the printing and typesetting industry.
-
-                                        <ol>
-                                          <li>Lorem ipsum dolor sit amet</li>
-                                          <li>Consectetur adipiscing elit</li>
-                                          <li>Integer molestie lorem at massa</li>
-                                          <li>Facilisis in pretium nisl aliquet</li>
-                                          <li>Nulla volutpat aliquam velit
-                                        </ol>
-
-                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                        <img src="img/service/single-servce4.jpg" alt="service">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque beatae voluptatem nemo, nesciunt soluta vitae, nisi, cum dolor officia veniam maxime earum id enim. Ratione, nihil, corrupti. Illum, aspernatur, magnam.</p>
-                                        <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
-                    <!-- PRODUCTOS Y SERVICIOS NAV -->
-                    <?
-                    include 'include/productosyservicios-nav.php'
-                    ?>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" style="padding-top: 90px;">
+                        <div class="single-service-inner-tab">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="" aria-controls="home" role="tab" data-toggle="tab">Software para Hoteles</a></li>
+                                <li role="presentation"><a href="" aria-controls="profile" role="tab" data-toggle="tab">Software para Bares, Discotecas y Casinos</a></li>
+                                <li role="presentation"><a href="" aria-controls="messages" role="tab" data-toggle="tab">Software para Retail</a></li>
+                                <li role="presentation"><a href="" aria-controls="settings" role="tab" data-toggle="tab">Software de Facturación Eléctrónica</a></li>
+                                <li role="presentation"><a href="" aria-controls="fund" role="tab" data-toggle="tab">Pasarella de Pagos Online</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
