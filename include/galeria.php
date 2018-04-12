@@ -1,4 +1,4 @@
-<div class="portfolio1-area">
+<div class="portfolio1-area" style="background-color: rgb(200, 237, 240);">
         <div class="gallery-area">
             <div class="container">
                 <div class="row">

@@ -4,7 +4,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="home3-about-content-area">
                         <h2>¿Quiénes Somos?</h2>
-                        <p>Majock Consulting somos un equipo de profesionales especilizadaos en brindar soluciones informaticas y de software para la industria del turismo: Hoteles, Restaurantes, Bares, Casinos y afines; Retail y ERP para empresas.</p>
+                        <p>Majock Consulting somos un equipo de profesionales especializados en brindar soluciones informáticas y de software para la industria del turismo: Hoteles, Restaurantes, Bares, Casinos y afines; Retail y ERP para empresas.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 acurate">

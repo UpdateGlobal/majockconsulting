@@ -1,4 +1,4 @@
-<!-- all js here -->
+  <!-- all js here -->
     <!-- jquery latest version -->
     <script src="js/vendor/jquery-1.12.0.min.js"></script>
     <!-- bootstrap js -->
@@ -27,7 +27,9 @@
     <script src="js/jquery.appear.js"></script>
     <!-- Isotope js -->
     <script src="js/isotope.pkgd.js"></script>
-    <!-- main js -->
-    <script src="js/main.js"></script>
     <!-- Google Map js -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgREM8KO8hjfbOC0R_btBhQsEQsnpzFGQ"></script>
+    <!-- Validator js -->
+    <script src="js/validator.min.js" type="text/javascript"></script>
+    <!-- main js -->
+    <script src="js/main.js"></script>
