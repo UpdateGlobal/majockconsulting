@@ -87,6 +87,7 @@ if ($eliminar == "true") {
             <small></small>
           </h1>
         </div>
+        <?php $page="noticias"; include("module/menu-noticias.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
         <div class="row">

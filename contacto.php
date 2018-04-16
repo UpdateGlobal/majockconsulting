@@ -6,11 +6,8 @@ include 'include/head.php'
 ?>
 
 <body>
-    
     <!--  Header Area Start Here -->
-    <?
-include 'include/header.php'
-?>
+    <? include 'include/header.php' ?>
     <!--  Header Area End Here -->
     <!-- Header Banner Area section Start Here -->
     <div class="header-banner-area">
@@ -39,25 +36,23 @@ include 'include/header.php'
         <div class="clearfix"></div>
         <!-- Google Map Integrate End Here -->
     </div>
-<br><br>
-        <div class="homepage-our-service-area">
-         <div class="container">
-                
-                    <div class="page-sidebar-area">
-                        <div class="single-sidebar">
-                            <h3>Contáctanos</h3>
-                            <p>Bríndanos tus datos y te contactaremos</p>
-                        </div>
-                    </div>
+    <br><br>
+    <div class="homepage-our-service-area">
+        <div class="container">
+            <div class="page-sidebar-area">
+                <div class="single-sidebar">
+                    <h3>Contáctanos</h3>
+                    <p>Bríndanos tus datos y te contactaremos</p>
                 </div>
             </div>
         </div>
+    </div>
     <!-- Contact Form Page start Here -->
     <div class="main-conatct-form-area" style="padding:15px 0 80px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                 <div class="main-contact-form contact-form">
+                    <div class="main-contact-form contact-form">
                         <form id='contact-form' role="form">
                             <fieldset>
                                 <div class="col-sm-6">
@@ -123,14 +118,7 @@ include 'include/header.php'
     <!-- Main Contact Page Section Area End here-->
     
     <!-- FOOTER -->
-    <?
-    include 'include/footer.php'
-    ?>
-    <?
-    include 'include/scripts.php'
-    ?>
-    
-  
+    <? include 'include/footer.php' ?>
+    <? include 'include/scripts.php' ?>
 </body>
-
 </html>

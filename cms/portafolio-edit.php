@@ -135,7 +135,7 @@ if($proceso == "Actualizar"){
                     <?php 
                       //Al cargar la pagina debe listar todas las categorias existentes
                       if($cod_categoria == ""){
-                        $consultaCat = "SELECT * FROM portafolio_categorias WHERE estado='Activo'";
+                        $consultaCat = "SELECT * FROM portafolio_categorias WHERE estado='1'";
                         $resultaCat = mysqli_query($enlaces,$consultaCat);
                         while($filaCat = mysqli_fetch_array($resultaCat)){
                           $xcodCat = $filaCat['cod_categoria'];

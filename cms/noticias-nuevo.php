@@ -8,13 +8,14 @@ if (isset($_REQUEST['proceso'])) {
   $proceso  = "";
 }
 if($proceso == "Registrar"){
-  $titulo       = mysqli_real_escape_string($enlaces, $_POST['titulo']);
-  $imagen       = $_POST['imagen'];
-  $noticia      = mysqli_real_escape_string($enlaces, $_POST['noticia']);
-  $fecha        = $_POST['fecha'];
+  $cod_categoria  = $_POST['cod_categoria'];
+  $titulo         = mysqli_real_escape_string($enlaces, $_POST['titulo']);
+  $imagen         = $_POST['imagen'];
+  $noticia        = mysqli_real_escape_string($enlaces, $_POST['noticia']);
+  $fecha          = $_POST['fecha'];
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
     
-  $insertarNoticia = "INSERT INTO noticias(titulo, imagen, noticia, fecha, estado)VALUE('$titulo', '$imagen', '$noticia', '$fecha', '$estado')";
+  $insertarNoticia = "INSERT INTO noticias(cod_categoria, titulo, imagen, noticia, fecha, estado)VALUE('$cod_categoria', '$titulo', '$imagen', '$noticia', '$fecha', '$estado')";
   $resultadoInsertar = mysqli_query($enlaces,$insertarNoticia);
   $mensaje = "<div class='alert alert-success' role='alert'>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
@@ -64,6 +65,7 @@ if($proceso == "Registrar"){
             <small></small>
           </h1>
         </div>
+        <?php $page="noticias"; include("module/menu-noticias.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
         <div class="card">
@@ -74,8 +76,44 @@ if($proceso == "Registrar"){
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="categoria">Categor&iacute;a:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <select class="form-control" id="categoria" name="cod_categoria">
+                    <?php 
+                      if($cod_categoria == ""){
+                        $consultaCat = "SELECT * FROM noticias_categorias WHERE estado='1'";
+                        $resultaCat = mysqli_query($enlaces,$consultaCat) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                        while($filaCat = mysqli_fetch_array($resultaCat)){
+                          $xcodCat = $filaCat['cod_categoria'];
+                          $xnomCat = $filaCat['categoria'];
+                          echo '<option value='.$xcodCat.'>'.$xnomCat.'</option>';
+                        }
+                      }else{
+                          $consultaCat = "SELECT * FROM noticias_categorias WHERE cod_categoria='$cod_categoria'";
+                          $resultaCat = mysqli_query($enlaces,$consultaCat) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                          while($filaCat = mysqli_fetch_array($resultaCat)){
+                            $xcodCat = $filaCat['cod_categoria'];
+                            $xnomCat = $filaCat['categoria'];
+                            echo '<option value='.$xcodCat.' selected="selected">'.$xnomCat.'</option>';
+                          }
+                          $consultaCat = "SELECT * FROM noticias_categorias WHERE cod_categoria!='$cod_categoria'";
+                          $resultaCat = mysqli_query($enlaces,$consultaCat) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                          while($filaCat = mysqli_fetch_array($resultaCat)){
+                            $xcodCat = $filaCat['cod_categoria'];
+                            $xnomCat = $filaCat['categoria'];
+                            echo '<option value='.$xcodCat.'>'.$xnomCat.'</option>';
+                        }
+                      }
+                    ?>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
                   <label class="col-form-label" for="imagen">Imagen:</label><br>
-                  <small>(-px x -px)</small>
+                  <small>(869px x 422px)</small>
                 </div>
                 <div class="col-4 col-lg-8">
                   <input class="form-control" id="imagen" name="imagen" type="text">

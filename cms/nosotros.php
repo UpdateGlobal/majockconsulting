@@ -1,10 +1,74 @@
 <?php include("module/conexion.php"); ?>
 <?php include("module/verificar.php"); ?>
+<?php
+if (isset($_REQUEST['eliminar'])) {
+  $eliminar = $_POST['eliminar'];
+} else {
+  $eliminar = "";
+}
+if ($eliminar == "true") {
+  $sqlEliminar = "SELECT cod_miembro FROM equipo_miembros ORDER BY orden";
+  $sqlResultado = mysqli_query($enlaces,$sqlEliminar);
+  $x = 0;
+  while($filaElim = mysqli_fetch_array($sqlResultado)){
+    $id_miembro = $filaElim["cod_miembro"];
+    if ($_REQUEST["chk" . $id_miembro] == "on") {
+      $x++;
+      if ($x == 1) {
+          $sql = "DELETE FROM equipo_miembros WHERE cod_miembro=$id_miembro";
+        } else { 
+          $sql = $sql . " OR cod_miembro=$id_miembro";
+        }
+    }
+  }
+  mysqli_free_result($sqlResultado);
+  if ($x > 0) {
+    $rs = mysqli_query($enlaces,$sql);
+  }
+  header ("Location:nosotros.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <?php include("module/head.php"); ?>
+    <style>
+      @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+        td:nth-of-type(1):before { content: "Imagen"; }
+        td:nth-of-type(2):before { content: "Nombre"; }
+        td:nth-of-type(3):before { content: "Orden"; }
+        td:nth-of-type(4):before { content: "Estado"; }
+        td:nth-of-type(5):before { content: ""; }
+        td:nth-of-type(6):before { content: ""; }
+        td:nth-of-type(7):before { content: ""; }
+      }
+    </style>
+    <script>
+      function Procedimiento(proceso,seccion){
+        document.fcms.proceso.value = "";
+        estado = 0;
+        for (i = 0; i < document.fcms.length; i++)
+
+        if(document.fcms.elements[i].name.substring(0,3) == "chk"){
+          if(document.fcms.elements[i].checked == true){
+            estado = 1
+          }
+        }
+
+        if (estado == 0) {
+          if (seccion == "N"){
+            alert("Debes de seleccionar un categoria.")
+          }
+          return
+        }
+
+        procedimiento = "document.fcms." + proceso + ".value = true"
+        eval(procedimiento)
+        document.fcms.submit()    
+      }
+    </script>
     <script src="assets/js/visitante-alert.js"></script>
+
   </head>
   <body>
     <!-- Preloader -->
@@ -104,8 +168,6 @@
               </div>
             </div>
           </div>
-
-
 
           <div class="col-4 col-lg-4">
             <div class="card card-bordered">
@@ -220,7 +282,7 @@
                           $xEstado    = $filaMim['estado'];
                       ?>
                       <tr>
-                        <td><img class="d-block b-1 border-light hover-shadow-2 p-1 img-admin" src="assets/img/member/<?php echo $xImagen; ?>" /></td>
+                        <td><img class="d-block b-1 border-light hover-shadow-2 p-1 img-admin" src="assets/img/miembros/<?php echo $xImagen; ?>" /></td>
                         <td><?php echo $xNombre; ?></td>
                         <td><?php echo $xOrden; ?></td>
                         <td><strong>
@@ -228,11 +290,11 @@
                           </strong>
                         </td>
                         <td>
-                          <a class="boton-eliminar <?php if($xVisitante=="1"){ ?>boton-eliminar-bloqueado<?php } ?>" href="<?php if($xVisitante=="0"){ ?>miembro-delete.php?cod_miembro=<?php echo $xCodigo; ?><?php }else{ ?>javascript:visitante();<?php } ?>">
+                          <a class="boton-eliminar <?php if($xVisitante=="1"){ ?>boton-eliminar-bloqueado<?php } ?>" href="<?php if($xVisitante=="0"){ ?>miembros-delete.php?cod_miembro=<?php echo $xCodigo; ?><?php }else{ ?>javascript:visitante();<?php } ?>">
                             <i class="fa fa-trash" aria-hidden="true"></i>
                           </a>
                         </td>
-                        <td><a class="boton-editar" href="miembro-edit.php?cod_miembro=<?php echo $xCodigo; ?>"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></td>
+                        <td><a class="boton-editar" href="miembros-edit.php?cod_miembro=<?php echo $xCodigo; ?>"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></td>
                         <td>
                           <?php if($xVisitante=="0"){ ?>
                           <div class="hidden">

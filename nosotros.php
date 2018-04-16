@@ -1,19 +1,11 @@
 <!doctype html>
 <html class="no-js" lang="es">
-
 <!-- head -->
-
-<?
-include 'include/head.php'
-?>
-
+<? include 'include/head.php' ?>
 <!-- end head -->
-
 <body>
     <!--  Header Area Here -->
-    <?
-    include 'include/header.php'
-    ?>
+    <? include 'include/header.php' ?>
     <!--  Header Area End Here -->
 
     <!-- Header Banner Area section Start Here -->
@@ -42,7 +34,6 @@ include 'include/head.php'
                         <li role="presentation"><a href="about.html#home" aria-controls="home" role="tab" data-toggle="tab">Misión</a></li>
                         <li role="presentation" class="active"><a href="about.html#profile" aria-controls="profile" role="tab" data-toggle="tab">Visión</a></li>
                         <li role="presentation"><a href="about.html#messages" aria-controls="messages" role="tab" data-toggle="tab">Historia</a></li>
-                        
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content">

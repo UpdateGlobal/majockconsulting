@@ -12,18 +12,19 @@ if($proceso == ""){
   $ejecutarNoticias = mysqli_query($enlaces,$consultaNoticias) or die('Consulta fallida: ' . mysqli_error($enlaces));
   $filaNot = mysqli_fetch_array($ejecutarNoticias);
   $cod_noticia = $filaNot['cod_noticia'];
+  $cod_categoria = $filaNot['cod_categoria'];
   $imagen   = $filaNot['imagen'];
   $titulo   = $filaNot['titulo'];
   $noticia  = $filaNot['noticia'];
   $estado   = $filaNot['estado'];
 }
 if($proceso=="Actualizar"){ 
-  $cod_noticia  = $_POST['cod_noticia'];
-  $imagen       = $_POST['imagen'];
-  $titulo       = mysqli_real_escape_string($enlaces, $_POST['titulo']);
-  $noticia      = mysqli_real_escape_string($enlaces, $_POST['noticia']);
+  $cod_categoria = $_POST['cod_categoria'];
+  $imagen        = $_POST['imagen'];
+  $titulo        = mysqli_real_escape_string($enlaces, $_POST['titulo']);
+  $noticia       = mysqli_real_escape_string($enlaces, $_POST['noticia']);
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
-  $actualizarNoticias = "UPDATE noticias SET cod_noticia='$cod_noticia', imagen='$imagen', titulo='$titulo', noticia='$noticia', estado='$estado' WHERE cod_noticia='$cod_noticia'";
+  $actualizarNoticias = "UPDATE noticias SET cod_noticia='$cod_noticia', cod_categoria='$cod_categoria', imagen='$imagen', titulo='$titulo', noticia='$noticia', estado='$estado' WHERE cod_noticia='$cod_noticia'";
   $resultadoActualizar = mysqli_query($enlaces,$actualizarNoticias) or die('Consulta fallida: ' . mysqli_error($enlaces));
   header("Location:noticias.php");
 }
@@ -75,6 +76,7 @@ if($proceso=="Actualizar"){
             <small></small>
           </h1>
         </div>
+        <?php $page="noticias"; include("module/menu-noticias.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
         <div class="card">
@@ -85,8 +87,47 @@ if($proceso=="Actualizar"){
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="categoria">Categor&iacute;a:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <select class="form-control" id="categoria" name="cod_categoria">
+                    <?php 
+                      //Al cargar la pagina debe listar todas las categorias existentes
+                      if($cod_categoria == ""){
+                        $consultaCat = "SELECT * FROM noticias_categorias WHERE estado='1'";
+                        $resultaCat = mysqli_query($enlaces,$consultaCat);
+                        while($filaCat = mysqli_fetch_array($resultaCat)){
+                          $xcodCat = $filaCat['cod_categoria'];
+                          $xnomCat = $filaCat['categoria'];
+                          echo '<option value='.$xcodCat.'>'.$xnomCat.'</option>';
+                        }
+                      }else{
+                        // Al recargar la pagina que seleccione el elemento escogido
+                        $consultaCat = "SELECT * FROM noticias_categorias WHERE cod_categoria='$cod_categoria'";
+                        $resultaCat = mysqli_query($enlaces,$consultaCat);
+                          while($filaCat = mysqli_fetch_array($resultaCat)){
+                            $xcodCat = $filaCat['cod_categoria'];
+                            $xnomCat = $filaCat['categoria'];
+                            echo '<option value='.$xcodCat.' selected="selected">'.$xnomCat.'</option>';
+                          }
+                        //Cargar todas las categorias menos la escogida
+                        $consultaCat = "SELECT * FROM noticias_categorias WHERE cod_categoria!='$cod_categoria'";
+                        $resultaCat = mysqli_query($enlaces,$consultaCat);
+                        while($filaCat = mysqli_fetch_array($resultaCat)){
+                          $xcodCat = $filaCat['cod_categoria'];
+                          $xnomCat = $filaCat['categoria'];
+                          echo '<option value='.$xcodCat.'>'.$xnomCat.'</option>';
+                        }
+                      }
+                    ?>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
                   <label class="col-form-label" for="imagen">Imagen:</label><br>
-                  <small>(-px x -px)</small>
+                  <small>(869px x 422px)</small>
                 </div>
                 <div class="col-4 col-lg-8">
                   <?php if($xVisitante=="1"){ ?><p><?php echo $imagen; ?></p><?php } ?>
@@ -129,8 +170,6 @@ if($proceso=="Actualizar"){
             <footer class="card-footer">
               <a href="noticias.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
               <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-refresh"></i> Editar Noticia</button>
-              <?php $fecha = date("Y-m-d"); ?>
-              <input type="hidden" name="fecha" value="<?php echo $fecha ?>">
               <input type="hidden" name="proceso">
               <input type="hidden" name="cod_noticia" value="<?php echo $cod_noticia; ?>">
             </footer>
