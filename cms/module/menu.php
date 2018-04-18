@@ -42,6 +42,13 @@
                   <span class="title">Clientes</span>
                 </a>
               </li>
+
+              <li class="menu-item">
+                <a class="menu-link" href="general.php">
+                  <span class="dot"></span>
+                  <span class="title">General</span>
+                </a>
+              </li>
             </ul>
           </li>
 
@@ -61,7 +68,7 @@
 
             <ul class="menu-submenu" <?php echo ($menu == "noticias" ? "style='display:block;'" : "")?> >
               <li class="menu-item">
-                <a class="menu-link" href="categorias.php">
+                <a class="menu-link" href="noticias-categorias.php">
                   <span class="dot"></span>
                   <span class="title">Categor&iacute;as</span>
                 </a>
@@ -70,10 +77,11 @@
               <li class="menu-item">
                 <a class="menu-link" href="noticias.php">
                   <span class="dot"></span>
-                  <span class="title">Noticias</span>
+                  <span class="title">Blog</span>
                 </a>
               </li>
             </ul>
+
           </li>
 
           <li class="menu-item <?php echo ($menu == "servicios" ? "active" : "")?>">

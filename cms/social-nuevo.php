@@ -75,16 +75,16 @@ if($proceso == "Registrar"){
                 </div>
                 <div class="col-8 col-lg-10">
                   <select name="type" id="type" class="form-control" id="social">
-                    <option value="fa-facebook-square">Facebook</option>
-                    <option value="fa-twitter-square">Twitter</option>
-                    <option value="fa-google-plus-official">Google+</option>
+                    <option value="fa-facebook">Facebook</option>
+                    <option value="fa-twitter">Twitter</option>
+                    <option value="fa-google-plus">Google+</option>
                     <option value="fa-linkedin">Linkedin</option>
                     <option value="fa-behance">Behance</option>
                     <option value="fa-blogger">Blogger</option>
-                    <option value="fa-youtube-play">Youtube</option>
+                    <option value="fa-youtube">Youtube</option>
                     <option value="fa-vimeo">Vimeo</option>
                     <option value="fa-wordpress">Wordpress</option>
-                    <option value="fa-tumblr-square">Tumblr</option>
+                    <option value="fa-tumblr">Tumblr</option>
                     <option value="fa-pinterest">Pinterest</option>
                     <option value="fa-instagram">Instagram</option>
                     <option value="fa-flickr">Flickr</option>

@@ -18,7 +18,7 @@
                                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
                                     <div class="single-skill wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".3s">
                                         <div class="progress-circular">
-                                            <input type="text" class="knob knob-nopercent" value="0" data-max="10000" data-min="0" data-angleArc="180" data-angleOffset="270" data-height="80" data-rel="9500" data-linecap="butt" data-width="175" data-bgcolor="#f2f2f2" data-fgcolor="#ef162a" data-thickness=".30" data-readonly="true" disabled>
+                                            <input type="text" class="knob knob-nopercent" value="0" data-max="10000" data-min="0" data-angleArc="180" data-angleOffset="270" data-height="80" data-rel="7500" data-linecap="butt" data-width="175" data-bgcolor="#f2f2f2" data-fgcolor="#ef162a" data-thickness=".30" data-readonly="true" disabled>
                                             <h4 class="progress-h4">Software</h4>
                                         </div>
                                     </div>
