@@ -1,16 +1,9 @@
+<?php include("cms/module/conexion.php"); ?>
 <!doctype html>
 <html class="no-js" lang="es">
-
-<?
-include 'include/head.php'
-?>
-
+<?php include 'include/head.php' ?>
 <body>
-   <?
-include 'include/header.php'
-?>
-
-    
+    <?php include 'include/header.php' ?>
     <!--  Header Area End Here -->
     <!-- Header Banner Area section Start Here -->
     <div class="header-banner-area">
@@ -19,7 +12,7 @@ include 'include/header.php'
                 <div class="header-banner">
                     <h1>Nuestro Blog</h1>
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.php">Inicio</a></li>
                         <li>/ Blog</li>
                     </ul>
                 </div>
@@ -32,119 +25,113 @@ include 'include/header.php'
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                    <?php
+                        $consultarNoticias = "SELECT * FROM noticias WHERE estado='1'";
+                        $resultadoNoticias = mysqli_query($enlaces, $consultarNoticias);
+                        $total_registros = mysqli_num_rows($resultadoNoticias);
+                        if($total_registros==0){ 
+                    ?>
+                        <h2>No hay entradas en nuestro blog, pronto tendremos novedades.</h2>
+                        <div style="height: 40px;"></div>
+                    <?php 
+                        }else{
+                        $registros_por_paginas = 1;
+                        $total_paginas = ceil($total_registros/$registros_por_paginas);
+                        $pagina = intval($_GET['p']);
+                        if($pagina<1 or $pagina>$total_paginas){
+                            $pagina=1;
+                        }
+                        $posicion = ($pagina-1)*$registros_por_paginas;
+                        $limite = "LIMIT $posicion, $registros_por_paginas";
+
+                        $consultarNoticias = "SELECT * FROM noticias WHERE estado='1' ORDER BY fecha,cod_noticia ASC $limite";
+                        $resultadoNoticias = mysqli_query($enlaces,$consultarNoticias) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                        while($filaNot = mysqli_fetch_array($resultadoNoticias)){
+                            $xCodigo        = $filaNot['cod_noticia'];
+                            $xTitulo        = $filaNot['titulo'];
+                            $xImagen        = $filaNot['imagen'];
+                            $xNoticia       = $filaNot['noticia'];
+                            $xFecha         = $filaNot['fecha'];
+                            $xSlugn         = $filaNot['slug'];
+                    ?>
                     <div class="news-page-content-section-area">
                         <div class="row single-news-area">
                             <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
                                 <div class="new-featured-image">
                                     <a href="blog-post.php">
-                                        <img class="media-object" src="img/news/5.jpg" alt="Generic placeholder image">
+                                        <img class="media-object" src="cms/assets/img/noticias/<?php echo $xImagen; ?>" />
                                     </a>
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
                                 <div class="media-body news-body">
-                                    <h3 class="media-heading"><a href="blog-post.php">El impacto del software en las organizaciones</a></h3>
-                                    <p class="meta">10 January, 2018 / por Máximo Soldevilla</p>
-                                    <p class="news-content">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. </p>
+                                    <h3 class="media-heading"><a href="blog-post.php"><?php echo $xTitulo; ?></a></h3>
+                                    <p class="meta"><?php
+                                        $mydate = strtotime($xFecha);
+                                        $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
+                                        $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                                        echo $dias[date('w', $mydate)]." ".date('d', $mydate)." de ".$meses[date('n', $mydate)-1]. " del ".date('Y', $mydate);
+                                        ?>
+                                    </p>
+                                    <p class="news-content">
+                                        <?php 
+                                            $xResumen_m = strip_tags($xNoticia);
+                                            $strCut = substr($xResumen_m,0,350);
+                                            $xResumen_m = $strCut.'...';
+                                        ?>
+                                        <?php echo $xResumen_m; ?>
+                                    </p>
                                     <div class="read-more">
-                                        <a href="blog-post.php">leer más  <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row single-news-area padding-top1">
-                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                                <div class="new-featured-image">
-                                    <a href="blog-post.php">
-                                        <img class="media-object" src="img/news/6.jpg" alt="Generic placeholder image">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                                <div class="media-body news-body">
-                                    <h3 class="media-heading"><a href="blog-post.php">El impacto del software en las organizaciones</a></h3>
-                                    <p class="meta">10 January, 2016 / By Admin</p>
-                                    <p class="news-content">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. </p>
-                                    <div class="read-more">
-                                        <a href="blog-post.php">Leer más  <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row single-news-area padding-top1">
-                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                                <div class="new-featured-image">
-                                    <a href="blog-post.php">
-                                        <img class="media-object" src="img/news/7.jpg" alt="Generic placeholder image">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                                <div class="media-body news-body">
-                                    <h3 class="media-heading"><a href="blog-post.php">El impacto del software en las organizaciones</a></h3>
-                                    <p class="meta">10 January, 2016 / By Admin</p>
-                                    <p class="news-content">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. </p>
-                                    <div class="read-more">
-                                        <a href="blog-post.php">Leer más  <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row single-news-area padding-top">
-                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                                <div class="new-featured-image">
-                                    <a href="blog-post.php">
-                                        <img class="media-object" src="img/news/8.jpg" alt="Generic placeholder image">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                                <div class="media-body news-body">
-                                    <h3 class="media-heading"><a href="blog-post.php">El impacto del software en las organizaciones</a></h3>
-                                    <p class="meta">10 January, 2016 / By Admin</p>
-                                    <p class="news-content">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. </p>
-                                    <div class="read-more">
-                                        <a href="blog-post.php">Leer más  <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                        <a href="blog-post.php">leer más <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="pagination-area">
-                        <ul>
-                            <li><a href="blog-post.php"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
-                            <li><a href="blog-post.php">1</a></li>
-                            <li><a href="blog-post.php">2</a></li>
-                            <li class="active"><a href="blog-post.php">3</a></li>
-                            <li><a href="blog-post.php">4</a></li>
-                            <li><a href="blog-post.php">5</a></li>
-                            <li><a href="blog-post.php"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>
+                    <?php
+                        }
+                        mysqli_free_result($resultadoNoticias);
+                    ?>
+                    <?php       
+                        $paginas_mostrar = 10;
+                        if ($total_paginas>1){
+                            echo "<div class='pagination-area'>
+                                    <ul>";
+                            if($pagina>1){
+                                echo "<li><a href='?p=".($pagina-1)."'><i class='fa fa-angle-double-left' aria-hidden='true'></i></a></li>";
+                            }
+                            for($i=$pagina; $i<=$total_paginas && $i<=($pagina+$paginas_mostrar); $i++){
+                                if($i==$pagina){
+                                    echo "<li class='active'><a>$i</a></li>";
+                                }else{
+                                    echo "<li><a href='?p=$i'>$i</a></li>";
+                                }
+                            }
+                            if(($pagina+$paginas_mostrar)<$total_paginas){
+                                echo "<li><a>...</a></li>";
+                            }
+                            if($pagina<$total_paginas){
+                                echo "  <li><a href='?p=".($pagina+1)."'><i class='fa fa-angle-double-right' aria-hidden='true'></i></a></li>";
+                            }
+                            echo "  </ul>
+                                </div>
+                            <hr>";
+                        }
+                    }
+                    ?>
                 </div>
-                <? 
-                    include 'include/categorias-blog.php'
-                ?>
+                <?php include 'include/categorias-blog.php' ?>
             </div>
         </div>
     </div>
     <!-- Main News Page End Here -->
-
-  
     <!--  Get Free Consult Section Start Here -->
-    <?
-    include 'include/banner-contact.php'
-    ?>
+    <?php include 'include/banner-contact.php' ?>
     <!--  Get Free Consult Section End Here -->
     <!-- Footer Start Here -->
-     <?
-     include 'include/footer.php'
-     ?>
+    <?php include 'include/footer.php' ?>
     <!-- Footer End Here -->
     <!-- all js here -->
-    <?
-    include 'include/scripts.php'
-    ?>
+    <?php include 'include/scripts.php' ?>
 </body>
-
 </html>
