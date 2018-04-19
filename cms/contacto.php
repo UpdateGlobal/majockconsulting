@@ -40,7 +40,6 @@
                     $xCodigo      = $filaCot['cod_contact'];
                     $xDirection   = $filaCot['direction'];
                     $xPhone       = $filaCot['phone'];
-                    $xMobile      = $filaCot['mobile'];
                     $xEmail       = $filaCot['email'];
                     $xMap         = $filaCot['map'];
                     $xFormem      = $filaCot['form_mail'];

@@ -220,7 +220,6 @@ if ($eliminar == "true") {
                     while($filaCon = mysqli_fetch_array($resultadoCon)){
                       $xCodigo      = $filaCon['cod_contenido'];
                       $xTitulo      = $filaCon['titulo_contenido'];
-                      $xImagen      = $filaCon['img_contenido'];
                       $xContenido   = $filaCon['contenido'];
                       $xEstado      = $filaCon['estado'];
                   ?>

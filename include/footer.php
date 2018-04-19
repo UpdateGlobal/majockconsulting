@@ -1,25 +1,32 @@
 <!-- Footer Start Here -->
-    <footer class="footer-area">
-        
-        <div class="footer-buttom-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="copy-right-text">
-                            <p>&copy; Majock Consulting 2018 - Diseño Update Global Marketing</p>
-                        </div>
+<footer class="footer-area">
+    <div class="footer-buttom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="copy-right-text">
+                        <p>&copy; Majock Consulting 2018 - Diseño Update Global Marketing</p>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="footer-social-media">
-                            <ul id="fnav">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="footer-social-media">
+                        <ul id="fnav">
+                            <?php
+                                $consultarSol = 'SELECT * FROM social ORDER BY orden';
+                                $resultadoSol = mysqli_query($enlaces,$consultarSol) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                                while($filaSol = mysqli_fetch_array($resultadoSol)){
+                                    $xType      = $filaSol['type'];
+                                    $xLinks     = $filaSol['links'];
+                            ?>
+                            <li><a href="<?php echo $xLinks; ?>"><i class="fa <?php echo $xType; ?>"></i></a></li>
+                            <?php 
+                                }
+                                mysqli_free_result($resultadoSol);
+                            ?>  
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>

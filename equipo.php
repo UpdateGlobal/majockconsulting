@@ -1,19 +1,12 @@
+<?php include("cms/module/conexion.php"); ?>
 <!doctype html>
 <html class="no-js" lang="es">
-
 <!-- head -->
-
-<?
-include 'include/head.php'
-?>
-
+<?php include 'include/head.php' ?>
 <!-- end head -->
-
 <body>
     <!--  Header Area Here -->
-    <?
-    include 'include/header.php'
-    ?>
+    <?php include 'include/header.php' ?>
     <!--  Header Area End Here -->
 
     <!-- CABECERA Start Here -->
@@ -31,35 +24,19 @@ include 'include/head.php'
         </div>
     </div>
     <!-- CABECERA End Here -->
-
     <!--  EQUIPO -->
-    
-    <?
-    include 'include/equipo.php'
-    ?>
-    
-    
+    <?php include 'include/equipo.php' ?>
     <!--  EQUIPO End Here -->
 
     <!-- Partner Logo Area Start Here -->
-    <?
-    include 'include/clientes.php'
-    ?>
+    <?php include 'include/clientes.php' ?>
     <!-- Partner Logo Area End Here -->
     <!--  Get Free Consult Section Start Here -->
-
-    <?
-        include 'include/banner-contact.php'
-    ?>
+    <?php include 'include/banner-contact.php' ?>
     <!--  Get Free Consult Section End Here -->
     <!-- Footer Start Here -->
-    <? 
-    include 'include/footer.php'
-    ?>
+    <?php include 'include/footer.php' ?>
     <!-- Footer End Here -->
-<?
-include 'include/scripts.php'
-?>
+    <?php include 'include/scripts.php' ?>
 </body>
-
 </html>

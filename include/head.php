@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <!-- style css -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/custom.css">
     <!-- responsive css -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- modernizr css -->

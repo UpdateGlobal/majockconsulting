@@ -1,4 +1,5 @@
 <?php include("cms/module/conexion.php"); ?>
+<?php $cod_categoria   = $_REQUEST['cod_categoria'];?>
 <!doctype html>
 <html class="no-js" lang="es">
 <?php include 'include/head.php' ?>
@@ -26,7 +27,7 @@
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                     <?php
-                        $consultarNoticias = "SELECT * FROM noticias WHERE estado='1'";
+                        $consultarNoticias = "SELECT * FROM noticias WHERE cod_categoria='$cod_categoria' AND estado='1'";
                         $resultadoNoticias = mysqli_query($enlaces, $consultarNoticias);
                         $total_registros = mysqli_num_rows($resultadoNoticias);
                         if($total_registros==0){ 
@@ -44,7 +45,7 @@
                         $posicion = ($pagina-1)*$registros_por_paginas;
                         $limite = "LIMIT $posicion, $registros_por_paginas";
 
-                        $consultarNoticias = "SELECT * FROM noticias WHERE estado='1' ORDER BY fecha,cod_noticia ASC $limite";
+                        $consultarNoticias = "SELECT * FROM noticias WHERE cod_categoria='$cod_categoria' AND estado='1' ORDER BY fecha,cod_noticia ASC $limite";
                         $resultadoNoticias = mysqli_query($enlaces,$consultarNoticias) or die('Consulta fallida: ' . mysqli_error($enlaces));
                         while($filaNot = mysqli_fetch_array($resultadoNoticias)){
                             $xCodigo        = $filaNot['cod_noticia'];

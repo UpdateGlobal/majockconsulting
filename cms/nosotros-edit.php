@@ -92,8 +92,6 @@ if($proceso == "Actualizar"){
                 </div>
               </div>
 
-
-
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
                   <label class="col-form-label" for="slogan">Descripci&oacute;n:</label>
@@ -103,6 +101,7 @@ if($proceso == "Actualizar"){
                   <textarea name="contenido" data-provide="summernote" data-min-height="150" <?php if($xVisitante=="1"){ ?> style="display:none;" <?php }else{ ?> <?php } ?> ><?php echo $contenido; ?></textarea>
                 </div>
               </div>
+              
               <?php if($cod_contenido=='1'){ ?>
               <?php }else{ ?>
               <div class="form-group row">
