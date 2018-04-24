@@ -1,5 +1,11 @@
 <?php include("cms/module/conexion.php"); ?>
-<?php $cod_servicio = $_REQUEST['cod_servicio']; ?>
+<?php $slug = $_REQUEST['slug']; ?>
+<?php 
+$consultarServicio = "SELECT * FROM servicios WHERE slug='$slug'";
+$resultadoServicio = mysqli_query($enlaces,$consultarServicio) or die('Consulta fallida: ' . mysqli_error($enlaces));
+$filaSer = mysqli_fetch_array($resultadoServicio);
+$cod_servicio = $filaSer['cod_servicio']; 
+?>
 <!doctype html>
 <html class="no-js" lang="es">
 <?php include 'include/head.php' ?>
@@ -22,7 +28,7 @@
                 <div class="header-banner">
                     <h1><?php echo $xTitulo; ?></h1>
                     <ul>
-                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="/index.php">Inicio</a></li>
                         <li>/ <?php echo $xTitulo; ?></li>
                     </ul>
                 </div>
@@ -42,7 +48,7 @@
                                 <div role="tabpanel" class="tab-pane active" id="home">
                                     <div class="single-service">
                                         <h2><?php echo $xTitulo; ?></h2>
-                                        <img src="cms/assets/img/servicios/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
+                                        <img src="/cms/assets/img/servicios/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
                                         <?php echo $xDescripcion; ?>
                                     </div>
                                 </div>            

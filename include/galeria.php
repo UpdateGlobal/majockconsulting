@@ -19,7 +19,7 @@
                     <div class="col-lg-12 col-md-12">
                         <div class="portfolioFilter">
                             <a href="#" data-filter=".productos" class="current">Productos</a>
-                            <a href="#" data-filter=".servicios">Servicios</a>      
+                            <a href="#" data-filter=".servicios">Servicios</a>
                         </div>
                     </div>
                 </div>
@@ -38,10 +38,10 @@
                                     $xImagen    = $filaPro['imagen'];
                             ?>
                             <div class="single-item productos">
-                                <img src="cms/assets/img/productos/<?php echo $xImagen; ?>" alt="image">
+                                <img src="/cms/assets/img/productos/<?php echo $xImagen; ?>" alt="<?php echo $xProducto; ?>">
                                 <div class="portfolio1-overley">
                                     <div class="item-content">
-                                        <h2><a href="producto-detalle.php?cod_producto=<?php echo $xCodigo; ?>"><?php echo $xProducto; ?></a></h2>
+                                        <h2><a href="/producto/<?php echo $xSlug; ?>"><?php echo $xProducto; ?></a></h2>
                                         <p>Majock Consulting || Productos</p>
                                     </div>
                                 </div>
@@ -60,10 +60,10 @@
                                     $xImagen    = $filaSer['imagen'];
                             ?>
                             <div class="single-item servicios">
-                                <img src="cms/assets/img/servicios/<?php echo $xImagen; ?>" alt="image">
+                                <img src="/cms/assets/img/servicios/<?php echo $xImagen; ?>" alt="<?php echo $xServicio; ?>">
                                 <div class="portfolio1-overley">
                                     <div class="item-content">
-                                        <h2><a href="servicio-detalle.php?cod_producto=<?php echo $xCodigo; ?>"><?php echo $xServicio; ?></a></h2>
+                                        <h2><a href="/servicio/<?php echo $xSlug; ?>"><?php echo $xServicio; ?></a></h2>
                                         <p>Majock Consulting || Servicios</p>
                                     </div>
                                 </div>

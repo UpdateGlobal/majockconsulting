@@ -14,7 +14,7 @@
                     $xImagen    = $filaCar['imagen'];
             ?>
             <div class="single-logo">
-                <a><img src="cms/assets/img/carrusel/<?php echo $xImagen; ?>" /></a>
+                <a><img src="/cms/assets/img/carrusel/<?php echo $xImagen; ?>" /></a>
             </div>
             <?php
                 }

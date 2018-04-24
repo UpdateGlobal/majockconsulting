@@ -29,7 +29,7 @@
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="single-portfolio-area">
                     <div class="portfolio-img">
-                        <img src="cms/assets/img/miembros/<?php echo $xImagen; ?>" />
+                        <img src="/cms/assets/img/miembros/<?php echo $xImagen; ?>" />
                     </div>
                     <div class="portfolio2-overley">
                         <div class="content">

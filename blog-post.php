@@ -1,5 +1,11 @@
 <?php include("cms/module/conexion.php"); ?>
-<?php $cod_noticia   = $_REQUEST['cod_noticia'];?>
+<?php $slug = $_REQUEST['slug']; ?>
+<?php
+    $consultaNoticias = "SELECT * FROM noticias WHERE slug='$slug'";
+    $ejecutarNoticias = mysqli_query($enlaces,$consultaNoticias) or die('Consulta fallida: ' . mysqli_error($enlaces));
+    $filaNot = mysqli_fetch_array($ejecutarNoticias);
+        $cod_noticia   = $filaNot['cod_noticia'];
+?>
 <!doctype html>
 <html class="no-js" lang="es">
 <?php include 'include/head.php' ?>
@@ -22,7 +28,7 @@
                 <div class="header-banner">
                     <h1><?php echo $xTitulo; ?></h1>
                     <ul>
-                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="/index.php">Inicio</a></li>
                         <li>/ <?php echo $xTitulo; ?></li>
                     </ul>
                 </div>
@@ -38,7 +44,7 @@
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                     <div class="news-page-content-section-area">
                         <div class="single-news-area"><h3 class="news-title"><a><?php echo $xTitulo; ?></a></h3><br>
-                            <a><img class="media-object" src="cms/assets/img/noticias/<?php echo $xImagen; ?>" /></a><br>
+                            <a><img class="media-object" src="/cms/assets/img/noticias/<?php echo $xImagen; ?>" /></a><br>
                             <div class="news-body">
                                 <p class="mata"><?php
                                     $mydate = strtotime($xFecha);
@@ -48,7 +54,7 @@
                                 ?></p>
                                 <?php echo $xNoticia; ?>
                             </div>
-                            <a href="blog.php" class="btn-template">&lt; Volver</a>
+                            <a href="/blog.php" class="btn-template">&lt; Volver</a>
                         </div>
                     </div>
                 </div>

@@ -10,7 +10,7 @@
                         $xSlug      = $filaSer['slug'];
                         $xServicio  = $filaSer['titulo'];
                 ?>
-                <li<?php if($menu==$xCodigo){ ?> class="active" <?php } ?>><a href="servicio-detalle.php?cod_servicio=<?php echo $xCodigo; ?>"><?php echo $xServicio; ?></a></li>
+                <li<?php if($menu==$xCodigo){ ?> class="active" <?php } ?>><a href="/servicio/<?php echo $xSlug; ?>"><?php echo $xServicio; ?></a></li>
                 <?php
                     }
                     mysqli_free_result($resultadoServicio);

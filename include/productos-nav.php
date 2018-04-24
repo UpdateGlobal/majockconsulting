@@ -10,7 +10,7 @@
                         $xSlug      = $filaPro['slug'];
                         $xProducto  = $filaPro['titulo'];
                 ?>
-                <li<?php if($menu==$xCodigo){ ?> class="active" <?php } ?>><a href="producto-detalle.php?cod_producto=<?php echo $xCodigo; ?>"><?php echo $xProducto; ?></a></li>
+                <li<?php if($menu==$xCodigo){ ?> class="active" <?php } ?>><a href="/producto/<?php echo $xSlug; ?>"><?php echo $xProducto; ?></a></li>
                 <?php
                     }
                     mysqli_free_result($resultadoProducto);

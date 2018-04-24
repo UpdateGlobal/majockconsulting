@@ -8,7 +8,7 @@
                         $xImagen    = $filaBan['imagen'];
                         $num++;
                 ?>
-                <img src="cms/assets/img/banner/<?php echo $xImagen; ?>" alt="" title="#slider-direction-<?php echo $num; ?>" />
+                <img src="/cms/assets/img/banner/<?php echo $xImagen; ?>" alt="" title="#slider-direction-<?php echo $num; ?>" />
                 <?php 
                     }
                     mysqli_free_result($resultadoBanner);
@@ -36,7 +36,7 @@
                             <ul>
                                 <li><a href="http://<?php echo $xLink; ?>">CON&Oacute;CENOS <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
                                 <?php if($xContacto=="1"){ ?>
-                                <li><a href="contacto.php">CONT&Aacute;CTANOS <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+                                <li><a href="/contacto.php">CONT&Aacute;CTANOS <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
                                 <?php } ?>
                             </ul>
                         </div>

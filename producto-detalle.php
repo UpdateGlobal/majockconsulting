@@ -1,5 +1,11 @@
 <?php include("cms/module/conexion.php"); ?>
-<?php $cod_producto = $_REQUEST['cod_producto']; ?>
+<?php $slug = $_REQUEST['slug']; ?>
+<?php 
+    $consultaProductos = "SELECT * FROM productos WHERE slug='$slug'";
+    $ejecutarProductos = mysqli_query($enlaces,$consultaProductos) or die('Consulta fallida: ' . mysqli_error($enlaces));
+    $filaPro        = mysqli_fetch_array($ejecutarProductos);
+    $cod_producto   = $filaPro['cod_producto'];
+?>
 <!doctype html>
 <html class="no-js" lang="es">
 <?php include 'include/head.php' ?>
@@ -22,7 +28,7 @@
                 <div class="header-banner">
                     <h1><?php echo $xTitulo; ?></h1>
                     <ul>
-                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="/index.php">Inicio</a></li>
                         <li>/ <?php echo $xTitulo; ?></li>
                     </ul>
                 </div>
@@ -42,7 +48,7 @@
                                 <div role="tabpanel" class="tab-pane active" id="home">
                                     <div class="single-service">
                                         <h2><?php echo $xTitulo; ?></h2>
-                                        <img src="cms/assets/img/productos/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
+                                        <img src="/cms/assets/img/productos/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
                                         <?php echo $xDescripcion; ?>
                                     </div>
                                 </div>            

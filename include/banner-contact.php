@@ -3,7 +3,6 @@
     $resultadoGeneral = mysqli_query($enlaces,$consultarGeneral) or die('Consulta fallida: ' . mysqli_error($enlaces));
     while($filaGen = mysqli_fetch_array($resultadoGeneral)){
         $xTitulo      = $filaGen['campo_1'];
-        $xLink        = $filaGen['campo_5'];
 ?>
 <div class="free-consult">
     <div class="container">
@@ -15,7 +14,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <div class="get-free-consult">
-                    <a href="<?php echo $xLink; ?>">Cont&aacute;ctanos</a>
+                    <a href="/contacto.php">Cont&aacute;ctanos</a>
                 </div>
             </div>
         </div>

@@ -3,15 +3,14 @@
 <html class="no-js" lang="">
 <head>
     <?php include 'include/head.php' ?>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script>
         function sendContact() {
             var valid;
             valid = validateContact();
             if(valid) {
                 jQuery.ajax({
-                    url: "contact_form.php",
-                    data:'nombre='+$("#nombre").val()+'&razon_social='+$("#razon_social").val()+'&email='+$("#email").val()+'&telefono='+$("#telefono").val()+'&mensaje='+$("#mensaje").val(),
+                    url: "/contact_form.php",
+                    data:'nombre='+$("#nombre").val()+'&razon_social='+$("#razon_social").val()+'&email='+$("#email").val()+'&telefono='+$("#telefono").val()+'&mensaje='+$("#mensaje").val()+'&fecha_ingreso='+$("#fecha_ingreso").val(),
                     type: "POST",
                     success:function(data){
                         $("#mail-status").html(data);
@@ -56,9 +55,9 @@
         <div class="container">
             <div class="row">
                 <div class="header-banner">
-                    <h1>Contáctanos</h1>
+                    <h1>Contactanos</h1>
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="/index.php">Inicio</a></li>
                         <li>/ Contacto</li>
                     </ul>
                 </div>
@@ -102,7 +101,7 @@
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                     <div class="row">
                         <div class="main-contact-form contact-form">
-                            <form id='contact-form' role="form">
+                            <div id='contact-form' role="form">
                                 <fieldset>
                                     <div class="col-sm-6">
                                         <div class="form-group">
@@ -131,14 +130,18 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group">
-                                            <button type="submit" name="submit" class="btn-read-more-fill btn-send" onClick="sendContact();">Contactarme</button>
+                                            <?php 
+                                                $fecha = date("Y-m-d");
+                                            ?>
+                                            <input type="hidden" id="fecha_ingreso" name="fecha_ingreso" value="<?php echo $fecha ?>">
+                                            <button name="submit" class="btn-read-more-fill btn-send" onClick="sendContact();">Contactarme</button>
                                         </div>
                                     </div>
                                     <div class="col-sm-8">
-                                        <div class="mail-status"></div>
+                                        <div id="mail-status"></div>
                                     </div>
                                 </fieldset>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>

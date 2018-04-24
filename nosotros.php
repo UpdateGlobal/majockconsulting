@@ -16,7 +16,7 @@
                 <div class="header-banner">
                     <h1>Nosotros</h1>
                     <ul>
-                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="/index.php">Inicio</a></li>
                         <li>/ Nosotros</li>
                     </ul>
                 </div>
@@ -32,9 +32,9 @@
                 <div class="about-inner-page">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation"><a href="about.html#home" aria-controls="home" role="tab" data-toggle="tab">Misi&oacute;n</a></li>
-                        <li role="presentation" class="active"><a href="about.html#profile" aria-controls="profile" role="tab" data-toggle="tab">Visi&oacute;n</a></li>
-                        <li role="presentation"><a href="about.html#messages" aria-controls="messages" role="tab" data-toggle="tab">Historia</a></li>
+                        <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Misi&oacute;n</a></li>
+                        <li role="presentation" class="active"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Visi&oacute;n</a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Historia</a></li>
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content">
@@ -49,8 +49,8 @@
                                     $xContenido   = $filaCon['contenido'];
                             ?>
                             <div class="media">
-                                <a class="pull-left" href="about.html#">
-                                    <img src="cms/assets/img/nosotros/<?php echo $xImagen; ?>" alt="Generic placeholder image">
+                                <a class="pull-left" href="#">
+                                    <img src="/cms/assets/img/nosotros/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
                                 </a>
                                 <div class="media-body">
                                     <h2 class="media-heading"><?php echo $xTitulo; ?></h2>
@@ -73,8 +73,8 @@
                                     $xContenido   = $filaCon['contenido'];
                             ?>
                             <div class="media">
-                                <a class="pull-left" href="about.html#">
-                                    <img src="cms/assets/img/nosotros/<?php echo $xImagen; ?>" alt="Generic placeholder image">
+                                <a class="pull-left" href="#">
+                                    <img src="/cms/assets/img/nosotros/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
                                 </a>
                                 <div class="media-body">
                                     <h2 class="media-heading"><?php echo $xTitulo; ?></h2>
@@ -97,8 +97,8 @@
                                     $xContenido   = $filaCon['contenido'];
                             ?>
                             <div class="media">
-                                <a class="pull-left" href="about.html#">
-                                    <img src="cms/assets/img/nosotros/<?php echo $xImagen; ?>" alt="Generic placeholder image">
+                                <a class="pull-left" href="#">
+                                    <img src="/cms/assets/img/nosotros/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
                                 </a>
                                 <div class="media-body">
                                     <h2 class="media-heading"><?php echo $xTitulo; ?></h2>

@@ -1,5 +1,11 @@
 <?php include("cms/module/conexion.php"); ?>
-<?php $cod_categoria   = $_REQUEST['cod_categoria'];?>
+<?php $slug = $_REQUEST['slug'];?>
+<?php 
+$consultarCategorias = "SELECT * FROM noticias_categorias WHERE slug='$slug'";
+$resultadoCategorias = mysqli_query($enlaces,$consultarCategorias) or die('Consulta fallida: ' . mysqli_error($enlaces));
+$filaCat = mysqli_fetch_array($resultadoCategorias);
+    $cod_categoria   = $filaCat['cod_categoria'];
+?>
 <!doctype html>
 <html class="no-js" lang="es">
 <?php include 'include/head.php' ?>
@@ -13,7 +19,7 @@
                 <div class="header-banner">
                     <h1>Nuestro Blog</h1>
                     <ul>
-                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="/index.php">Inicio</a></li>
                         <li>/ Blog</li>
                     </ul>
                 </div>
@@ -36,7 +42,7 @@
                         <div style="height: 40px;"></div>
                     <?php 
                         }else{
-                        $registros_por_paginas = 4;
+                        $registros_por_paginas = 1;
                         $total_paginas = ceil($total_registros/$registros_por_paginas);
                         $pagina = intval($_GET['p']);
                         if($pagina<1 or $pagina>$total_paginas){
@@ -53,20 +59,20 @@
                             $xImagen        = $filaNot['imagen'];
                             $xNoticia       = $filaNot['noticia'];
                             $xFecha         = $filaNot['fecha'];
-                            $xSlugn         = $filaNot['slug'];
+                            $xSlug          = $filaNot['slug'];
                     ?>
                     <div class="news-page-content-section-area">
                         <div class="row single-news-area">
                             <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
                                 <div class="new-featured-image">
-                                    <a href="blog-post.php?cod_noticia=<?php echo $xCodigo; ?>">
-                                        <img class="media-object" src="cms/assets/img/noticias/<?php echo $xImagen; ?>" />
+                                    <a href="/blog/<?php echo $xSlug; ?>">
+                                        <img class="media-object" src="/cms/assets/img/noticias/<?php echo $xImagen; ?>" />
                                     </a>
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
                                 <div class="media-body news-body">
-                                    <h3 class="media-heading"><a href="blog-post.php?cod_noticia=<?php echo $xCodigo; ?>"><?php echo $xTitulo; ?></a></h3>
+                                    <h3 class="media-heading"><a href="/blog/<?php echo $xSlug; ?>"><?php echo $xTitulo; ?></a></h3>
                                     <p class="meta"><?php
                                         $mydate = strtotime($xFecha);
                                         $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
@@ -83,7 +89,7 @@
                                         <?php echo $xResumen_m; ?>
                                     </p>
                                     <div class="read-more">
-                                        <a href="blog-post.php?cod_noticia=<?php echo $xCodigo; ?>">leer más <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                        <a href="/blog/<?php echo $xSlug; ?>">leer m&aacute;s <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -99,20 +105,20 @@
                             echo "<div class='pagination-area'>
                                     <ul>";
                             if($pagina>1){
-                                echo "<li><a href='?p=".($pagina-1)."'><i class='fa fa-angle-double-left' aria-hidden='true'></i></a></li>";
+                                echo "<li><a href='/categoria/".$slug."&p=".($pagina-1)."'><i class='fa fa-angle-double-left' aria-hidden='true'></i></a></li>";
                             }
                             for($i=$pagina; $i<=$total_paginas && $i<=($pagina+$paginas_mostrar); $i++){
                                 if($i==$pagina){
                                     echo "<li class='active'><a>$i</a></li>";
                                 }else{
-                                    echo "<li><a href='?p=$i'>$i</a></li>";
+                                    echo "<li><a href='/categoria/".$slug."&p=$i'>$i</a></li>";
                                 }
                             }
                             if(($pagina+$paginas_mostrar)<$total_paginas){
                                 echo "<li><a>...</a></li>";
                             }
                             if($pagina<$total_paginas){
-                                echo "<li><a href='?p=".($pagina+1)."'><i class='fa fa-angle-double-right' aria-hidden='true'></i></a></li>";
+                                echo "<li><a href='/categoria/".$slug."&p=".($pagina+1)."'><i class='fa fa-angle-double-right' aria-hidden='true'></i></a></li>";
                             }
                             echo "  </ul>
                                 </div>

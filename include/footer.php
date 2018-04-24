@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="copy-right-text">
-                        <p>&copy; Majock Consulting 2018 - Diseño Update Global Marketing</p>
+                        <p>&copy; Majock Consulting 2018 - Dise&ntilde;o Update Global Marketing</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

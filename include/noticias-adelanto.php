@@ -14,14 +14,14 @@
                                 $xImagen        = $filaNot['imagen'];
                                 $xNoticia       = $filaNot['noticia'];
                                 $xFecha         = $filaNot['fecha'];
-                                $xSlugn         = $filaNot['slug'];
+                                $xSlug          = $filaNot['slug'];
                         ?>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="single-news-area">
                                 <div class="media">
                                     <div class="pull-left">
-                                        <a href="blog-post.php?cod_noticia=<?php echo $xCodigo; ?>">
-                                            <img src="cms/assets/img/noticias/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
+                                        <a href="/blog/<?php echo $xSlug; ?>">
+                                            <img src="/cms/assets/img/noticias/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
                                             <?php 
                                                 $mydate = strtotime($xFecha);
                                                 $meses = array("Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic");
@@ -31,14 +31,14 @@
                                         </a>
                                     </div>
                                     <div class="media-body">
-                                        <h3><a href="blog-post.php?cod_noticia=<?php echo $xCodigo; ?>"><?php echo $xTitulo; ?></a></h3>
+                                        <h3><a href="/blog/<?php echo $xSlug; ?>"><?php echo $xTitulo; ?></a></h3>
                                         <?php 
                                             $xResumen_m = strip_tags($xNoticia);
                                             $strCut = substr($xResumen_m,0,200);
                                             $xResumen_m = $strCut.'...';
                                         ?>
                                         <?php echo $xResumen_m; ?>
-                                        <p class="date"><a href="blog-post.php?cod_noticia=<?php echo $xCodigo; ?>">Leer m&aacute;s</a></p>
+                                        <p class="date"><a href="/blog/<?php echo $xSlug; ?>">Leer m&aacute;s</a></p>
                                     </div>
                                 </div>
                             </div>
