@@ -84,68 +84,18 @@
 
           </li>
 
-          <li class="menu-item <?php echo ($menu == "servicios" ? "active" : "")?>">
-            <a class="menu-link <?php echo ($menu == "servicios" ? "open" : "")?>" href="#">
-              <span class="icon fa fa-bars"></span>
-              <span class="title">Servicios</span>
-              <span class="arrow"></span>
-            </a>
-
-            <ul class="menu-submenu" <?php echo ($menu == "servicios" ? "style='display:block;'" : "")?> >
-              <li class="menu-item">
-                <a class="menu-link" href="servicios-categorias.php">
-                  <span class="dot"></span>
-                  <span class="title">Categor&iacute;as</span>
-                </a>
-              </li>
-
-              <li class="menu-item">
-                <a class="menu-link" href="servicios.php">
-                  <span class="dot"></span>
-                  <span class="title">Servicios</span>
-                </a>
-              </li>
-
-            </ul>
-          </li>
-
           <li class="menu-item <?php echo ($menu == "productos" ? "active" : "")?>">
-            <a class="menu-link <?php echo ($menu == "productos" ? "open" : "") ?>" href="#">
+            <a class="menu-link <?php echo ($menu == "productos" ? "open" : "")?>" href="productos.php">
               <span class="icon fa fa-cube"></span>
               <span class="title">Productos</span>
-              <span class="arrow"></span>
             </a>
+          </li>
 
-            <ul class="menu-submenu" <?php echo ($menu == "productos" ? "style='display:block;'" : "")?>>
-              <li class="menu-item">
-                <a class="menu-link" href="productos-categorias.php">
-                  <span class="dot"></span>
-                  <span class="title">Categor&iacute;as</span>
-                </a>
-              </li>
-
-              <li class="menu-item">
-                <a class="menu-link" href="productos-subcategorias.php">
-                  <span class="dot"></span>
-                  <span class="title">Sub-categor&iacute;a</span>
-                </a>
-              </li>
-
-              <li class="menu-item">
-                <a class="menu-link" href="productos.php">
-                  <span class="dot"></span>
-                  <span class="title">Productos</span>
-                </a>
-              </li>
-
-              <li class="menu-item">
-                <a class="menu-link" href="productos-fotos.php">
-                  <span class="dot"></span>
-                  <span class="title">Fotos</span>
-                </a>
-              </li>
-
-            </ul>
+          <li class="menu-item <?php echo ($menu == "servicios" ? "active" : "")?>">
+            <a class="menu-link <?php echo ($menu == "servicios" ? "open" : "")?>" href="servicios.php">
+              <span class="icon fa fa-bars"></span>
+              <span class="title">Servicios</span>
+            </a>
           </li>
 
           <li class="menu-category">Contacto</li>

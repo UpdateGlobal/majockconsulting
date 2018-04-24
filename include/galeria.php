@@ -2,19 +2,24 @@
         <div class="gallery-area">
             <div class="container">
                 <div class="row">
-                <div class="section-styling-area">
-                    <h2>Estamos listos para ayudar<br>en el crecimiento de tu empresa</h2>
-                    <p class="icon-border"><i class="fa fa-clone" aria-hidden="true"></i></p>
-                    <p class="section-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum excepturi quibusdam temporibus in corporis eos rerum, distinctio, repudiandae quam expedita consectetur quos possimus sint ratione reiciendis doloribus unde tenetur! Neque.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum excepturi quibusdam temporibus in corporis eos rerum.This is shahin text for demo and its very important text</p>
+                    <div class="section-styling-area">
+                        <?php
+                            $consultarGeneral = "SELECT * FROM general WHERE cod_general='3' AND estado='1'";
+                            $resultadoGeneral = mysqli_query($enlaces,$consultarGeneral) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                            $filaGen = mysqli_fetch_array($resultadoGeneral);
+                                $xTitulo      = $filaGen['campo_1'];
+                                $xDescripcion = $filaGen['campo_2'];
+                        ?>
+                        <h2><?php echo $xTitulo; ?></h2>
+                        <p class="icon-border"><i class="fa fa-clone" aria-hidden="true"></i></p>
+                        <p class="section-text"><?php echo $xDescripcion; ?></p>
+                    </div>
                 </div>
-            </div>
-
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="portfolioFilter">
-                            <a href="portfolio.html#" data-filter=".productos" class="current">Productos</a>
-                            <a href="portfolio.html#" data-filter=".servicios">Servicios</a>
-                            
+                            <a href="#" data-filter=".productos" class="current">Productos</a>
+                            <a href="#" data-filter=".servicios">Servicios</a>      
                         </div>
                     </div>
                 </div>
@@ -23,87 +28,50 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="portfolioContainer">
+                            <?php
+                                $consultarProducto = "SELECT * FROM productos WHERE estado='1' ORDER BY orden";
+                                $resultadoProducto = mysqli_query($enlaces,$consultarProducto) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                                while($filaPro = mysqli_fetch_array($resultadoProducto)){
+                                    $xCodigo    = $filaPro['cod_producto'];
+                                    $xSlug      = $filaPro['slug'];
+                                    $xProducto  = $filaPro['titulo'];
+                                    $xImagen    = $filaPro['imagen'];
+                            ?>
                             <div class="single-item productos">
-                                <img src="img/gallery/g1.jpg" alt="image">
+                                <img src="cms/assets/img/productos/<?php echo $xImagen; ?>" alt="image">
                                 <div class="portfolio1-overley">
                                     <div class="item-content">
-                                        <h2><a href="portfolio.html#">Software para Hoteles</a></h2>
+                                        <h2><a href="producto-detalle.php?cod_producto=<?php echo $xCodigo; ?>"><?php echo $xProducto; ?></a></h2>
                                         <p>Majock Consulting || Productos</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="single-item productos">
-                                <img src="img/gallery/g2.jpg" alt="image">
-                                <div class="portfolio1-overley">
-                                    <div class="item-content">
-                                        <h2><a href="portfolio.html#">Software para Bares, <br>Discotecas y Casinos</a></h2>
-                                        <p>Majock Consulting || Productos</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-item productos">
-                                <img src="img/gallery/g3.jpg" alt="image">
-                                <div class="portfolio1-overley">
-                                    <div class="item-content">
-                                        <h2><a href="portfolio.html#">Software para Retail</a></h2>
-                                        <p>Majock Consulting || Productos</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-item productos">
-                                <img src="img/gallery/g4.jpg" alt="image">
-                                <div class="portfolio1-overley">
-                                    <div class="item-content">
-                                        <h2><a href="portfolio.html#">Software de Facturación Eléctrónica</a></h2>
-                                        <p>Majock Consulting || Productos</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-item productos">
-                                <img src="img/gallery/g5.jpg" alt="image">
-                                <div class="portfolio1-overley">
-                                    <div class="item-content">
-                                        <h2><a href="portfolio.html#">Pasarella de Pagos Online</a></h2>
-                                        <p>Majock Consulting || Productos</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php
+                                }
+                                mysqli_free_result($resultadoProducto);
+                            ?>
+                            <?php
+                                $consultarServicio = "SELECT * FROM servicios WHERE estado='1' ORDER BY orden";
+                                $resultadoServicio = mysqli_query($enlaces,$consultarServicio) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                                while($filaSer = mysqli_fetch_array($resultadoServicio)){
+                                    $xCodigo    = $filaSer['cod_servicio'];
+                                    $xSlug      = $filaSer['slug'];
+                                    $xServicio  = $filaSer['titulo'];
+                                    $xImagen    = $filaSer['imagen'];
+                            ?>
                             <div class="single-item servicios">
-                                <img src="img/gallery/g6.jpg" alt="image">
+                                <img src="cms/assets/img/servicios/<?php echo $xImagen; ?>" alt="image">
                                 <div class="portfolio1-overley">
                                     <div class="item-content">
-                                        <h2><a href="portfolio.html#">Consultoría informática</a></h2>
+                                        <h2><a href="servicio-detalle.php?cod_producto=<?php echo $xCodigo; ?>"><?php echo $xServicio; ?></a></h2>
                                         <p>Majock Consulting || Servicios</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="single-item servicios">
-                                <img src="img/gallery/g7.jpg" alt="image">
-                                <div class="portfolio1-overley">
-                                    <div class="item-content">
-                                        <h2><a href="portfolio.html#">Consultoría en Gestión Hotelera</a></h2>
-                                        <p>Majock Consulting || Servicios</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-item servicios">
-                                <img src="img/gallery/g8.jpg" alt="image">
-                                <div class="portfolio1-overley">
-                                    <div class="item-content">
-                                        <h2><a href="portfolio.html#">Implementación de Software</a></h2>
-                                        <p>Majock Consulting || Servicios</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-item servicios">
-                                <img src="img/gallery/g1.jpg" alt="image">
-                                <div class="portfolio1-overley">
-                                    <div class="item-content">
-                                        <h2><a href="portfolio.html#">Desarrollo de Sistemas a medida</a></h2>
-                                        <p>Majock Consulting || Servicios</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php
+                                }
+                                mysqli_free_result($resultadoServicio);
+                            ?>
                         </div>
                     </div>
                 </div>

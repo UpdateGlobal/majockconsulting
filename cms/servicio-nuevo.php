@@ -9,12 +9,22 @@ if (isset($_REQUEST['proceso'])) {
 }
 if($proceso == "Registrar"){
   $titulo       = mysqli_real_escape_string($enlaces, $_POST['titulo']);
+  $slug         = $titulo;
+  $slug         = preg_replace('~[^\pL\d]+~u', '-', $slug);
+  $slug         = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
+  $slug         = preg_replace('~[^-\w]+~', '', $slug);
+  $slug         = trim($slug, '-');
+  $slug         = preg_replace('~-+~', '-', $slug);
+  $slug         = strtolower($slug);
+  if (empty($slug)){
+      return 'n-a';
+  }
   $imagen       = $_POST['imagen'];
   $descripcion  = mysqli_real_escape_string($enlaces, $_POST['descripcion']);
   if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
     
-  $insertarServicio = "INSERT INTO servicios(titulo, imagen, descripcion, orden, estado)VALUE('$titulo', '$imagen', '$descripcion', '$orden', '$estado')";
+  $insertarServicio = "INSERT INTO servicios(slug, titulo, imagen, descripcion, orden, estado)VALUE('$slug', '$titulo', '$imagen', '$descripcion', '$orden', '$estado')";
   $resultadoInsertar = mysqli_query($enlaces,$insertarServicio);
   $mensaje = "<div class='alert alert-success' role='alert'>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
@@ -69,7 +79,6 @@ if($proceso == "Registrar"){
             <small></small>
           </h1>
         </div>
-        <?php $page="servicios"; include("module/menu-servicios.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
         <div class="card">
@@ -77,6 +86,16 @@ if($proceso == "Registrar"){
           <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
             <div class="card-body">
               <?php if(isset($mensaje)){ echo $mensaje; } else {}; ?>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label required" for="titulo">T&iacute;tulo:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <input class="form-control" name="titulo" type="text" id="titulo" required/>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
@@ -88,16 +107,6 @@ if($proceso == "Registrar"){
                 </div>
                 <div class="col-4 col-lg-2">
                   <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SER');" /><i class="fa fa-save"></i> Examinar</button>
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <div class="col-4 col-lg-2">
-                  <label class="col-form-label required" for="titulo">T&iacute;tulo:</label>
-                </div>
-                <div class="col-8 col-lg-10">
-                  <input class="form-control" name="titulo" type="text" id="titulo" required/>
-                  <div class="invalid-feedback"></div>
                 </div>
               </div>
 
@@ -132,7 +141,7 @@ if($proceso == "Registrar"){
 
             <footer class="card-footer">
               <a href="servicios.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
-              <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-chevron-circle-right"></i> Registrar Banner</button>
+              <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-chevron-circle-right"></i> Registrar Servicio</button>
               <input type="hidden" name="proceso">
             </footer>
 

@@ -16,6 +16,8 @@ if($proceso == ""){
   $titulo = $filaBan['titulo'];
   $subtitulo = $filaBan['subtitulo'];
   $texto  = $filaBan['texto'];
+  $link = $filaBan['link'];
+  $contacto = $filaBan['contacto'];
   $orden  = $filaBan['orden'];
   $estado = $filaBan['estado'];
 }
@@ -25,9 +27,11 @@ if($proceso=="Actualizar"){
   $titulo       = mysqli_real_escape_string($enlaces, $_POST['titulo']);
   $subtitulo    = mysqli_real_escape_string($enlaces, $_POST['subtitulo']);
   $texto        = mysqli_real_escape_string($enlaces, $_POST['texto']);
+  $link         = $_POST['link'];
+  $contacto     = $_POST['contacto'];
   if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
-  $actualizarBanner = "UPDATE banners SET cod_banner='$cod_banner', imagen='$imagen', titulo='$titulo', subtitulo='$subtitulo', texto='$texto', orden='$orden', estado='$estado' WHERE cod_banner='$cod_banner'";
+  $actualizarBanner = "UPDATE banners SET cod_banner='$cod_banner', imagen='$imagen', titulo='$titulo', subtitulo='$subtitulo', texto='$texto', link='$link', contacto='$contacto', orden='$orden', estado='$estado' WHERE cod_banner='$cod_banner'";
   $resultadoActualizar = mysqli_query($enlaces,$actualizarBanner) or die('Consulta fallida: ' . mysqli_error($enlaces));
   header("Location:banners.php");
 }
@@ -126,6 +130,24 @@ if($proceso=="Actualizar"){
                 </div>
                 <div class="col-8 col-lg-10">
                   <textarea class="form-control" name="texto" id="texto"><?php echo $texto; ?></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="link">Enlace:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <input class="form-control" name="link" type="text" id="link" value="<?php echo $link; ?>" />
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="contacto">Contacto:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <input type="checkbox" name="contacto" data-size="small" data-provide="switchery" value="1" <?php if($contacto=="1"){ echo "checked"; } ?> />
                 </div>
               </div>
 

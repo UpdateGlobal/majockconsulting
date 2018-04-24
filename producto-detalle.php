@@ -1,5 +1,5 @@
 <?php include("cms/module/conexion.php"); ?>
-<?php $cod_servicio = $_REQUEST['cod_servicio']; ?>
+<?php $cod_producto = $_REQUEST['cod_producto']; ?>
 <!doctype html>
 <html class="no-js" lang="es">
 <?php include 'include/head.php' ?>
@@ -8,13 +8,13 @@
     <!--  Header Area End Here -->
     <!-- Header Banner Area section Start Here -->
     <?php 
-        $consultarServicio = "SELECT * FROM servicios WHERE cod_servicio='$cod_servicio'";
-        $resultadoServicio = mysqli_query($enlaces,$consultarServicio) or die('Consulta fallida: ' . mysqli_error($enlaces));
-        $filaSer = mysqli_fetch_array($resultadoServicio);
-        $cod_producto   = $filaSer['cod_servicio'];
-        $xTitulo        = htmlspecialchars($filaSer['titulo']);
-        $xImagen        = $filaSer['imagen'];
-        $xDescripcion   = $filaSer['descripcion'];
+        $consultaProductos = "SELECT * FROM productos WHERE cod_producto='$cod_producto'";
+        $ejecutarProductos = mysqli_query($enlaces,$consultaProductos) or die('Consulta fallida: ' . mysqli_error($enlaces));
+        $filaPro        = mysqli_fetch_array($ejecutarProductos);
+        $cod_producto   = $filaPro['cod_producto'];
+        $xTitulo        = htmlspecialchars($filaPro['titulo']);
+        $xImagen        = $filaPro['imagen'];
+        $xDescripcion   = $filaPro['descripcion'];
     ?>
     <div class="header-banner-area">
         <div class="container">
@@ -42,7 +42,7 @@
                                 <div role="tabpanel" class="tab-pane active" id="home">
                                     <div class="single-service">
                                         <h2><?php echo $xTitulo; ?></h2>
-                                        <img src="cms/assets/img/servicios/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
+                                        <img src="cms/assets/img/productos/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
                                         <?php echo $xDescripcion; ?>
                                     </div>
                                 </div>            
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <!-- PRODUCTOS Y SERVICIOS NAV -->
-                    <?php $menu=$cod_servicio; include 'include/servicios-nav.php'; ?>
+                    <?php $menu=$cod_producto; include 'include/productos-nav.php'; ?>
                     <!-- PRODUCTOS Y SERVICIOS NAV -->
                 </div>
             </div>

@@ -22,9 +22,19 @@ if($proceso=="Actualizar"){
   $cod_categoria = $_POST['cod_categoria'];
   $imagen        = $_POST['imagen'];
   $titulo        = mysqli_real_escape_string($enlaces, $_POST['titulo']);
+  $slug          = $titulo;
+  $slug          = preg_replace('~[^\pL\d]+~u', '-', $slug);
+  $slug          = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
+  $slug          = preg_replace('~[^-\w]+~', '', $slug);
+  $slug          = trim($slug, '-');
+  $slug          = preg_replace('~-+~', '-', $slug);
+  $slug          = strtolower($slug);
+  if (empty($slug)){
+      return 'n-a';
+  }
   $noticia       = mysqli_real_escape_string($enlaces, $_POST['noticia']);
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
-  $actualizarNoticias = "UPDATE noticias SET cod_noticia='$cod_noticia', cod_categoria='$cod_categoria', imagen='$imagen', titulo='$titulo', noticia='$noticia', estado='$estado' WHERE cod_noticia='$cod_noticia'";
+  $actualizarNoticias = "UPDATE noticias SET cod_noticia='$cod_noticia', cod_categoria='$cod_categoria', titulo='$titulo', slug='$slug', imagen='$imagen', noticia='$noticia', estado='$estado' WHERE cod_noticia='$cod_noticia'";
   $resultadoActualizar = mysqli_query($enlaces,$actualizarNoticias) or die('Consulta fallida: ' . mysqli_error($enlaces));
   header("Location:noticias.php");
 }

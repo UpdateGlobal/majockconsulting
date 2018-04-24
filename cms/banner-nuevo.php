@@ -12,9 +12,11 @@ if($proceso == "Registrar"){
   $titulo       = mysqli_real_escape_string($enlaces, $_POST['titulo']);
   $subtitulo    = mysqli_real_escape_string($enlaces, $_POST['subtitulo']);
   $texto        = mysqli_real_escape_string($enlaces, $_POST['texto']);
+  $link         = $_POST['link'];
+  $contacto     = $_POST['contacto'];
   if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
-  $insertarBanner = "INSERT INTO banners(imagen, titulo, subtitulo, texto, orden, estado)VALUE('$imagen', '$titulo', '$subtitulo', '$texto', '$orden', '$estado')";
+  $insertarBanner = "INSERT INTO banners(imagen, titulo, subtitulo, texto, link, contacto, orden, estado)VALUE('$imagen', '$titulo', '$subtitulo', '$texto', '$link', '$contacto', '$orden', '$estado')";
   $resultadoInsertar = mysqli_query($enlaces,$insertarBanner);
   $mensaje = "<div class='alert alert-success' role='alert'>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
@@ -113,6 +115,24 @@ if($proceso == "Registrar"){
                 </div>
                 <div class="col-8 col-lg-10">
                   <textarea class="form-control" name="texto" id="texto"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="link">Enlace:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <input class="form-control" name="link" type="text" id="link" />
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="contacto">Contacto:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <input type="checkbox" name="contacto" data-size="small" data-provide="switchery" value="1" checked>
                 </div>
               </div>
 

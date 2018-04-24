@@ -12,20 +12,30 @@ if($proceso == ""){
   $ejecutarServicios = mysqli_query($enlaces,$consultaServicios) or die('Consulta fallida: ' . mysqli_error($enlaces));
   $filaSer = mysqli_fetch_array($ejecutarServicios);
   $cod_servicio = $filaSer['cod_servicio'];
-  $imagen      = $filaSer['imagen'];
   $titulo      = $filaSer['titulo'];
+  $imagen      = $filaSer['imagen'];
   $descripcion = $filaSer['descripcion'];
   $orden       = $filaSer['orden'];
   $estado      = $filaSer['estado'];
 }
 if($proceso=="Actualizar"){
   $cod_servicio     = $_POST['cod_servicio'];
-  $imagen           = $_POST['imagen'];
   $titulo           = mysqli_real_escape_string($enlaces, $_POST['titulo']);
+  $slug             = $titulo;
+  $slug             = preg_replace('~[^\pL\d]+~u', '-', $slug);
+  $slug             = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
+  $slug             = preg_replace('~[^-\w]+~', '', $slug);
+  $slug             = trim($slug, '-');
+  $slug             = preg_replace('~-+~', '-', $slug);
+  $slug             = strtolower($slug);
+  if (empty($slug)){
+      return 'n-a';
+  }
+  $imagen           = $_POST['imagen'];
   $descripcion      = mysqli_real_escape_string($enlaces, $_POST['descripcion']);
   if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
-  $actualizarServicios  = "UPDATE servicios SET cod_servicio='$cod_servicio', imagen='$imagen', titulo='$titulo', descripcion='$descripcion', orden='$orden', estado='$estado' WHERE cod_servicio='$cod_servicio'";
+  $actualizarServicios  = "UPDATE servicios SET cod_servicio='$cod_servicio', slug='$slug', titulo='$titulo', imagen='$imagen', descripcion='$descripcion', orden='$orden', estado='$estado' WHERE cod_servicio='$cod_servicio'";
   $resultadoActualizar = mysqli_query($enlaces,$actualizarServicios) or die('Consulta fallida: ' . mysqli_error($enlaces));
   header("Location:servicios.php");
 }
@@ -77,7 +87,6 @@ if($proceso=="Actualizar"){
             <small></small>
           </h1>
         </div>
-        <?php $page="servicios"; include("module/menu-servicios.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
         <div class="card">
@@ -85,6 +94,16 @@ if($proceso=="Actualizar"){
           <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
             <div class="card-body">
               <?php if(isset($mensaje)){ echo $mensaje; } else {}; ?>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label required" for="titulo">T&iacute;tulo:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <input class="form-control" name="titulo" type="text" id="titulo" value="<?php echo $titulo; ?>" required/>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
@@ -96,16 +115,6 @@ if($proceso=="Actualizar"){
                 </div>
                 <div class="col-4 col-lg-2">
                   <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SER');" /><i class="fa fa-save"></i> Examinar</button>
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <div class="col-4 col-lg-2">
-                  <label class="col-form-label required" for="titulo">T&iacute;tulo:</label>
-                </div>
-                <div class="col-8 col-lg-10">
-                  <input class="form-control" name="titulo" type="text" id="titulo" value="<?php echo $titulo; ?>" required/>
-                  <div class="invalid-feedback"></div>
                 </div>
               </div>
 
@@ -140,7 +149,7 @@ if($proceso=="Actualizar"){
 
             <footer class="card-footer">
               <a href="servicios.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
-              <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-refresh"></i> Editar Servicio</button>
+              <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-refresh"></i> Guardar Cambios</button>
               <input type="hidden" name="proceso">
               <input type="hidden" name="cod_servicio" value="<?php echo $cod_servicio; ?>">
             </footer>

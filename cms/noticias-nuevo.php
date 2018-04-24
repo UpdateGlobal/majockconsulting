@@ -10,12 +10,22 @@ if (isset($_REQUEST['proceso'])) {
 if($proceso == "Registrar"){
   $cod_categoria  = $_POST['cod_categoria'];
   $titulo         = mysqli_real_escape_string($enlaces, $_POST['titulo']);
+  $slug           = $titulo;
+  $slug           = preg_replace('~[^\pL\d]+~u', '-', $slug);
+  $slug           = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
+  $slug           = preg_replace('~[^-\w]+~', '', $slug);
+  $slug           = trim($slug, '-');
+  $slug           = preg_replace('~-+~', '-', $slug);
+  $slug           = strtolower($slug);
+  if (empty($slug)){
+      return 'n-a';
+  }
   $imagen         = $_POST['imagen'];
   $noticia        = mysqli_real_escape_string($enlaces, $_POST['noticia']);
   $fecha          = $_POST['fecha'];
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
     
-  $insertarNoticia = "INSERT INTO noticias(cod_categoria, titulo, imagen, noticia, fecha, estado)VALUE('$cod_categoria', '$titulo', '$imagen', '$noticia', '$fecha', '$estado')";
+  $insertarNoticia = "INSERT INTO noticias(cod_categoria, slug, titulo, imagen, noticia, fecha, estado)VALUE('$cod_categoria', '$slug', '$titulo', '$imagen', '$noticia', '$fecha', '$estado')";
   $resultadoInsertar = mysqli_query($enlaces,$insertarNoticia);
   $mensaje = "<div class='alert alert-success' role='alert'>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>

@@ -1,24 +1,18 @@
+<?php include("cms/module/conexion.php"); ?>
 <!doctype html>
 <html class="no-js" lang="es">
-
-<?
-include 'include/head.php'
-?>
-
+<?php include 'include/head.php' ?>
 <body>
-<?
-include 'include/header.php'
-?>
-    
-    <!--  Header Area End Here -->
-    <!-- Header Banner Area section Start Here -->
+<?php include 'include/header.php' ?>
+<!--  Header Area End Here -->
+<!-- Header Banner Area section Start Here -->
     <div class="header-banner-area">
         <div class="container">
             <div class="row">
                 <div class="header-banner">
                     <h1>Software para hoteles</h1>
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.php">Inicio</a></li>
                         <li>/ Software para hoteles</li>
                     </ul>
                 </div>
@@ -39,7 +33,6 @@ include 'include/header.php'
                                     <div class="single-service">
                                         <h2>Software para hoteles</h2>
                                         <img src="img/service/single-servce1.jpg" alt="service">
-                                        
                                         <blockquote>
                                             <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but a Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
                                         </blockquote>
@@ -80,21 +73,13 @@ include 'include/header.php'
         </div>
     </div>
     <!-- Single Service Inner Section End Here -->
-
     <!--  Get Free Consult Section Start Here -->
-     <?
-    include 'include/banner-contact.php'
-    ?>
+    <?php include 'include/banner-contact.php' ?>
     <!--  Get Free Consult Section End Here -->
     <!-- Footer Start Here -->
-    <?
-    include 'include/footer.php'
-    ?>
+    <?php include 'include/footer.php' ?>
     <!-- Footer End Here -->
     <!-- all js here -->
-     <?
-    include 'include/scripts.php'
-    ?>
+    <?php include 'include/scripts.php' ?>
 </body>
-
 </html>

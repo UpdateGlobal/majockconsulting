@@ -101,7 +101,7 @@ if($proceso=="Actualizar"){
     $actualizarGeneral = "UPDATE general SET cod_general='$cod_general', campo_1='$campo_1', campo_2='$campo_2', estado='$estado' WHERE cod_general='$cod_general'";
   }
   if ($cod_general == 4){
-    $actualizarGeneral = "UPDATE general SET cod_general='$cod_general', campo_1='$campo_1', campo_2='$campo_2', campo_5='$campo_5', estado='$estado' WHERE cod_general='$cod_general'";
+    $actualizarGeneral = "UPDATE general SET cod_general='$cod_general', campo_1='$campo_1', campo_2='$campo_2', campo_3='$campo_3', campo_4='$campo_4', campo_5='$campo_5', estado='$estado' WHERE cod_general='$cod_general'";
   }
   if ($cod_general == 5){
     $actualizarGeneral = "UPDATE general SET cod_general='$cod_general', campo_1='$campo_1', campo_2='$campo_2', estado='$estado' WHERE cod_general='$cod_general'";

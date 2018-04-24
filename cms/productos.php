@@ -31,18 +31,16 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <?php header ('Content-type: text/html; charset=utf-8'); include("module/head.php"); ?>
+    <?php include("module/head.php"); ?>
     <style>
       @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
-        td:nth-of-type(1):before { content: "Categoria"; }
-        td:nth-of-type(2):before { content: "Sub-categoria"; }
-        td:nth-of-type(3):before { content: "Producto"; }
-        td:nth-of-type(4):before { content: "Imagen"; }
-        td:nth-of-type(5):before { content: "Adjuntos"; }
-        td:nth-of-type(6):before { content: "Estado"; }
+        td:nth-of-type(1):before { content: "Producto"; }
+        td:nth-of-type(2):before { content: "Imagen"; }
+        td:nth-of-type(3):before { content: "Orden"; }
+        td:nth-of-type(4):before { content: "Estado"; }
+        td:nth-of-type(5):before { content: ""; }
+        td:nth-of-type(6):before { content: ""; }
         td:nth-of-type(7):before { content: ""; }
-        td:nth-of-type(8):before { content: ""; }
-        td:nth-of-type(9):before { content: ""; }
       }
     </style>
     <script>
@@ -89,7 +87,6 @@
             <small></small>
           </h1>
         </div>
-        <?php $page="productos"; include("module/menu-productos.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
         <div class="row">
@@ -103,14 +100,12 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th width="15%" scope="col">Categoria</th>
-                        <th width="15%" scope="col">Sub Categoria</th>
-                        <th width="20%" scope="col">Producto</th>
-                        <th width="20%" scope="col">Imagen
+                        <th width="30%" scope="col">Producto</th>
+                        <th width="40%" scope="col">Imagen
                           <input type="hidden" name="proceso">
                           <input type="hidden" name="eliminar" value="false">
                         </th>
-                        <th width="10%" scope="col">Adjuntos</th>
+                        <th width="10%" scope="col">Orden</th>
                         <th width="5%" scope="col">Estado</th>
                         <th width="5%" scope="col">&nbsp;</th>
                         <th width="5%" scope="col">&nbsp;</th>
@@ -119,24 +114,19 @@
                     </thead>
                     <tbody>
                       <?php
-                        $consultarPro = "SELECT cp.cod_categoria, cp.categoria, scp.cod_sub_categoria, scp.subcategoria, p.* FROM productos_categorias as cp, productos_sub_categorias as scp, productos as p WHERE p.cod_categoria=cp.cod_categoria AND p.cod_sub_categoria=scp.cod_sub_categoria ORDER BY categoria ASC";
+                        $consultarPro = "SELECT * FROM productos ORDER BY orden ASC";
                         $resultadoPro = mysqli_query($enlaces, $consultarPro);
                         while($filaPro = mysqli_fetch_array($resultadoPro)){
                           $xCodigo    = $filaPro['cod_producto'];
-                          $xCategoria   = utf8_encode($filaPro['categoria']);
-                          $xSCategoria  = utf8_encode($filaPro['subcategoria']);
-                          $xProducto    = $filaPro['nom_producto'];
+                          $xProducto  = $filaPro['titulo'];
                           $xImagen    = $filaPro['imagen'];
-                          $xFicha     = $filaPro['ficha_tecnica'];
-                          $xVideo     = $filaPro['video'];
-                          $xEstado     = $filaPro['estado'];
+                          $xOrden     = $filaPro['orden'];
+                          $xEstado    = $filaPro['estado'];
                       ?>
                       <tr>
-                        <td><?php echo $xCategoria; ?></td>
-                        <td><?php echo $xSCategoria; ?></td>
                         <td><?php echo $xProducto; ?></td>
                         <td><img class="d-block b-1 border-light hover-shadow-2 p-1 img-admin" src="assets/img/productos/<?php echo $xImagen; ?>" /></td>
-                        <td><strong><?php if($xVideo!=""){echo "<i class='fa fa-video-camera'></i> ";} if($xFicha!=""){echo "<i class='fa fa-file-pdf-o'></i> ";} ?></strong></td>
+                        <td><?php echo $xOrden; ?></strong></td>
                         <td><strong>
                           <?php if($xEstado=="1"){ echo "[Activo]"; }else{ echo "[Inactivo]"; } ?>
                           </strong></td>

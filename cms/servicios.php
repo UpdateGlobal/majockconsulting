@@ -35,8 +35,8 @@ if ($eliminar == "true") {
     <?php include("module/head.php"); ?>
     <style>
       @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
-        td:nth-of-type(1):before { content: "Imagen"; }
-        td:nth-of-type(2):before { content: "Título"; }
+        td:nth-of-type(1):before { content: "Servicios"; }
+        td:nth-of-type(2):before { content: "Imagen"; }
         td:nth-of-type(3):before { content: "Orden"; }
         td:nth-of-type(4):before { content: "Estado"; }
         td:nth-of-type(5):before { content: ""; }
@@ -87,7 +87,6 @@ if ($eliminar == "true") {
             <small></small>
           </h1>
         </div>
-        <?php $page="servicios"; include("module/menu-servicios.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
         <div class="row">
@@ -101,13 +100,13 @@ if ($eliminar == "true") {
                   <table class="table">
                     <thead>
                       <tr>
-                        <th width="45%" scope="col">Imagen
+                        <th width="30%" scope="col">Servicio</th>
+                        <th width="40%" scope="col">Imagen
                           <input type="hidden" name="proceso">
                           <input type="hidden" name="eliminar" value="false">
-                        </th>
-                        <th width="20%" scope="col">Título</th>
+                        </th> 
                         <th width="10%" scope="col">Orden</th>
-                        <th width="10%" scope="col">Estado</th>
+                        <th width="5%" scope="col">Estado</th>
                         <th width="5%" scope="col"></th>
                         <th width="5%" scope="col"></th>
                         <th width="5%" scope="col"><a href="javascript:Procedimiento('eliminar','N');"><img src="assets/img/borrar.png" width="18" height="25" alt="Borrar"></a></th>
@@ -119,14 +118,14 @@ if ($eliminar == "true") {
                         $resultadoservicio = mysqli_query($enlaces,$consultarservicio) or die('Consulta fallida: ' . mysqli_error($enlaces));
                         while($filaBan = mysqli_fetch_array($resultadoservicio)){
                           $xCodigo    = $filaBan['cod_servicio'];
+                          $xServicio  = $filaBan['titulo'];
                           $xImagen    = $filaBan['imagen'];
-                          $xTitulo    = $filaBan['titulo'];
                           $xOrden     = $filaBan['orden'];
                           $xEstado    = $filaBan['estado'];
                       ?>
                       <tr>
+                        <td><?php echo $xServicio; ?></td>
                         <td><img class="d-block b-1 border-light hover-shadow-2 p-1" src="assets/img/servicios/<?php echo $xImagen; ?>" /></td>
-                        <td><?php echo $xTitulo; ?></td>
                         <td><?php echo $xOrden; ?></td>
                         <td><strong>
                           <?php if($xEstado=="1"){ echo "[Activo]"; }else{ echo "[Inactivo]";} ?>
