@@ -19,8 +19,9 @@
                                 $filaGen = mysqli_fetch_array($resultadoGeneral);
                                     $xTitulo      = $filaGen['campo_1'];
                                     $xDescripcion = $filaGen['campo_2'];
+                                    $xIcono       = $filaGen['campo_5'];
                             ?>
-                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            <i class="fa <?php echo $xIcono; ?>" aria-hidden="true"></i>
                             <h3><?php echo $xTitulo; ?></h3>
                             <p><?php echo $xDescripcion; ?></p>
                         </div>
@@ -33,11 +34,11 @@
                                 $filaGen = mysqli_fetch_array($resultadoGeneral);
                                     $xTitulo      = $filaGen['campo_1'];
                                     $xDescripcion = $filaGen['campo_2'];
+                                    $xIcono       = $filaGen['campo_5'];
                             ?>
-                            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                            <i class="fa <?php echo $xIcono; ?>" aria-hidden="true"></i>
                             <h3><?php echo $xTitulo; ?></h3>
                             <p><?php echo $xDescripcion; ?></p>
-                        
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -48,11 +49,11 @@
                                 $filaGen = mysqli_fetch_array($resultadoGeneral);
                                     $xTitulo      = $filaGen['campo_1'];
                                     $xDescripcion = $filaGen['campo_2'];
+                                    $xIcono       = $filaGen['campo_5'];
                             ?>
-                            <i class="fa fa-trophy" aria-hidden="true"></i>
+                            <i class="fa <?php echo $xIcono; ?>" aria-hidden="true"></i>
                             <h3><?php echo $xTitulo; ?></h3>
                             <p><?php echo $xDescripcion; ?></p>
-
                         </div>
                     </div>
                 </div>

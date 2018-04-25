@@ -9,11 +9,12 @@ if (isset($_REQUEST['proceso'])) {
 }
 if($proceso == "Registrar"){
   $nombres      = mysqli_real_escape_string($enlaces, $_POST['nombre']);
+  $cargo        = mysqli_real_escape_string($enlaces, $_POST['cargo']);
   $descripcion  = mysqli_real_escape_string($enlaces, $_POST['descripcion']);
   $imagen       = $_POST['imagen'];
   if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
-  $insertarMiembro = "INSERT INTO equipo_miembros(nombre, descripcion, imagen, orden, estado)VALUE('$nombres', '$descripcion', '$imagen', '$orden', '$estado')";
+  $insertarMiembro = "INSERT INTO equipo_miembros(nombre, cargo, descripcion, imagen, orden, estado)VALUE('$nombres', '$cargo', '$descripcion', '$imagen', '$orden', '$estado')";
   $resultadoInsertar = mysqli_query($enlaces,$insertarMiembro);
   $mensaje = "<div class='alert alert-success' role='alert'>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
@@ -93,6 +94,15 @@ if($proceso == "Registrar"){
                 </div>
                 <div class="col-8 col-lg-10">
                   <input class="form-control" name="nombre" type="text" id="nombre" />
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="cargo">Cargo:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <input class="form-control" name="cargo" type="text" id="cargo" />
                 </div>
               </div>
 

@@ -1,4 +1,5 @@
-<div class="portfolio1-area" style="background-color: rgb(200, 237, 240);">
+    <a name="servicios"></a><a name="productos"></a>
+    <div class="portfolio1-area" style="background-color: rgb(200, 237, 240);">
         <div class="gallery-area">
             <div class="container">
                 <div class="row">
@@ -18,7 +19,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="portfolioFilter">
-                            <a href="#" data-filter=".productos" class="current">Productos</a>
+                            <a href="#" data-filter=".productos">Productos</a>
                             <a href="#" data-filter=".servicios">Servicios</a>
                         </div>
                     </div>
@@ -36,8 +37,10 @@
                                     $xSlug      = $filaPro['slug'];
                                     $xProducto  = $filaPro['titulo'];
                                     $xImagen    = $filaPro['imagen'];
+                                    $nump++;
                             ?>
-                            <div class="single-item productos">
+                            
+                            <div class="single-item productos all" <?php if($nump>3){?> style="display: none;" <?php } ?>>
                                 <img src="/cms/assets/img/productos/<?php echo $xImagen; ?>" alt="<?php echo $xProducto; ?>">
                                 <div class="portfolio1-overley">
                                     <div class="item-content">
@@ -58,8 +61,9 @@
                                     $xSlug      = $filaSer['slug'];
                                     $xServicio  = $filaSer['titulo'];
                                     $xImagen    = $filaSer['imagen'];
+                                    $nums++;
                             ?>
-                            <div class="single-item servicios">
+                            <div class="single-item servicios all" <?php if($nums>3){?> style="display: none;" <?php } ?>>
                                 <img src="/cms/assets/img/servicios/<?php echo $xImagen; ?>" alt="<?php echo $xServicio; ?>">
                                 <div class="portfolio1-overley">
                                     <div class="item-content">

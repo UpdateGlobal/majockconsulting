@@ -336,7 +336,9 @@ label span {
     line-height: initial;
 }
 
-
+.icon-size i {
+    font-size: 90px;
+}
 
 @media only screen and (max-width:1199px){
 

@@ -9,40 +9,69 @@ $num_b=0; ?>
 <body>
     <!-- Header -->
     <?php include 'include/header.php'; ?>
-    <!-- Header End Here -->
+    <!-- Header End -->
 
-    <!-- Slider Area Start Here -->
+    <!-- Slider Area -->
     <?php include 'include/slider.php'; ?>
-    <!-- Slider Area End Here -->
-    
-    <!-- QUIENES SOMOS Start Here -->
-    <?php include 'include/quienes-somos.php'; ?>
-    <!-- QUIENES SOMOS End Here -->
+    <!-- Slider Area End -->
 
-    <!-- SERVICIOS GALERÍA Start Here  -->
-    <?php include 'include/galeria.php'; ?>    
-    <!-- SERVICIOS GALERÍA End Here  -->
-    
+    <!-- QUIENES SOMOS -->
+    <?php include 'include/quienes-somos.php'; ?>
+    <!-- QUIENES SOMOS End -->
+
+    <!-- SERVICIOS GALERÍA -->
+    <?php include 'include/galeria.php'; ?>
+    <!-- SERVICIOS GALERÍA End -->
+
     <!-- PORQUE CONFIAR -->
     <?php include 'include/porque-confiar.php'; ?>
-    <!-- PORQUE CONFIAR END -->
+    <!-- PORQUE CONFIAR End -->
 
-    <!-- Partner Logo Area Start Here -->
-    <?php include 'include/clientes.php'; ?> 
-    <!-- Partner Logo Area End Here -->
-    
+    <!-- Partner Logo -->
+    <?php include 'include/clientes.php'; ?>
+    <!-- Partner Logo End -->
+
     <!-- NOTICIAS ADELANTO -->
-    <?php include 'include/noticias-adelanto.php'; ?> 
-    <!-- NOTICIAS ADELANTO End Here -->
-    
-    <!-- Get Free Consult Section Start Here -->
+    <?php include 'include/noticias-adelanto.php'; ?>
+    <!-- NOTICIAS ADELANTO End -->
+
+    <!-- Get Free Consult Section -->
     <?php include 'include/banner-contact.php'; ?>
-    <!-- Get Free Consult Section End Here -->
+    <!-- Get Free Consult Section End -->
 
-    <!-- Footer Start Here -->
+    <!-- Footer -->
     <?php include 'include/footer.php'; ?>
-    <!-- Footer End Here -->
+    <!-- Footer End -->
 
+    
     <?php include 'include/scripts.php'; ?>
+    <script>
+$(function(){
+
+     $('a[href*=#]').click(function() {
+
+     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+         && location.hostname == this.hostname) {
+
+             var $target = $(this.hash);
+
+             $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+
+             if ($target.length) {
+
+                 var targetOffset = $target.offset().top;
+
+                 $('html,body').animate({scrollTop: targetOffset}, 1000);
+
+                 return false;
+
+            }
+
+       }
+
+   });
+
+});
+</script>
 </body>
 </html>

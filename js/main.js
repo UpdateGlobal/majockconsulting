@@ -212,6 +212,7 @@ $('.rc-carousel').each(function() {
                     step: function() {
 
                         $this.val(Math.ceil(this.value)).trigger('change');
+
                     }
                 });
             }, { accX: 0, accY: -150 });
@@ -224,7 +225,7 @@ $('.rc-carousel').each(function() {
      ------------------------------ */
 
     $('nav#dropdown').meanmenu({
-        siteLogo: "<a href='index.html'><img src='img/logo.png' /></a>"
+        siteLogo: "<a href='/index.php'><img src='/cms/assets/img/meta/' /></a>"
     });
 
     $('#nav li.has-submenu > a').on('click', function(e) {

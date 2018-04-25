@@ -24,6 +24,7 @@
         </div>
     </div>
     <!-- CABECERA End Here -->
+    
     <!--  EQUIPO -->
     <?php include 'include/equipo.php' ?>
     <!--  EQUIPO End Here -->

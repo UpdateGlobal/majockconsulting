@@ -101,13 +101,13 @@ if($proceso=="Actualizar"){
     $actualizarGeneral = "UPDATE general SET cod_general='$cod_general', campo_1='$campo_1', campo_2='$campo_2', estado='$estado' WHERE cod_general='$cod_general'";
   }
   if ($cod_general == 4){
-    $actualizarGeneral = "UPDATE general SET cod_general='$cod_general', campo_1='$campo_1', campo_2='$campo_2', campo_3='$campo_3', campo_4='$campo_4', campo_5='$campo_5', estado='$estado' WHERE cod_general='$cod_general'";
+    $actualizarGeneral = "UPDATE general SET cod_general='$cod_general', campo_1='$campo_1', campo_2='$campo_2', campo_5='$campo_5', estado='$estado' WHERE cod_general='$cod_general'";
   }
   if ($cod_general == 5){
-    $actualizarGeneral = "UPDATE general SET cod_general='$cod_general', campo_1='$campo_1', campo_2='$campo_2', estado='$estado' WHERE cod_general='$cod_general'";
+    $actualizarGeneral = "UPDATE general SET cod_general='$cod_general', campo_1='$campo_1', campo_2='$campo_2', campo_5='$campo_5', estado='$estado' WHERE cod_general='$cod_general'";
   }
   if ($cod_general == 6){
-    $actualizarGeneral = "UPDATE general SET cod_general='$cod_general', campo_1='$campo_1', campo_2='$campo_2', estado='$estado' WHERE cod_general='$cod_general'";
+    $actualizarGeneral = "UPDATE general SET cod_general='$cod_general', campo_1='$campo_1', campo_2='$campo_2', campo_5='$campo_5', estado='$estado' WHERE cod_general='$cod_general'";
   }
   if ($cod_general == 7){
     $actualizarGeneral = "UPDATE general SET cod_general='$cod_general', campo_1='$campo_1', campo_5='$campo_5', estado='$estado' WHERE cod_general='$cod_general'";
@@ -279,7 +279,12 @@ if($proceso=="Actualizar"){
                   <label class="col-form-label" for="campo_5">&Iacute;cono:</label>
                 </div>
                 <div class="col-8 col-lg-4">
-                  <input class="form-control" name="campo_5" type="text" id="campo_5" value="<?php echo $campo_5; ?>" />                  
+                  <select class="form-control" name="campo_5" id="campo_5">
+                    <option value="<?php echo $campo_5; ?>"><?php echo $campo_5; ?> (Actual)</option>
+                    <option value="fa-info-circle">&#xf05a Informaci&oacute;n</option>
+                    <option value="fa-paper-plane-o">&#xf1d9 Avi&oacute;n de Papel</option>
+                    <option value="fa-trophy">&#xf091 Trofeo</option>
+                  </select>
                 </div>
               </div>
 

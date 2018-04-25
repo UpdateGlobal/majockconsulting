@@ -53,6 +53,7 @@
                                     echo $dias[date('w', $mydate)]." ".date('d', $mydate)." de ".$meses[date('n', $mydate)-1]. " del ".date('Y', $mydate);
                                 ?></p>
                                 <?php echo $xNoticia; ?>
+                                
                             </div>
                             <a href="/blog.php" class="btn-template">&lt; Volver</a>
                         </div>

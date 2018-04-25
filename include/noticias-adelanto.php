@@ -32,7 +32,7 @@
                                     </div>
                                     <div class="media-body">
                                         <h3><a href="/blog/<?php echo $xSlug; ?>"><?php echo $xTitulo; ?></a></h3>
-                                        <?php 
+                                        <?php
                                             $xResumen_m = strip_tags($xNoticia);
                                             $strCut = substr($xResumen_m,0,200);
                                             $xResumen_m = $strCut.'...';

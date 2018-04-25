@@ -133,8 +133,8 @@
             ?>
             <div class="card card-bordered">
               <h4 class="card-title"><strong><?php echo $xTitulo; ?></strong></h4>
-              <div class="card-body text-center">
-                <p class="font-awesome-icon"><?php echo $xIcon; ?></p>
+              <div class="card-body text-center icon-size">
+                <i class="fa <?php echo $xIcon; ?>" aria-hidden="true"></i>
                 <p><?php echo $xDescripcion; ?></p>
                 <p><strong>Estado: <?php if($xEstado=="1"){echo "[Activo]";}else{ echo "[Inactivo]"; } ?> </strong></p>
               </div>
@@ -160,8 +160,8 @@
             ?>
             <div class="card card-bordered">
               <h4 class="card-title"><strong><?php echo $xTitulo; ?></strong></h4>
-              <div class="card-body text-center">
-                <p class="font-awesome-icon"><?php echo $xIcon; ?></p>
+              <div class="card-body text-center icon-size">
+                <i class="fa <?php echo $xIcon; ?>" aria-hidden="true"></i>
                 <p><?php echo $xDescripcion; ?></p>
                 <p><strong>Estado: <?php if($xEstado=="1"){echo "[Activo]";}else{ echo "[Inactivo]"; } ?> </strong></p>
               </div>
@@ -187,8 +187,8 @@
             ?>
             <div class="card card-bordered">
               <h4 class="card-title"><strong><?php echo $xTitulo; ?></strong></h4>
-              <div class="card-body text-center">
-                <p class="font-awesome-icon"><?php echo $xIcon; ?></p>
+              <div class="card-body text-center icon-size">
+                <i class="fa <?php echo $xIcon; ?>" aria-hidden="true"></i>
                 <p><?php echo $xDescripcion; ?></p>
                 <p><strong>Estado: <?php if($xEstado=="1"){echo "[Activo]";}else{ echo "[Inactivo]"; } ?> </strong></p>
               </div>

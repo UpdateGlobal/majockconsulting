@@ -19,3 +19,47 @@
     background: #058c99;
     color: #fff;
 }
+
+.header-area {
+    background: rgba(0, 0, 0, 1) none repeat scroll 0 0 !important;
+}
+
+.header-back {
+    height: 100px;
+    background: #000;
+}
+
+.cargo-titulo{
+    font-size: 12px;
+    display: block;
+    margin-top: 4px;
+    margin-bottom: -7px;
+}
+
+
+@media (min-width: 0px) and (max-width: 768px) {
+    .header-back{
+        display: none;
+    }
+    .knob.knob-nopercent {
+        display: none;
+    }
+
+    .single-skill h4.progress-h4 {
+        margin: 0px 0 0 10px;
+    }
+}
+
+
+@media only screen and (max-width: 480px) and (min-width: 321px){
+    .portfolio4-area .single-portfolio-area:hover .portfolio2-overley .content p {
+        bottom: -14% !important;
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 480px) and (min-width: 321px){
+    .owl-theme .owl-controls .owl-nav div {
+        margin-top: 48px !important;
+    }
+}

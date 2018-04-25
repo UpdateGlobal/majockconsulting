@@ -22,7 +22,7 @@
                         <div class="main-menu-area">
                             <nav>
                                 <ul id="nav">
-                                    <li><a href="index.php">INICIO</a></li>
+                                    <li><a href="/index.php">INICIO</a></li>
                                     <li class='has-submenu'>
                                         <a href="#">NOSOTROS</a>
                                         <ul>
@@ -30,7 +30,8 @@
                                             <li><a href="/equipo.php">Equipo</a></li>
                                         </ul>
                                     </li>
-                                    <li class='has-submenu'><a href="#">PRODUCTOS</a>
+                                    <li>
+                                        <a href="#productos">PRODUCTOS</a>
                                         <ul>
                                             <?php
                                                 $consultarProducto = "SELECT * FROM productos WHERE estado='1' ORDER BY orden";
@@ -47,8 +48,8 @@
                                             ?>
                                         </ul>
                                     </li>
-                                    <li class='has-submenu'>
-                                        <a href="#">SERVICIOS</a>
+                                    <li>
+                                        <a href="#servicios">SERVICIOS</a>
                                         <ul>
                                             <?php
                                                 $consultarServicio = "SELECT * FROM servicios WHERE estado='1' ORDER BY orden";
@@ -134,4 +135,5 @@
             </div>
         </div>
     </header>
+    <div class="header-back"></div>
     <!--  Header Area End Here -->

@@ -88,8 +88,8 @@
         <div class="container">
             <div class="page-sidebar-area">
                 <div class="single-sidebar">
-                    <h3>Contáctanos</h3>
-                    <p>Bríndanos tus datos y te contactaremos</p>
+                    <h3>Contactanos</h3>
+                    <p>Brindanos tus datos y te contactaremos</p>
                 </div>
             </div>
         </div>

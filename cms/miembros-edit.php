@@ -13,6 +13,7 @@ if($proceso==""){
   $filaMin = mysqli_fetch_array($ejecutarMin);
   $cod_miembro   = $filaMin['cod_miembro'];
   $nombre        = $filaMin['nombre'];
+  $cargo         = $filaMin['cargo'];
   $descripcion   = $filaMin['descripcion'];
   $imagen        = $filaMin['imagen'];
   $orden         = $filaMin['orden'];
@@ -22,12 +23,13 @@ if($proceso==""){
 if($proceso == "Actualizar"){
   $cod_miembro   = $_POST['cod_miembro'];
   $nombre        = mysqli_real_escape_string($enlaces, $_POST['nombre']);
+  $cargo         = mysqli_real_escape_string($enlaces, $_POST['cargo']);
   $descripcion   = mysqli_real_escape_string($enlaces, $_POST['descripcion']);
   $imagen        = $_POST['imagen'];
   $orden         = $_POST['orden'];
   $estado        = $_POST['estado'];
 
-  $ActualizarMin = "UPDATE equipo_miembros SET cod_miembro='$cod_miembro', nombre='$nombre', descripcion='$descripcion', imagen='$imagen', orden='$orden', estado='$estado' WHERE cod_miembro='$cod_miembro'";
+  $ActualizarMin = "UPDATE equipo_miembros SET cod_miembro='$cod_miembro', nombre='$nombre', cargo='$cargo', descripcion='$descripcion', imagen='$imagen', orden='$orden', estado='$estado' WHERE cod_miembro='$cod_miembro'";
   $resultadoActualizar = mysqli_query($enlaces,$ActualizarMin) or die('Consulta fallida: ' . mysqli_error($enlaces));
   header("Location:nosotros.php");
 }
@@ -105,7 +107,16 @@ if($proceso == "Actualizar"){
                 <div class="col-8 col-lg-10">
                   <?php if($xVisitante=="1"){ ?><p><?php echo $nombre; ?></p><?php } ?>
                   <input class="form-control" name="nombre" type="<?php if($xVisitante=="1"){ ?>hidden<?php }else{ ?>text<?php } ?>" id="nombre" value="<?php echo $nombre; ?>" />
-                  <?php  ?>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="cargo">Cargo:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <?php if($xVisitante=="1"){ ?><p><?php echo $cargo; ?></p><?php } ?>
+                  <input class="form-control" name="cargo" type="<?php if($xVisitante=="1"){ ?>hidden<?php }else{ ?>text<?php } ?>" id="cargo" value="<?php echo $cargo; ?>" />
                 </div>
               </div>
 

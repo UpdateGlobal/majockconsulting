@@ -36,11 +36,12 @@ if ($eliminar == "true") {
       @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
         td:nth-of-type(1):before { content: "Imagen"; }
         td:nth-of-type(2):before { content: "Nombre"; }
-        td:nth-of-type(3):before { content: "Orden"; }
-        td:nth-of-type(4):before { content: "Estado"; }
-        td:nth-of-type(5):before { content: ""; }
+        td:nth-of-type(3):before { content: "Cargo"; }
+        td:nth-of-type(4):before { content: "Orden"; }
+        td:nth-of-type(5):before { content: "Estado"; }
         td:nth-of-type(6):before { content: ""; }
         td:nth-of-type(7):before { content: ""; }
+        td:nth-of-type(8):before { content: ""; }
       }
     </style>
     <script>
@@ -257,11 +258,12 @@ if ($eliminar == "true") {
                   <table class="table">
                     <thead>
                       <tr>
-                        <th width="45%" scope="col">Imagen
+                        <th width="35%" scope="col">Imagen
                           <input type="hidden" name="proceso">
                           <input type="hidden" name="eliminar" value="false">
                         </th>
-                        <th width="20%" scope="col">Nombre</th>
+                        <th width="15%" scope="col">Nombre</th>
+                        <th width="15%" scope="col">Cargo</th>
                         <th width="10%" scope="col">Orden</th>
                         <th width="10%" scope="col">Estado</th>
                         <th width="5%" scope="col"></th>
@@ -276,6 +278,7 @@ if ($eliminar == "true") {
                         while($filaMim = mysqli_fetch_array($resultadoMiembros)){
                           $xCodigo    = $filaMim['cod_miembro'];
                           $xNombre    = $filaMim['nombre'];
+                          $xCargo     = $filaMim['cargo'];
                           $xImagen    = $filaMim['imagen'];
                           $xOrden     = $filaMim['orden'];
                           $xEstado    = $filaMim['estado'];
@@ -283,6 +286,7 @@ if ($eliminar == "true") {
                       <tr>
                         <td><img class="d-block b-1 border-light hover-shadow-2 p-1 img-admin" src="assets/img/miembros/<?php echo $xImagen; ?>" /></td>
                         <td><?php echo $xNombre; ?></td>
+                        <td><?php echo $xCargo; ?></td>
                         <td><?php echo $xOrden; ?></td>
                         <td><strong>
                           <?php if($xEstado=="1"){ echo "[Activo]"; }else{ echo "[Inactivo]";} ?>

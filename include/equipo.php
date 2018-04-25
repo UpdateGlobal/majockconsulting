@@ -24,6 +24,7 @@
                 while($filaMim = mysqli_fetch_array($resultadoMiembros)){
                     $xNombre        = $filaMim['nombre'];
                     $xImagen        = $filaMim['imagen'];
+                    $xCargo         = $filaMim['cargo'];
                     $xDescripcion   = $filaMim['descripcion'];
             ?>
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -33,7 +34,7 @@
                     </div>
                     <div class="portfolio2-overley">
                         <div class="content">
-                            <h3><a><?php echo $xNombre; ?></a></h3>
+                            <h3><a><?php echo $xNombre; ?><br><span class="cargo-titulo"><?php echo $xCargo; ?></span></a></h3>
                             <p><?php echo $xDescripcion; ?></p>
                         </div>
                     </div>

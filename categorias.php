@@ -42,7 +42,7 @@ $filaCat = mysqli_fetch_array($resultadoCategorias);
                         <div style="height: 40px;"></div>
                     <?php 
                         }else{
-                        $registros_por_paginas = 1;
+                        $registros_por_paginas = 4;
                         $total_paginas = ceil($total_registros/$registros_por_paginas);
                         $pagina = intval($_GET['p']);
                         if($pagina<1 or $pagina>$total_paginas){
