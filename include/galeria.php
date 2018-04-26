@@ -19,12 +19,14 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="portfolioFilter">
+                            <a href="#" data-filter=".all">Todos</a>
                             <a href="#" data-filter=".productos">Productos</a>
                             <a href="#" data-filter=".servicios">Servicios</a>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12">

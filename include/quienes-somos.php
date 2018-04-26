@@ -1,4 +1,4 @@
-<div class="homepage3-about-us-area" id="about">
+    <div class="homepage3-about-us-area" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

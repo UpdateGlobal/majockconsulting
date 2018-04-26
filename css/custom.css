@@ -42,7 +42,7 @@
         display: none;
     }
     .knob.knob-nopercent {
-        display: none;
+        font-size: 0px !important;
     }
 
     .single-skill h4.progress-h4 {
@@ -61,5 +61,33 @@
 @media only screen and (max-width: 480px) and (min-width: 321px){
     .owl-theme .owl-controls .owl-nav div {
         margin-top: 48px !important;
+    }
+    .slider-area .title1 {
+        font-size: 20px;
+        margin-bottom: 0px;
+    }
+    .slider-area p {
+        font-size: 14px;
+    }
+    .slider-area .medium-text {
+        letter-spacing: 5px;
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+    .slider-area .read-more ul li a {
+        padding: 5px 15px;
+        margin: 0 10px;
+        font-size: 11px;
+    }
+    .slider-content{
+        display: block !important;
+    }
+    .slider-area .read-more ul li:last-child a {
+        padding: 5px 11px;
+        margin: 0 10px;
+        font-size: 11px;
+    }
+    .slider-area .read-more {
+        margin-top: 5px;
     }
 }

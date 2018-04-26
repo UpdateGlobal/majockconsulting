@@ -23,12 +23,12 @@
                             <nav>
                                 <ul id="nav">
                                     <li><a href="/index.php">INICIO</a></li>
-                                    <li class='has-submenu'>
-                                        <a href="#">NOSOTROS</a>
-                                        <ul>
+                                    <li>
+                                        <a href="/nosotros.php">NOSOTROS</a>
+                                        <!-- <ul>
                                             <li><a href="/nosotros.php">Majock Consulting</a></li>
                                             <li><a href="/equipo.php">Equipo</a></li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
                                     <li>
                                         <a href="#productos">PRODUCTOS</a>
