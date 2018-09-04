@@ -80,7 +80,6 @@ if($proceso=="Actualizar"){
                 </div>
               </div>
 
-
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
                   <label class="col-form-label" for="descripcion">Texto:</label>

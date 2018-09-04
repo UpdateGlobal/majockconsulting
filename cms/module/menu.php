@@ -37,16 +37,16 @@
               </li>
 
               <li class="menu-item">
-                <a class="menu-link" href="carrusel.php">
+                <a class="menu-link" href="general.php">
                   <span class="dot"></span>
-                  <span class="title">Clientes</span>
+                  <span class="title">General</span>
                 </a>
               </li>
 
               <li class="menu-item">
-                <a class="menu-link" href="general.php">
+                <a class="menu-link" href="carrusel.php">
                   <span class="dot"></span>
-                  <span class="title">General</span>
+                  <span class="title">Clientes</span>
                 </a>
               </li>
             </ul>

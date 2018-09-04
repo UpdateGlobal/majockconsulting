@@ -25,7 +25,7 @@
         $ejecutarNoticias = mysqli_query($enlaces,$consultaNoticias) or die('Consulta fallida: ' . mysqli_error($enlaces));
         $filaNot = mysqli_fetch_array($ejecutarNoticias);
             $xTitulo   = htmlspecialchars($filaNot['titulo']);
-            $xImagen   = $filaNot['imagen'];
+            $xImagenx  = $filaNot['imagen'];
             $xNoticia  = strip_tags($filaNot['noticia']);
     ?>
     <title><?php echo $xTitulo." | ".$xWebname; ?></title>
@@ -41,7 +41,7 @@
     <meta property="og:type" content="company" />
     <meta property="og:description" content="<?php echo htmlspecialchars($xNoticia); ?>" />
     <meta property="og:url" content="<?php echo $xUrl; ?>" />
-    <meta property="og:image" content="/cms/assets/img/productos/<?php echo $xImagen; ?>" />
+    <meta property="og:image" content="/cms/assets/img/productos/<?php echo $xImagenx; ?>" />
     <!-- favicon
     ============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="/cms/assets/img/meta/<?php echo $xIco; ?>">
@@ -88,13 +88,21 @@
         $consultaNoticias = "SELECT * FROM noticias WHERE cod_noticia='$cod_noticia'";
         $ejecutarNoticias = mysqli_query($enlaces,$consultaNoticias) or die('Consulta fallida: ' . mysqli_error($enlaces));
         $filaNot = mysqli_fetch_array($ejecutarNoticias);
-            $xImagen   = $filaNot['imagen'];
+            $xImagenx  = $filaNot['imagen'];
             $xTitulo   = $filaNot['titulo'];
             $xFecha    = $filaNot['fecha'];
             $xNoticia  = $filaNot['noticia'];
     ?>
+    <?php
+        $consultarContenido = "SELECT * FROM contenidos WHERE cod_contenido='8'";
+        $resultadoContenido = mysqli_query($enlaces,$consultarContenido) or die('Consulta fallida: ' . mysqli_error($enlaces));
+        $filaCon = mysqli_fetch_array($resultadoContenido);
+            $xCodigo   = $filaCon['cod_contenido'];
+            $xImagen   = $filaCon['img_contenido'];
+            $xEstado   = $filaCon['estado'];
+    ?>
     <!-- Header Banner Area section Start Here -->
-    <div class="header-banner-area">
+    <div class="header-banner-area" style="background: url(/cms/assets/img/nosotros/<?php echo $xImagen; ?>) no-repeat;">
         <div class="container">
             <div class="row">
                 <div class="header-banner">
@@ -107,6 +115,9 @@
             </div>
         </div>
     </div>
+    <?php
+        mysqli_free_result($resultadoContenido);
+    ?>
     <!-- Header Banner Area section End Here -->
 
     <!-- Main News Page start Here -->
@@ -116,7 +127,7 @@
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                     <div class="news-page-content-section-area">
                         <div class="single-news-area"><h3 class="news-title"><a><?php echo $xTitulo; ?></a></h3><br>
-                            <a><img class="media-object" src="/cms/assets/img/noticias/<?php echo $xImagen; ?>" /></a><br>
+                            <a><img class="media-object" src="/cms/assets/img/noticias/<?php echo $xImagenx; ?>" /></a><br>
                             <div class="news-body">
                                 <p class="mata"><?php
                                     $mydate = strtotime($xFecha);
@@ -134,6 +145,59 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- 
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="homepage-contact-faq-form">
+                        <h2>Request A Call Back</h2>
+                        <div class="form-area">
+                            <form class="request-form" id='request-form' role="form">
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <select class="form-control" name="sell" id="sel1" data-error="This field is required" required>
+                                                    <option>Discussions with Financial Experts</option>
+                                                    <option>Financial Experts</option>
+                                                    <option>Invest Funs</option>
+                                                    <option>Investment and Funds</option>
+                                                </select>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <input id="form-name" name="name" placeholder="Name" class="form-control" type="text" data-error="Name field is required" required>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <input id="form-phone" name="email" placeholder="Email" class="form-control" type="text" data-error="Email field is required" required>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <textarea class="textarea form-control" rows="4" id="form-message" name="message" placeholder="Message" data-error="Message field is required" required></textarea>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <button type="submit" class="btn-send submit-botton">Submit <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <div class='form-response'></div>
+                            </form>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div> -->
                 <!-- CATEGORIAS -->
                 <?php include 'include/categorias-blog.php' ?>
                 <!-- CATEGORIAS END -->

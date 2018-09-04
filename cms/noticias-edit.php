@@ -32,7 +32,7 @@ if($proceso=="Actualizar"){
   if (empty($slug)){
       return 'n-a';
   }
-  $noticia       = mysqli_real_escape_string($enlaces, $_POST['noticia']);
+  $noticia       = $_POST['noticia'];
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
   $actualizarNoticias = "UPDATE noticias SET cod_noticia='$cod_noticia', cod_categoria='$cod_categoria', titulo='$titulo', slug='$slug', imagen='$imagen', noticia='$noticia', estado='$estado' WHERE cod_noticia='$cod_noticia'";
   $resultadoActualizar = mysqli_query($enlaces,$actualizarNoticias) or die('Consulta fallida: ' . mysqli_error($enlaces));

@@ -12,11 +12,11 @@ if ($eliminar == "true") {
   $x = 0;
   while($filaElim = mysqli_fetch_array($sqlResultado)){
     $id_miembro = $filaElim["cod_miembro"];
-    if ($_REQUEST["chk" . $id_miembro] == "on") {
+    if ($_REQUEST["chk" . $id_miembro] == "on"){
       $x++;
       if ($x == 1) {
           $sql = "DELETE FROM equipo_miembros WHERE cod_miembro=$id_miembro";
-        } else { 
+        } else {
           $sql = $sql . " OR cod_miembro=$id_miembro";
         }
     }
@@ -93,6 +93,31 @@ if ($eliminar == "true") {
         </div>
       </header><!--/.header -->
       <div class="main-content">
+        <div class="row">
+          <div class="col-md-12">
+            <?php
+              $consultarContenido = "SELECT * FROM contenidos WHERE cod_contenido='5'";
+              $resultadoContenido = mysqli_query($enlaces,$consultarContenido) or die('Consulta fallida: ' . mysqli_error($enlaces));
+              $filaCon = mysqli_fetch_array($resultadoContenido);
+                $xCodigo   = $filaCon['cod_contenido'];
+                $xImagen   = $filaCon['img_contenido'];
+                $xEstado   = $filaCon['estado'];
+            ?>
+            <div class="card card-bordered">
+              <h4 class="card-title"><strong>Banner de fondo: Nosotros</strong></h4>
+              <div class="card-body icon-size">
+                <p><img src="assets/img/nosotros/<?php echo $xImagen; ?>" /></p>
+                <p><strong>Estado: <?php if($xEstado=="1"){echo "[Activo]";}else{ echo "[Inactivo]"; } ?> </strong></p>
+              </div>
+              <footer class="card-footer">
+                <a href="imagenes-edit.php?cod_contenido=<?php echo $xCodigo; ?>" class="btn btn-bold btn-primary"><i class="fa fa-refresh"></i> Editar Banner</a>
+              </footer>
+            </div>
+            <?php
+              mysqli_free_result($resultadoContenido);
+            ?>
+          </div>
+        </div>
         <div class="row">
           <div class="col-4 col-lg-4">
             <div class="card card-bordered">

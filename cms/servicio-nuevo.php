@@ -23,8 +23,18 @@ if($proceso == "Registrar"){
   $descripcion  = mysqli_real_escape_string($enlaces, $_POST['descripcion']);
   if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
-    
-  $insertarServicio = "INSERT INTO servicios(slug, titulo, imagen, descripcion, orden, estado)VALUE('$slug', '$titulo', '$imagen', '$descripcion', '$orden', '$estado')";
+
+  /* ---  --- */
+  if(isset($_POST['subtitulo'])){$subtitulo = $_POST['subtitulo'];}else{$subtitulo = "";}
+  if(isset($_POST['titulo_a'])){$titulo_a = $_POST['titulo_a'];}else{$titulo_a = "";}
+  if(isset($_POST['contenido_a'])){$contenido_a = $_POST['contenido_a'];}else{$contenido_a = "";}
+  if(isset($_POST['titulo_b'])){$titulo_b = $_POST['titulo_b'];}else{$titulo_b = "";}
+  if(isset($_POST['contenido_b'])){$contenido_b = $_POST['contenido_b'];}else{$contenido_b = "";}
+  if(isset($_POST['titulo_c'])){$titulo_c = $_POST['titulo_c'];}else{$titulo_c = "";}
+  if(isset($_POST['contenido_c'])){$contenido_c = $_POST['contenido_c'];}else{$contenido_c = "";}
+  if(isset($_POST['estado_tab'])){$estado_tab = $_POST['estado_tab'];}else{$estado_tab = 0;}
+      
+  $insertarServicio = "INSERT INTO servicios(slug, titulo, imagen, descripcion, orden, estado, subtitulo, titulo_a, contenido_a, titulo_b, contenido_b, titulo_c, contenido_c, estado_tab) VALUE ('$slug', '$titulo', '$imagen', '$descripcion', '$orden', '$estado', '$subtitulo', '$titulo_a', '$contenido_a', '$titulo_b', '$contenido_b', '$titulo_c', '$contenido_c', '$estado_tab')";
   $resultadoInsertar = mysqli_query($enlaces,$insertarServicio);
   $mensaje = "<div class='alert alert-success' role='alert'>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
@@ -100,7 +110,7 @@ if($proceso == "Registrar"){
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
                   <label class="col-form-label" for="imagen">Imagen:</label><br>
-                  <small>(-px x -px)</small>
+                  <small>(847px x 557px)</small>
                 </div>
                 <div class="col-4 col-lg-8">
                   <input class="form-control" id="imagen" name="imagen" type="text">
@@ -134,6 +144,92 @@ if($proceso == "Registrar"){
                 </div>
                 <div class="col-8 col-lg-10">
                   <input type="checkbox" name="estado" data-size="small" data-provide="switchery" value="1" checked>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-12 col-lg-12">
+                  <div class="accordion" id="accordion-1">
+                    <div class="card">
+                      <h5 class="card-title">
+                        <a data-toggle="collapse" data-parent="#accordion-1" href="#collapse-1-1">Caracter&iacute;sticas Adicionales</a>
+                      </h5>
+                      <div id="collapse-1-1" class="collapse">
+                        <div class="card-body">
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="subtitulo">Subt&iacute;tulo:</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <input class="form-control" id="subtitulo" name="subtitulo" type="text" />
+                              <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="titulo_a">T&iacute;tulo (Tab 1):</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <input class="form-control" id="titulo_a" name="titulo_a" type="text" />
+                              <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="contenido_a">Descripci&oacute;n (Tab 1):</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <textarea class="form-control" name="contenido_a" id="contenido_a" data-provide="summernote" data-min-height="150"></textarea>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="titulo_b">T&iacute;tulo (Tab 2):</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <input class="form-control" id="titulo_b" name="titulo_b" type="text" />
+                              <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="contenido_b">Descripci&oacute;n (Tab 2):</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <textarea class="form-control" name="contenido_b" id="contenido_b" data-provide="summernote" data-min-height="150"></textarea>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="titulo_c">T&iacute;tulo (Tab 3):</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <input class="form-control" id="titulo_c" name="titulo_c" type="text" />
+                              <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="contenido_c">Descripci&oacute;n (Tab 3):</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <textarea class="form-control" name="contenido_c" id="contenido_c" data-provide="summernote" data-min-height="150"></textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="estado_tab">Estado (Mostrar tabs):</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <input type="checkbox" name="estado_tab" data-size="small" data-provide="switchery" value="1">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
                 </div>
               </div>
 

@@ -93,8 +93,25 @@
         $xTitulo        = htmlspecialchars($filaPro['titulo']);
         $xImagen        = $filaPro['imagen'];
         $xDescripcion   = $filaPro['descripcion'];
+        // Tabs
+        $subtitulo      = $filaPro['subtitulo'];
+        $titulo_a       = $filaPro['titulo_a'];
+        $titulo_b       = $filaPro['titulo_b'];
+        $titulo_c       = $filaPro['titulo_c'];
+        $contenidos_a   = $filaPro['contenido_a'];
+        $contenidos_b   = $filaPro['contenido_b'];
+        $contenidos_c   = $filaPro['contenido_c'];
+        $estado_tab     = $filaPro['estado_tab'];
     ?>
-    <div class="header-banner-area">
+    <?php
+        $consultarContenido = "SELECT * FROM contenidos WHERE cod_contenido='6'";
+        $resultadoContenido = mysqli_query($enlaces,$consultarContenido) or die('Consulta fallida: ' . mysqli_error($enlaces));
+        $filaCon = mysqli_fetch_array($resultadoContenido);
+            $xCodigo   = $filaCon['cod_contenido'];
+            $xImagenx   = $filaCon['img_contenido'];
+            $xEstado   = $filaCon['estado'];
+    ?>
+    <div class="header-banner-area" style="background: url(/cms/assets/img/nosotros/<?php echo $xImagenx; ?>) no-repeat;">
         <div class="container">
             <div class="row">
                 <div class="header-banner">
@@ -107,13 +124,16 @@
             </div>
         </div>
     </div>
+    <?php
+        mysqli_free_result($resultadoContenido);
+    ?>
     <!-- Header Banner Area section End Here -->
     <!-- Single Service Inner Section Start Here -->
     <div class="single-service-inner-page-area">
         <div class="container">
             <div class="row">
                 <div class="single-service-inner-page">
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="single-service-inner-content">
                             <!-- Tab panes -->
                             <div class="tab-content">
@@ -122,6 +142,58 @@
                                         <h2><?php echo $xTitulo; ?></h2>
                                         <img src="/cms/assets/img/productos/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
                                         <?php echo $xDescripcion; ?>
+
+                                        <?php if($estado_tab==1){ ?>
+                                        <h4><?php echo $subtitulo; ?></h4>
+                                        <div class="about-inner-page">
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <?php if($titulo_a==""){ }else{ ?>
+                                                <li role="presentation" class="active"><a href="#taba" aria-controls="taba" role="tab" data-toggle="tab"><?php echo $titulo_a; ?></a></li>
+                                                <?php } ?>
+                                                <?php if($titulo_b==""){ }else{ ?>
+                                                <li role="presentation"><a href="#tabb" aria-controls="tabb" role="tab" data-toggle="tab"><?php echo $titulo_b; ?></a></li>
+                                                <?php } ?>
+                                                <?php if($titulo_c==""){ }else{ ?>
+                                                <li role="presentation"><a href="#tabc" aria-controls="tabc" role="tab" data-toggle="tab"><?php echo $titulo_c; ?></a></li>
+                                                <?php } ?>
+                                            </ul>
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <?php if($contenidos_a==""){ }else{ ?>
+                                                <div role="tabpanel" class="tab-pane active" id="taba">
+                                                    <div class="media contenido_media">
+                                                        <div class="media-body">
+                                                            <h5><?php echo $titulo_a; ?></h5>
+                                                            <?php echo $contenidos_a; ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php } ?>
+                                                <?php if($contenidos_b==""){ }else{ ?>
+                                                <div role="tabpanel" class="tab-pane" id="tabb">
+                                                    <div class="media contenido_media">
+                                                        <div class="media-body">
+                                                            <h5><?php echo $titulo_b; ?></h5>
+                                                            <?php echo $contenidos_b; ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php } ?>
+                                                <?php if($contenidos_c==""){ }else{ ?>
+                                                <div role="tabpanel" class="tab-pane" id="tabc">
+                                                    <div class="media contenido_media">
+                                                        <div class="media-body">
+                                                            <h5><?php echo $titulo_c; ?></h5>
+                                                            <?php echo $contenidos_c; ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php } ?>
+                                            </div>
+                                        </div>
+                                        <?php } ?>
+
                                         <!-- Go to www.addthis.com/dashboard to customize your tools -->
                                         <div class="addthis_inline_share_toolbox"></div>
                                         <!-- Go to www.addthis.com/dashboard to customize your tools -->

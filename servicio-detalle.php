@@ -4,7 +4,7 @@
 $consultarServicio = "SELECT * FROM servicios WHERE slug='$slug'";
 $resultadoServicio = mysqli_query($enlaces,$consultarServicio) or die('Consulta fallida: ' . mysqli_error($enlaces));
 $filaSer = mysqli_fetch_array($resultadoServicio);
-$cod_servicio = $filaSer['cod_servicio']; 
+$cod_servicio = $filaSer['cod_servicio'];
 ?>
 <!doctype html>
 <html class="no-js" lang="es">
@@ -25,7 +25,7 @@ $cod_servicio = $filaSer['cod_servicio'];
         $resultadoServicio = mysqli_query($enlaces,$consultarServicio) or die('Consulta fallida: ' . mysqli_error($enlaces));
         $filaSer = mysqli_fetch_array($resultadoServicio);
             $xTitulo        = htmlspecialchars($filaSer['titulo']);
-            $xImagen        = $filaSer['imagen'];
+            $xImagenx       = $filaSer['imagen'];
             $xDescripcion   = strip_tags($filaSer['descripcion']);
     ?>
     <title><?php echo $xTitulo." | ".$xWebname; ?></title>
@@ -41,7 +41,7 @@ $cod_servicio = $filaSer['cod_servicio'];
     <meta property="og:type" content="company" />
     <meta property="og:description" content="<?php echo htmlspecialchars($xDescripcion); ?>" />
     <meta property="og:url" content="<?php echo $xUrl; ?>" />
-    <meta property="og:image" content="/cms/assets/img/servicios/<?php echo $xImagen; ?>" />
+    <meta property="og:image" content="/cms/assets/img/servicios/<?php echo $xImagenx; ?>" />
     <!-- favicon
     ============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="/cms/assets/img/meta/<?php echo $xIco; ?>" />
@@ -91,10 +91,27 @@ $cod_servicio = $filaSer['cod_servicio'];
         $filaSer = mysqli_fetch_array($resultadoServicio);
             $cod_producto   = $filaSer['cod_servicio'];
             $xTitulo        = htmlspecialchars($filaSer['titulo']);
-            $xImagen        = $filaSer['imagen'];
+            $xImagenx       = $filaSer['imagen'];
             $xDescripcion   = $filaSer['descripcion'];
+            // Tabs
+            $subtitulo      = $filaSer['subtitulo'];
+            $titulo_a       = $filaSer['titulo_a'];
+            $titulo_b       = $filaSer['titulo_b'];
+            $titulo_c       = $filaSer['titulo_c'];
+            $contenidos_a   = $filaSer['contenido_a'];
+            $contenidos_b   = $filaSer['contenido_b'];
+            $contenidos_c   = $filaSer['contenido_c'];
+            $estado_tab     = $filaSer['estado_tab'];
     ?>
-    <div class="header-banner-area">
+    <?php
+        $consultarContenido = "SELECT * FROM contenidos WHERE cod_contenido='7'";
+        $resultadoContenido = mysqli_query($enlaces,$consultarContenido) or die('Consulta fallida: ' . mysqli_error($enlaces));
+        $filaCon = mysqli_fetch_array($resultadoContenido);
+            $xCodigo   = $filaCon['cod_contenido'];
+            $xImagen   = $filaCon['img_contenido'];
+            $xEstado   = $filaCon['estado'];
+    ?>
+    <div class="header-banner-area" style="background: url(/cms/assets/img/nosotros/<?php echo $xImagen; ?>) no-repeat;">
         <div class="container">
             <div class="row">
                 <div class="header-banner">
@@ -107,21 +124,75 @@ $cod_servicio = $filaSer['cod_servicio'];
             </div>
         </div>
     </div>
+    <?php
+        mysqli_free_result($resultadoContenido);
+    ?>
     <!-- Header Banner Area section End Here -->
     <!-- Single Service Inner Section Start Here -->
     <div class="single-service-inner-page-area">
         <div class="container">
             <div class="row">
                 <div class="single-service-inner-page">
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="single-service-inner-content">
                             <!-- Tab panes -->
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="home">
                                     <div class="single-service">
                                         <h2><?php echo $xTitulo; ?></h2>
-                                        <img src="/cms/assets/img/servicios/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
+                                        <img src="/cms/assets/img/servicios/<?php echo $xImagenx; ?>" alt="<?php echo $xTitulo; ?>">
                                         <?php echo $xDescripcion; ?>
+
+                                        <?php if($estado_tab==1){ ?>
+                                        <h4><?php echo $subtitulo; ?></h4>
+                                        <div class="about-inner-page">
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <?php if($titulo_a==""){ }else{ ?>
+                                                <li role="presentation" class="active"><a href="#taba" aria-controls="taba" role="tab" data-toggle="tab"><?php echo $titulo_a; ?></a></li>
+                                                <?php } ?>
+                                                <?php if($titulo_b==""){ }else{ ?>
+                                                <li role="presentation"><a href="#tabb" aria-controls="tabb" role="tab" data-toggle="tab"><?php echo $titulo_b; ?></a></li>
+                                                <?php } ?>
+                                                <?php if($titulo_c==""){ }else{ ?>
+                                                <li role="presentation"><a href="#tabc" aria-controls="tabc" role="tab" data-toggle="tab"><?php echo $titulo_c; ?></a></li>
+                                                <?php } ?>
+                                            </ul>
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <?php if($contenidos_a==""){ }else{ ?>
+                                                <div role="tabpanel" class="tab-pane active" id="taba">
+                                                    <div class="media contenido_media">
+                                                        <div class="media-body">
+                                                            <h5><?php echo $titulo_a; ?></h5>
+                                                            <?php echo $contenidos_a; ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php } ?>
+                                                <?php if($contenidos_b==""){ }else{ ?>
+                                                <div role="tabpanel" class="tab-pane" id="tabb">
+                                                    <div class="media contenido_media">
+                                                        <div class="media-body">
+                                                            <h5><?php echo $titulo_b; ?></h5>
+                                                            <?php echo $contenidos_b; ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php } ?>
+                                                <?php if($contenidos_c==""){ }else{ ?>
+                                                <div role="tabpanel" class="tab-pane" id="tabc">
+                                                    <div class="media contenido_media">
+                                                        <div class="media-body">
+                                                            <h5><?php echo $titulo_c; ?></h5>
+                                                            <?php echo $contenidos_c; ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php } ?>
+                                            </div>
+                                        </div>
+                                        <?php } ?>
                                         <!-- Go to www.addthis.com/dashboard to customize your tools -->
                                         <div class="addthis_inline_share_toolbox"></div>
                                         <!-- Go to www.addthis.com/dashboard to customize your tools -->
@@ -131,8 +202,8 @@ $cod_servicio = $filaSer['cod_servicio'];
                             </div>
                         </div>
                     </div>
-                    <!-- PRODUCTOS Y SERVICIOS NAV -->
-                    <?php $menu=$cod_servicio; include 'include/servicios-nav.php'; ?>
+                    <!-- PRODUCTOS Y SERVICIOS NAV 
+                    < ?php $menu=$cod_servicio; include 'include/servicios-nav.php'; ?>
                     <!-- PRODUCTOS Y SERVICIOS NAV -->
                 </div>
             </div>

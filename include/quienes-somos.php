@@ -10,8 +10,10 @@
                                 $xTitulo      = $filaGen['campo_1'];
                                 $xDescripcion = $filaGen['campo_2'];
                         ?>
-                        <h2><?php echo $xTitulo; ?></h2>
-                        <p><?php echo $xDescripcion; ?></p>
+                        <div class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".3s">
+                            <h2><?php echo $xTitulo; ?></h2>
+                            <p><?php echo $xDescripcion; ?></p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 acurate">

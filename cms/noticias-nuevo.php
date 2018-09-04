@@ -21,7 +21,7 @@ if($proceso == "Registrar"){
       return 'n-a';
   }
   $imagen         = $_POST['imagen'];
-  $noticia        = mysqli_real_escape_string($enlaces, $_POST['noticia']);
+  $noticia        = $_POST['noticia'];
   $fecha          = $_POST['fecha'];
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
     

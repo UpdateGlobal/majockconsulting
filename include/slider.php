@@ -34,7 +34,7 @@
                         <p><?php echo $xTexto; ?></p>
                         <div class="read-more">
                             <ul>
-                                <li><a href="http://<?php echo $xLink; ?>">CON&Oacute;CENOS <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+                                <li><a href="<?php echo $xLink; ?>">CON&Oacute;CENOS <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
                                 <?php if($xContacto=="1"){ ?>
                                 <li><a href="/contacto.php">CONT&Aacute;CTANOS <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
                                 <?php } ?>

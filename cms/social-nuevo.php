@@ -30,7 +30,7 @@ if($proceso == "Registrar"){
         if(document.fcms.links.value==""){
           alert("Debe colocar el enlace de su cuenta");
           document.fcms.links.focus();
-          return; 
+          return;
         }
         document.fcms.action = "social-nuevo.php";
         document.fcms.proceso.value="Registrar";
@@ -118,7 +118,7 @@ if($proceso == "Registrar"){
               </div>
             </div>
             <footer class="card-footer">
-              <a href="carrusel.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
+              <a href="sociales.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
               <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();"><i class="fa fa-chevron-circle-right"></i> Registrar red social</button>
               <input type="hidden" name="proceso">
             </footer>

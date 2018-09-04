@@ -136,7 +136,7 @@ if($proceso == "Registrar"){
             </div>
 
             <footer class="card-footer">
-              <a href="banners.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
+              <a href="nosotros.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
               <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-chevron-circle-right"></i> Registrar</button>
               <input type="hidden" name="proceso">
             </footer>

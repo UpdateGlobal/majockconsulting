@@ -18,6 +18,14 @@ if($proceso == ""){
   $descripcion    = htmlspecialchars($filaPro['descripcion']);
   $orden          = $filaPro['orden'];
   $estado         = $filaPro['estado'];
+  $subtitulo      = $filaPro['subtitulo'];
+  $titulo_a       = $filaPro['titulo_a'];
+  $contenido_a    = $filaPro['contenido_a'];
+  $titulo_b       = $filaPro['titulo_b'];
+  $contenido_b    = $filaPro['contenido_b'];
+  $titulo_c       = $filaPro['titulo_c'];
+  $contenido_c    = $filaPro['contenido_c'];
+  $estado_tab     = $filaPro['estado_tab'];
 }
 
 if($proceso == "Actualizar"){
@@ -37,10 +45,18 @@ if($proceso == "Actualizar"){
   $descripcion    = mysqli_real_escape_string($enlaces, $_POST['descripcion']);
   if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
+  if(isset($_POST['subtitulo'])){$subtitulo = $_POST['subtitulo'];}else{$subtitulo = "";}
+  if(isset($_POST['titulo_a'])){$titulo_a = $_POST['titulo_a'];}else{$titulo_a = "";}
+  if(isset($_POST['contenido_a'])){$contenido_a = $_POST['contenido_a'];}else{$contenido_a = "";}
+  if(isset($_POST['titulo_b'])){$titulo_b = $_POST['titulo_b'];}else{$titulo_b = "";}
+  if(isset($_POST['contenido_b'])){$contenido_b = $_POST['contenido_b'];}else{$contenido_b = "";}
+  if(isset($_POST['titulo_c'])){$titulo_c = $_POST['titulo_c'];}else{$titulo_c = "";}
+  if(isset($_POST['contenido_c'])){$contenido_c = $_POST['contenido_c'];}else{$contenido_c = "";}
+  if(isset($_POST['estado_tab'])){$estado_tab = $_POST['estado_tab'];}else{$estado_tab = 0;}
 
-  $actualizarProductos = "UPDATE productos SET cod_producto='$cod_producto', titulo='$titulo', slug='$slug', imagen='$imagen', descripcion='$descripcion', orden='$orden', estado='$estado' WHERE cod_producto='$cod_producto'";
+  $actualizarProductos = "UPDATE productos SET cod_producto='$cod_producto', titulo='$titulo', slug='$slug', imagen='$imagen', descripcion='$descripcion', orden='$orden', estado='$estado', subtitulo='$subtitulo', titulo_a='$titulo_a', contenido_a='$contenido_a', titulo_b='$titulo_b', contenido_b='$contenido_b', titulo_c='$titulo_c', contenido_c='$contenido_c', estado_tab='$estado_tab' WHERE cod_producto='$cod_producto'";
   $resultadoActualizar = mysqli_query($enlaces, $actualizarProductos) or die('Consulta fallida: ' . mysqli_error($enlaces));
-
+  header("Location:productos.php");
 }
 ?>
 <!DOCTYPE html>
@@ -114,8 +130,8 @@ if($proceso == "Actualizar"){
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
-                  <label class="col-form-label require" for="imagen">Imagen:</label><br>
-                  <small>(-px x -px)</small>
+                  <label class="col-form-label required" for="imagen">Imagen:</label><br>
+                  <small>(720px x 500px)</small>
                 </div>
                 <div class="col-4 col-lg-8">
                   <input class="form-control" id="imagen" name="imagen" type="text" value="<?php echo $imagen; ?>" required />
@@ -150,6 +166,92 @@ if($proceso == "Actualizar"){
                 </div>
                 <div class="col-8 col-lg-10">
                   <input type="checkbox" name="estado" data-size="small" data-provide="switchery" value="1" <?php if($estado=="1"){echo "checked";} ?>>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-12 col-lg-12">
+                  <div class="accordion" id="accordion-1">
+                    <div class="card">
+                      <h5 class="card-title">
+                        <a data-toggle="collapse" data-parent="#accordion-1" href="#collapse-1-1">Caracter&iacute;sticas Adicionales</a>
+                      </h5>
+                      <div id="collapse-1-1" class="collapse">
+                        <div class="card-body">
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="subtitulo">Subt&iacute;tulo:</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <input class="form-control" id="subtitulo" name="subtitulo" type="text" value="<?php echo $subtitulo; ?>" />
+                              <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="titulo_a">T&iacute;tulo (Tab 1):</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <input class="form-control" id="titulo_a" name="titulo_a" type="text" value="<?php echo $titulo_a; ?>" />
+                              <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="contenido_a">Descripci&oacute;n (Tab 1):</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <textarea class="form-control" name="contenido_a" id="contenido_a" data-provide="summernote" data-min-height="150"><?php echo $contenido_a; ?></textarea>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="titulo_b">T&iacute;tulo (Tab 2):</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <input class="form-control" id="titulo_b" name="titulo_b" type="text" value="<?php echo $titulo_b; ?>" />
+                              <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="contenido_b">Descripci&oacute;n (Tab 2):</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <textarea class="form-control" name="contenido_b" id="contenido_b" data-provide="summernote" data-min-height="150"><?php echo $contenido_b; ?></textarea>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="titulo_c">T&iacute;tulo (Tab 3):</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <input class="form-control" id="titulo_c" name="titulo_c" type="text" value="<?php echo $titulo_c; ?>" />
+                              <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="contenido_c">Descripci&oacute;n (Tab 3):</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <textarea class="form-control" name="contenido_c" id="contenido_c" data-provide="summernote" data-min-height="150"><?php echo $contenido_c; ?></textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="estado_tab">Estado (Mostrar tabs):</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <input type="checkbox" name="estado_tab" data-size="small" data-provide="switchery" value="1" <?php if($estado=="1"){echo "checked";} ?>>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
                 </div>
               </div>
             </div>

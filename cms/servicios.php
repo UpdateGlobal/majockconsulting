@@ -91,6 +91,31 @@ if ($eliminar == "true") {
       <div class="main-content">
         <div class="row">
           <div class="col-md-12">
+            <?php
+              $consultarContenido = "SELECT * FROM contenidos WHERE cod_contenido='7'";
+              $resultadoContenido = mysqli_query($enlaces,$consultarContenido) or die('Consulta fallida: ' . mysqli_error($enlaces));
+              $filaCon = mysqli_fetch_array($resultadoContenido);
+                $xCodigo   = $filaCon['cod_contenido'];
+                $xImagen   = $filaCon['img_contenido'];
+                $xEstado   = $filaCon['estado'];
+            ?>
+            <div class="card card-bordered">
+              <h4 class="card-title"><strong>Banner de fondo: Servicios</strong></h4>
+              <div class="card-body icon-size">
+                <p><img src="assets/img/nosotros/<?php echo $xImagen; ?>" /></p>
+                <p><strong>Estado: <?php if($xEstado=="1"){echo "[Activo]";}else{ echo "[Inactivo]"; } ?> </strong></p>
+              </div>
+              <footer class="card-footer">
+                <a href="imagenes-edit.php?cod_contenido=<?php echo $xCodigo; ?>" class="btn btn-bold btn-primary"><i class="fa fa-refresh"></i> Editar Banner</a>
+              </footer>
+            </div>
+            <?php
+              mysqli_free_result($resultadoContenido);
+            ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
             <div class="card card-bordered">
               <h4 class="card-title"><strong>Lista de Servicios</strong></h4>
               <div class="card-body">

@@ -12,8 +12,16 @@ $filaCat = mysqli_fetch_array($resultadoCategorias);
 <body>
     <?php include 'include/header.php' ?>
     <!--  Header Area End Here -->
+    <?php
+        $consultarContenido = "SELECT * FROM contenidos WHERE cod_contenido='8'";
+        $resultadoContenido = mysqli_query($enlaces,$consultarContenido) or die('Consulta fallida: ' . mysqli_error($enlaces));
+        $filaCon = mysqli_fetch_array($resultadoContenido);
+            $xCodigo   = $filaCon['cod_contenido'];
+            $xImagen   = $filaCon['img_contenido'];
+            $xEstado   = $filaCon['estado'];
+    ?>
     <!-- Header Banner Area section Start Here -->
-    <div class="header-banner-area">
+    <div class="header-banner-area" style="background: url(/cms/assets/img/nosotros/<?php echo $xImagen; ?>) no-repeat;">
         <div class="container">
             <div class="row">
                 <div class="header-banner">
@@ -26,6 +34,9 @@ $filaCat = mysqli_fetch_array($resultadoCategorias);
             </div>
         </div>
     </div>
+    <?php
+        mysqli_free_result($resultadoContenido);
+    ?>
     <!-- Header Banner Area section End Here -->
     <!-- Main News Page start Here -->
     <div class="main-news-page-section-area">

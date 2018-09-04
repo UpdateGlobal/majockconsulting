@@ -36,6 +36,15 @@
     margin-bottom: -7px;
 }
 
+.map-width iframe{
+    width: 100%;
+}
+
+.contenido_media{
+    padding-top: 12px;
+    padding-left: 8px;
+    padding-bottom: 20px;
+}
 
 @media (min-width: 0px) and (max-width: 768px) {
     .header-back{
