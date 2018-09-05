@@ -225,7 +225,7 @@ $('.rc-carousel').each(function() {
      ------------------------------ */
 
     $('nav#dropdown').meanmenu({
-        siteLogo: "<a href='/index.php'><img src='/cms/assets/img/meta/' /></a>"
+        siteLogo: "<a href='/index.php'><img src='/img/logo.png' /></a>"
     });
 
     $('#nav li.has-submenu > a').on('click', function(e) {

@@ -97,6 +97,7 @@
         $xTitulo        = htmlspecialchars($filaPro['titulo']);
         $xImagen        = $filaPro['imagen'];
         $xDescripcion   = $filaPro['descripcion'];
+        $xDescripcion2  = $filaPro['descripcion_b'];
         // Tabs
         $subtitulo      = $filaPro['subtitulo'];
         $titulo_a       = $filaPro['titulo_a'];
@@ -144,22 +145,18 @@
                                 <div role="tabpanel" class="tab-pane active" id="home">
                                     <div class="single-service">
                                       <div class_="col-md-12">
-                                        
                                         <h2><?php echo $xTitulo; ?></h2>
                                     </div>
 
                                         <div class_="col-md-12">
                                         <div class="col-md-6">
-                                        <img src="/cms/assets/img/productos/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
+                                            <img src="/cms/assets/img/productos/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
                                         </div>
-
                                         <div class="col-md-6">
-
-                                        <?php echo $xDescripcion; ?>
+                                            <?php echo $xDescripcion; ?>
                                         </div>
-
                                         <div class="col-md-12">
-                                            <h1>Texto1</h1>
+                                            <?php echo $xDescripcion2; ?>
                                         </div>
                                        </div>
 
@@ -223,9 +220,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- PRODUCTOS Y SERVICIOS NAV -->
-                    <?php $menu=$cod_producto; include 'include/productos-nav.php'; ?>
-                    <!-- PRODUCTOS Y SERVICIOS NAV -->
                 </div>
             </div>
         </div>

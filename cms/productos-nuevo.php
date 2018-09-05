@@ -22,6 +22,7 @@ if($proceso == "Registrar"){
   }
   $imagen         = $_POST['imagen'];
   $descripcion    = mysqli_real_escape_string($enlaces,$_POST['descripcion']);
+  $descripcion_b  = mysqli_real_escape_string($enlaces,$_POST['descripcion_b']);
   if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
 
@@ -35,7 +36,7 @@ if($proceso == "Registrar"){
   if(isset($_POST['contenido_c'])){$contenido_c = $_POST['contenido_c'];}else{$contenido_c = "";}
   if(isset($_POST['estado_tab'])){$estado_tab = $_POST['estado_tab'];}else{$estado_tab = 0;}
   
-  $insertarProductos = "INSERT INTO productos (titulo, slug, imagen, descripcion, orden, estado, subtitulo, titulo_a, contenido_a, titulo_b, contenido_b, titulo_c, contenido_c, estado_tab) VALUE ('$titulo', '$slug', '$imagen', '$descripcion', '$orden', '$estado', '$subtitulo', '$titulo_a', '$contenido_a', '$titulo_b', '$contenido_b', '$titulo_c', '$contenido_c', '$estado_tab')";
+  $insertarProductos = "INSERT INTO productos (titulo, slug, imagen, descripcion, descripcion_b, orden, estado, subtitulo, titulo_a, contenido_a, titulo_b, contenido_b, titulo_c, contenido_c, estado_tab) VALUE ('$titulo', '$slug', '$imagen', '$descripcion', '$descripcion_b', '$orden', '$estado', '$subtitulo', '$titulo_a', '$contenido_a', '$titulo_b', '$contenido_b', '$titulo_c', '$contenido_c', '$estado_tab')";
   $resultadoInsertar = mysqli_query($enlaces, $insertarProductos);
   $mensaje = "<div class='alert alert-success' role='alert'>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
@@ -133,6 +134,16 @@ if($proceso == "Registrar"){
                 </div>
                 <div class="col-8 col-lg-10">
                   <textarea class="form-control" name="descripcion" id="descripcion" data-provide="summernote" data-min-height="150"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="descripcion_b">Descripci&oacute;n 2:</label>
+                  <small>(Descripci&oacute;n Larga)</small>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <textarea class="form-control" name="descripcion_b" id="descripcion_b" data-provide="summernote" data-min-height="150"></textarea>
                 </div>
               </div>
 

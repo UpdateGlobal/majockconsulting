@@ -16,6 +16,7 @@ if($proceso == ""){
   $titulo         = htmlspecialchars($filaPro['titulo']);
   $imagen         = $filaPro['imagen'];
   $descripcion    = htmlspecialchars($filaPro['descripcion']);
+  $descripcion_b  = $filaPro['descripcion_b'];
   $orden          = $filaPro['orden'];
   $estado         = $filaPro['estado'];
   $subtitulo      = $filaPro['subtitulo'];
@@ -43,6 +44,7 @@ if($proceso == "Actualizar"){
   }
   $imagen         = $_POST['imagen'];
   $descripcion    = mysqli_real_escape_string($enlaces, $_POST['descripcion']);
+  $descripcion_b  = mysqli_real_escape_string($enlaces, $_POST['descripcion_b']);
   if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
   if(isset($_POST['subtitulo'])){$subtitulo = $_POST['subtitulo'];}else{$subtitulo = "";}
@@ -54,7 +56,7 @@ if($proceso == "Actualizar"){
   if(isset($_POST['contenido_c'])){$contenido_c = $_POST['contenido_c'];}else{$contenido_c = "";}
   if(isset($_POST['estado_tab'])){$estado_tab = $_POST['estado_tab'];}else{$estado_tab = 0;}
 
-  $actualizarProductos = "UPDATE productos SET cod_producto='$cod_producto', titulo='$titulo', slug='$slug', imagen='$imagen', descripcion='$descripcion', orden='$orden', estado='$estado', subtitulo='$subtitulo', titulo_a='$titulo_a', contenido_a='$contenido_a', titulo_b='$titulo_b', contenido_b='$contenido_b', titulo_c='$titulo_c', contenido_c='$contenido_c', estado_tab='$estado_tab' WHERE cod_producto='$cod_producto'";
+  $actualizarProductos = "UPDATE productos SET cod_producto='$cod_producto', titulo='$titulo', slug='$slug', imagen='$imagen', descripcion='$descripcion', descripcion_b='$descripcion_b', orden='$orden', estado='$estado', subtitulo='$subtitulo', titulo_a='$titulo_a', contenido_a='$contenido_a', titulo_b='$titulo_b', contenido_b='$contenido_b', titulo_c='$titulo_c', contenido_c='$contenido_c', estado_tab='$estado_tab' WHERE cod_producto='$cod_producto'";
   $resultadoActualizar = mysqli_query($enlaces, $actualizarProductos) or die('Consulta fallida: ' . mysqli_error($enlaces));
   header("Location:productos.php");
 }
@@ -147,7 +149,17 @@ if($proceso == "Actualizar"){
                   <label class="col-form-label" for="descripcion">Descripci&oacute;n:</label>
                 </div>
                 <div class="col-8 col-lg-10">
-                  <textarea class="form-control" name="descripcion" id="descripcion" data-provide="summernote" data-min-height="150"><?php echo $descripcion; ?></textarea>
+                  <textarea class="form-control" name="descripcion" id="descripcion" data-provide="summernote" data-min-height="150" maxlength="500"><?php echo $descripcion; ?></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="descripcion_b">Descripci&oacute;n 2:</label>
+                  <small>(Descripci&oacute;n Larga)</small>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <textarea class="form-control" name="descripcion_b" id="descripcion_b" data-provide="summernote" data-min-height="150"><?php echo $descripcion_b; ?></textarea>
                 </div>
               </div>
 
