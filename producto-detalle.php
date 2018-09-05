@@ -162,6 +162,7 @@
                                         </div>
                                         <div class="row">
                                         <?php if($estado_tab==1){ ?>
+<<<<<<< HEAD
                                         <div class="col-md-12">
                                             <h4><?php echo $subtitulo; ?></h4>
                                             <div class="about-inner-page">
@@ -206,6 +207,50 @@
                                                                
                                                                 <?php echo $contenidos_c; ?>
                                                             </div>
+=======
+                                        <h4><?php echo $subtitulo; ?></h4>
+                                        <div class="about-inner-page">
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <?php if($titulo_a==""){ }else{ ?>
+                                                <li role="presentation" class="active"><a href="#taba" aria-controls="taba" role="tab" data-toggle="tab"><?php echo $titulo_a; ?></a></li>
+                                                <?php } ?>
+                                                <?php if($titulo_b==""){ }else{ ?>
+                                                <li role="presentation"><a href="#tabb" aria-controls="tabb" role="tab" data-toggle="tab"><?php echo $titulo_b; ?></a></li>
+                                                <?php } ?>
+                                                <?php if($titulo_c==""){ }else{ ?>
+                                                <li role="presentation"><a href="#tabc" aria-controls="tabc" role="tab" data-toggle="tab"><?php echo $titulo_c; ?></a></li>
+                                                <?php } ?>
+                                            </ul>
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <?php if($contenidos_a==""){ }else{ ?>
+                                                <div role="tabpanel" class="tab-pane active" id="taba" onclick="myFunction()">
+                                                    <div class="media contenido_media">
+                                                        <div class="media-body" id="titulo_a">
+                                                            
+                                                            <?php echo $contenidos_a; ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php } ?>
+                                                <?php if($contenidos_b==""){ }else{ ?>
+                                                <div role="tabpanel" class="tab-pane" id="tabb" onclick="myFunction2()">
+                                                    <div class="media contenido_media">
+                                                        <div class="media-body" id="titulo_b">
+                                                            
+                                                            <?php echo $contenidos_b; ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php } ?>
+                                                <?php if($contenidos_c==""){ }else{ ?>
+                                                <div role="tabpanel" class="tab-pane" id="tabc">
+                                                    <div class="media contenido_media" id="titulo_c">
+                                                        <div class="media-body">
+                                                           
+                                                            <?php echo $contenidos_c; ?>
+>>>>>>> 5a67f5d158c6a54908d07883ce8c945fe045cb7b
                                                         </div>
                                                     </div>
                                                     <?php } ?>
