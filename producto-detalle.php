@@ -56,6 +56,10 @@
     <!-- all css here -->
     <!-- bootstrap v3.3.6 css -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/justified-nav.css" rel="stylesheet">
+
     <!-- animate css -->
     <link rel="stylesheet" href="/css/animate.css">
     <!-- jquery-ui.min css -->
@@ -139,9 +143,25 @@
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="home">
                                     <div class="single-service">
+                                      <div class_="col-md-12">
+                                        
                                         <h2><?php echo $xTitulo; ?></h2>
+                                    </div>
+
+                                        <div class_="col-md-12">
+                                        <div class="col-md-6">
                                         <img src="/cms/assets/img/productos/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
+                                        </div>
+
+                                        <div class="col-md-6">
+
                                         <?php echo $xDescripcion; ?>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <h1>Texto1</h1>
+                                        </div>
+                                       </div>
 
                                         <?php if($estado_tab==1){ ?>
                                         <h4><?php echo $subtitulo; ?></h4>
@@ -190,8 +210,8 @@
                                                     </div>
                                                 </div>
                                                 <?php } ?>
-                                            </div>
-                                        </div>
+                                            </div><!--Fin div tab panes-->
+                                        </div><!--fin div about-inner-page-->
                                         <?php } ?>
 
                                         <!-- Go to www.addthis.com/dashboard to customize your tools -->
@@ -219,5 +239,11 @@
     <!-- Footer End Here -->
     <!-- all js here -->
     <?php include 'include/scripts.php' ?>
+
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>
