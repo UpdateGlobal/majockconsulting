@@ -8,15 +8,8 @@ RewriteCond %{REQUEST_URI} !^/producto/(.*) [OR]
 RewriteCond %{REQUEST_URI} !^/servicio/(.*) [OR]
 RewriteCond %{REQUEST_URI} !^/categoria/(.*) [OR]
 RewriteCond %{REQUEST_URI} !^/blog/(.*) [OR]
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteRule ^producto/([^/]*) producto-detalle.php?slug=$1
 RewriteRule ^servicio/([^/]*) servicio-detalle.php?slug=$1
 RewriteRule ^categoria/([^/]*) categorias.php?slug=$1
 RewriteRule ^categoria/([^/]*) categorias.php?slug=$1&p=2
 RewriteRule ^blog/([^/]*) blog-post.php?slug=$1
-RewriteCond %{HTTP_HOST} ^majockconsulting\.com$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.majockconsulting\.com$
-RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
-RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
-RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteRule ^/?$ "https\:\/\/majockconsulting\.com\/index\.php" [R=301,L]

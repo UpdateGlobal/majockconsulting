@@ -197,10 +197,10 @@
                 </div> 
             </div>
         </div>
-    </div> -->
-                <!-- CATEGORIAS -->
+    </div> 
+    -->
                 <?php include 'include/categorias-blog.php' ?>
-                <!-- CATEGORIAS END -->
+           
             </div>
         </div>
     </div>
