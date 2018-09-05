@@ -179,8 +179,7 @@
                                                 <div role="tabpanel" class="tab-pane active" id="taba" onclick="myFunction()">
                                                     <div class="media contenido_media">
                                                         <div class="media-body" id="titulo_a">
-                                                            <h5><?php echo $titulo_a; ?>  
-                                                            </h5>
+                                                            
                                                             <?php echo $contenidos_a; ?>
                                                         </div>
                                                     </div>
@@ -190,7 +189,7 @@
                                                 <div role="tabpanel" class="tab-pane" id="tabb" onclick="myFunction2()">
                                                     <div class="media contenido_media">
                                                         <div class="media-body" id="titulo_b">
-                                                            <h5><?php echo $titulo_b; ?></h5>
+                                                            
                                                             <?php echo $contenidos_b; ?>
                                                         </div>
                                                     </div>
@@ -200,7 +199,7 @@
                                                 <div role="tabpanel" class="tab-pane" id="tabc">
                                                     <div class="media contenido_media" id="titulo_c">
                                                         <div class="media-body">
-                                                            <h5><?php echo $titulo_c; ?></h5>
+                                                           
                                                             <?php echo $contenidos_c; ?>
                                                         </div>
                                                     </div>
