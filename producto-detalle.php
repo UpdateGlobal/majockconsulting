@@ -57,8 +57,6 @@
     <!-- bootstrap v3.3.6 css -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 
-    <!-- Custom styles for this template -->
-    <link href="css/justified-nav.css" rel="stylesheet">
 
     <!-- animate css -->
     <link rel="stylesheet" href="/css/animate.css">
@@ -178,19 +176,20 @@
                                             <!-- Tab panes -->
                                             <div class="tab-content">
                                                 <?php if($contenidos_a==""){ }else{ ?>
-                                                <div role="tabpanel" class="tab-pane active" id="taba">
+                                                <div role="tabpanel" class="tab-pane active" id="taba" onclick="myFunction()">
                                                     <div class="media contenido_media">
-                                                        <div class="media-body">
-                                                            <h5><?php echo $titulo_a; ?></h5>
+                                                        <div class="media-body" id="titulo_a">
+                                                            <h5><?php echo $titulo_a; ?>  
+                                                            </h5>
                                                             <?php echo $contenidos_a; ?>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <?php } ?>
                                                 <?php if($contenidos_b==""){ }else{ ?>
-                                                <div role="tabpanel" class="tab-pane" id="tabb">
+                                                <div role="tabpanel" class="tab-pane" id="tabb" onclick="myFunction2()">
                                                     <div class="media contenido_media">
-                                                        <div class="media-body">
+                                                        <div class="media-body" id="titulo_b">
                                                             <h5><?php echo $titulo_b; ?></h5>
                                                             <?php echo $contenidos_b; ?>
                                                         </div>
@@ -199,7 +198,7 @@
                                                 <?php } ?>
                                                 <?php if($contenidos_c==""){ }else{ ?>
                                                 <div role="tabpanel" class="tab-pane" id="tabc">
-                                                    <div class="media contenido_media">
+                                                    <div class="media contenido_media" id="titulo_c">
                                                         <div class="media-body">
                                                             <h5><?php echo $titulo_c; ?></h5>
                                                             <?php echo $contenidos_c; ?>
@@ -234,10 +233,37 @@
     <!-- all js here -->
     <?php include 'include/scripts.php' ?>
 
+    <script src="js/jquery-3.3.min.js"></script>
+
     <script src="js/jquery-3.2.1.slim.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    
+
+    <script>
+        function myFunction() {
+
+            alert("me diste clic");
+              
+            /*
+            document.getElementById("taba").style.color="white";
+            document.getElementById("taba").style.background="blue";
+            */
+        }
+
+        function myFunction2() {
+
+            alert("me diste clic");
+              
+            /*
+            document.getElementById("taba").style.color="white";
+            document.getElementById("taba").style.background="blue";
+            */
+        }
+
+
+    </script>
 
 </body>
 </html>
