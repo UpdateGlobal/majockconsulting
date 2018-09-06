@@ -11,7 +11,7 @@
                                 $xTitulo      = $filaGen['campo_1'];
                                 $xDescripcion = $filaGen['campo_2'];
                         ?>
-                        <h2><?php echo $xTitulo; ?></h2>
+                        <h2 class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".3s"><?php echo $xTitulo; ?></h2>
                         <p class="icon-border"><i class="fa fa-clone" aria-hidden="true"></i></p>
                         <p class="section-text"><?php echo $xDescripcion; ?></p>
                     </div>
@@ -43,7 +43,11 @@
                             ?>
                             
                             <div class="single-item productos all" <?php if($nump>3){?> style="display: none;" <?php } ?>>
-                                <img src="/cms/assets/img/productos/<?php echo $xImagen; ?>" alt="<?php echo $xProducto; ?>">
+
+                                <div class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".3s">
+                                    <img src="/cms/assets/img/productos/<?php echo $xImagen; ?>" alt="<?php echo $xProducto; ?>">
+                                </div>
+
                                 <div class="portfolio1-overley">
                                     <div class="item-content">
                                         <h2><a href="/producto/<?php echo $xSlug; ?>"><?php echo $xProducto; ?></a></h2>
@@ -66,7 +70,11 @@
                                     $nums++;
                             ?>
                             <div class="single-item servicios all" <?php if($nums>3){?> style="display: none;" <?php } ?>>
-                                <img src="/cms/assets/img/servicios/<?php echo $xImagen; ?>" alt="<?php echo $xServicio; ?>">
+
+                                <div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">
+                                    <img src="/cms/assets/img/servicios/<?php echo $xImagen; ?>" alt="<?php echo $xServicio; ?>">
+                                </div>
+
                                 <div class="portfolio1-overley">
                                     <div class="item-content">
                                         <h2><a href="/servicio/<?php echo $xSlug; ?>"><?php echo $xServicio; ?></a></h2>
