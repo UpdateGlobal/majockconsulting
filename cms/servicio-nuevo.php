@@ -23,18 +23,23 @@ if($proceso == "Registrar"){
   $descripcion  = mysqli_real_escape_string($enlaces, $_POST['descripcion']);
   if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
-
   /* ---  --- */
   if(isset($_POST['subtitulo'])){$subtitulo = $_POST['subtitulo'];}else{$subtitulo = "";}
+  if(isset($_POST['tab_a'])){$tab_a = $_POST['tab_a'];}else{$tab_a = "";}
   if(isset($_POST['titulo_a'])){$titulo_a = $_POST['titulo_a'];}else{$titulo_a = "";}
+  if(isset($_POST['img_a'])){$img_a = $_POST['img_a'];}else{$img_a = "";}
   if(isset($_POST['contenido_a'])){$contenido_a = $_POST['contenido_a'];}else{$contenido_a = "";}
+  if(isset($_POST['tab_b'])){$tab_b = $_POST['tab_b'];}else{$tab_b = "";}
   if(isset($_POST['titulo_b'])){$titulo_b = $_POST['titulo_b'];}else{$titulo_b = "";}
+  if(isset($_POST['img_b'])){$img_b = $_POST['img_b'];}else{$img_b = "";}
   if(isset($_POST['contenido_b'])){$contenido_b = $_POST['contenido_b'];}else{$contenido_b = "";}
+  if(isset($_POST['tab_c'])){$tab_c = $_POST['tab_c'];}else{$tab_c = "";}
   if(isset($_POST['titulo_c'])){$titulo_c = $_POST['titulo_c'];}else{$titulo_c = "";}
+  if(isset($_POST['img_c'])){$img_c = $_POST['img_c'];}else{$img_c = "";}
   if(isset($_POST['contenido_c'])){$contenido_c = $_POST['contenido_c'];}else{$contenido_c = "";}
   if(isset($_POST['estado_tab'])){$estado_tab = $_POST['estado_tab'];}else{$estado_tab = 0;}
       
-  $insertarServicio = "INSERT INTO servicios(slug, titulo, imagen, descripcion, orden, estado, subtitulo, titulo_a, contenido_a, titulo_b, contenido_b, titulo_c, contenido_c, estado_tab) VALUE ('$slug', '$titulo', '$imagen', '$descripcion', '$orden', '$estado', '$subtitulo', '$titulo_a', '$contenido_a', '$titulo_b', '$contenido_b', '$titulo_c', '$contenido_c', '$estado_tab')";
+  $insertarServicio = "INSERT INTO servicios(slug, titulo, imagen, descripcion, orden, estado, subtitulo, tab_a, titulo_a, img_a, contenido_a, tab_b, titulo_b, img_b, contenido_b, tab_c, titulo_c, img_c, contenido_c, estado_tab) VALUE ('$slug', '$titulo', '$imagen', '$descripcion', '$orden', '$estado', '$subtitulo', '$tab_a', '$titulo_a', '$img_a', '$contenido_a', '$tab_b', '$titulo_b', '$img_b', '$contenido_b', '$tab_c', '$titulo_c', '$img_c', '$contenido_c', '$estado_tab')";
   $resultadoInsertar = mysqli_query($enlaces,$insertarServicio);
   $mensaje = "<div class='alert alert-success' role='alert'>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
@@ -122,10 +127,20 @@ if($proceso == "Registrar"){
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
-                  <label class="col-form-label" for="texto">Texto:</label>
+                  <label class="col-form-label" for="descripcion">Descripci&oacute;n:</label>
                 </div>
                 <div class="col-8 col-lg-10">
-                  <textarea data-provide="summernote" id="descripcion" name="descripcion" data-min-height="150"></textarea>
+                  <textarea data-provide="summernote" id="descripcion" name="descripcion" data-toolbar="full" data-min-height="150"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="descripcion_b">Descripci&oacute;n 2:</label>
+                  <small>(Descripci&oacute;n Larga)</small>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <textarea data-provide="summernote" id="descripcion_b" name="descripcion_b" data-toolbar="full" data-min-height="150"></textarea>
                 </div>
               </div>
 
@@ -167,6 +182,15 @@ if($proceso == "Registrar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="tab_a">Tab 1:</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <input class="form-control" id="tab_a" name="tab_a" type="text" />
+                              <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
                               <label class="col-form-label" for="titulo_a">T&iacute;tulo (Tab 1):</label>
                             </div>
                             <div class="col-8 col-lg-10">
@@ -176,13 +200,34 @@ if($proceso == "Registrar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="img_a">Imagen:</label><br>
+                              <small>(385px x 400px)</small>
+                            </div>
+                            <div class="col-4 col-lg-8">
+                              <input class="form-control" id="img_a" name="img_a" type="text" value="">
+                            </div>
+                            <div class="col-4 col-lg-2">
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERGAL');" /><i class="fa fa-save"></i> Examinar</button>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
                               <label class="col-form-label" for="contenido_a">Descripci&oacute;n (Tab 1):</label>
                             </div>
                             <div class="col-8 col-lg-10">
-                              <textarea class="form-control" name="contenido_a" id="contenido_a" data-provide="summernote" data-min-height="150"></textarea>
+                              <textarea class="form-control" name="contenido_a" id="contenido_a" data-provide="summernote" data-toolbar="full" data-min-height="150"></textarea>
                             </div>
                           </div>
                           <hr>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="tab_b">Tab 2:</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <input class="form-control" id="tab_b" name="tab_b" type="text" />
+                              <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
                               <label class="col-form-label" for="titulo_b">T&iacute;tulo (Tab 2):</label>
@@ -194,13 +239,34 @@ if($proceso == "Registrar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="img_b">Imagen:</label><br>
+                              <small>(385px x 400px)</small>
+                            </div>
+                            <div class="col-4 col-lg-8">
+                              <input class="form-control" id="img_b" name="img_b" type="text" value="">
+                            </div>
+                            <div class="col-4 col-lg-2">
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERGAL');" /><i class="fa fa-save"></i> Examinar</button>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
                               <label class="col-form-label" for="contenido_b">Descripci&oacute;n (Tab 2):</label>
                             </div>
                             <div class="col-8 col-lg-10">
-                              <textarea class="form-control" name="contenido_b" id="contenido_b" data-provide="summernote" data-min-height="150"></textarea>
+                              <textarea class="form-control" name="contenido_b" id="contenido_b" data-provide="summernote" data-toolbar="full" data-min-height="150"></textarea>
                             </div>
                           </div>
                           <hr>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="tab_c">Tab 3:</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <input class="form-control" id="tab_c" name="tab_c" type="text" />
+                              <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
                               <label class="col-form-label" for="titulo_c">T&iacute;tulo (Tab 3):</label>
@@ -212,10 +278,22 @@ if($proceso == "Registrar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="img_c">Imagen:</label><br>
+                              <small>(385px x 400px)</small>
+                            </div>
+                            <div class="col-4 col-lg-8">
+                              <input class="form-control" id="img_c" name="img_c" type="text" value="">
+                            </div>
+                            <div class="col-4 col-lg-2">
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERGAL');" /><i class="fa fa-save"></i> Examinar</button>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
                               <label class="col-form-label" for="contenido_c">Descripci&oacute;n (Tab 3):</label>
                             </div>
                             <div class="col-8 col-lg-10">
-                              <textarea class="form-control" name="contenido_c" id="contenido_c" data-provide="summernote" data-min-height="150"></textarea>
+                              <textarea class="form-control" name="contenido_c" id="contenido_c" data-provide="summernote" data-toolbar="full" data-min-height="150"></textarea>
                             </div>
                           </div>
                           <div class="form-group row">
