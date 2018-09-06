@@ -93,11 +93,15 @@ $cod_servicio = $filaSer['cod_servicio'];
             $xTitulo        = htmlspecialchars($filaSer['titulo']);
             $xImagenx       = $filaSer['imagen'];
             $xDescripcion   = $filaSer['descripcion'];
+            $xDescripcion2  = $filaSer['descripcion_b'];
             // Tabs
             $subtitulo      = $filaSer['subtitulo'];
             $titulo_a       = $filaSer['titulo_a'];
             $titulo_b       = $filaSer['titulo_b'];
             $titulo_c       = $filaSer['titulo_c'];
+            $img_a          = $filaSer['img_a'];
+            $img_b          = $filaSer['img_b'];
+            $img_c          = $filaSer['img_c'];
             $contenidos_a   = $filaSer['contenido_a'];
             $contenidos_b   = $filaSer['contenido_b'];
             $contenidos_c   = $filaSer['contenido_c'];
@@ -139,64 +143,103 @@ $cod_servicio = $filaSer['cod_servicio'];
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="home">
                                     <div class="single-service">
-                                        <h2><?php echo $xTitulo; ?></h2>
-                                        <img src="/cms/assets/img/servicios/<?php echo $xImagenx; ?>" alt="<?php echo $xTitulo; ?>">
-                                        <?php echo $xDescripcion; ?>
-
-                                        <?php if($estado_tab==1){ ?>
-                                        <h4><?php echo $subtitulo; ?></h4>
-                                        <div class="about-inner-page">
-                                            <!-- Nav tabs -->
-                                            <ul class="nav nav-tabs" role="tablist">
-                                                <?php if($titulo_a==""){ }else{ ?>
-                                                <li role="presentation" class="active"><a href="#taba" aria-controls="taba" role="tab" data-toggle="tab"><?php echo $titulo_a; ?></a></li>
-                                                <?php } ?>
-                                                <?php if($titulo_b==""){ }else{ ?>
-                                                <li role="presentation"><a href="#tabb" aria-controls="tabb" role="tab" data-toggle="tab"><?php echo $titulo_b; ?></a></li>
-                                                <?php } ?>
-                                                <?php if($titulo_c==""){ }else{ ?>
-                                                <li role="presentation"><a href="#tabc" aria-controls="tabc" role="tab" data-toggle="tab"><?php echo $titulo_c; ?></a></li>
-                                                <?php } ?>
-                                            </ul>
-                                            <!-- Tab panes -->
-                                            <div class="tab-content">
-                                                <?php if($contenidos_a==""){ }else{ ?>
-                                                <div role="tabpanel" class="tab-pane active" id="taba">
-                                                    <div class="media contenido_media">
-                                                        <div class="media-body">
-                                                            <h5><?php echo $titulo_a; ?></h5>
-                                                            <?php echo $contenidos_a; ?>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <?php } ?>
-                                                <?php if($contenidos_b==""){ }else{ ?>
-                                                <div role="tabpanel" class="tab-pane" id="tabb">
-                                                    <div class="media contenido_media">
-                                                        <div class="media-body">
-                                                            <h5><?php echo $titulo_b; ?></h5>
-                                                            <?php echo $contenidos_b; ?>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <?php } ?>
-                                                <?php if($contenidos_c==""){ }else{ ?>
-                                                <div role="tabpanel" class="tab-pane" id="tabc">
-                                                    <div class="media contenido_media">
-                                                        <div class="media-body">
-                                                            <h5><?php echo $titulo_c; ?></h5>
-                                                            <?php echo $contenidos_c; ?>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <?php } ?>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h2><?php echo $xTitulo; ?></h2>
                                             </div>
                                         </div>
-                                        <?php } ?>
-                                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                                        <div class="addthis_inline_share_toolbox"></div>
-                                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                                        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ae1e6fc57e4c84d"></script>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <img src="/cms/assets/img/servicios/<?php echo $xImagenx; ?>" alt="<?php echo $xTitulo; ?>">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <?php echo $xDescripcion; ?>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <?php echo $xDescripcion_b; ?>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <?php if($estado_tab==1){ ?>
+                                                <h4><?php echo $subtitulo; ?></h4>
+                                                <div class="about-inner-page">
+                                                    <!-- Nav tabs -->
+                                                    <ul class="nav nav-tabs" role="tablist">
+                                                        <?php if($titulo_a==""){ }else{ ?>
+                                                        <li role="presentation" class="active"><a href="#taba" aria-controls="taba" role="tab" data-toggle="tab"><?php echo $titulo_a; ?></a></li>
+                                                        <?php } ?>
+                                                        <?php if($titulo_b==""){ }else{ ?>
+                                                        <li role="presentation"><a href="#tabb" aria-controls="tabb" role="tab" data-toggle="tab"><?php echo $titulo_b; ?></a></li>
+                                                        <?php } ?>
+                                                        <?php if($titulo_c==""){ }else{ ?>
+                                                        <li role="presentation"><a href="#tabc" aria-controls="tabc" role="tab" data-toggle="tab"><?php echo $titulo_c; ?></a></li>
+                                                        <?php } ?>
+                                                    </ul>
+                                                    <!-- Tab panes -->
+                                                    <div class="tab-content">
+                                                        <?php if($contenidos_a==""){ }else{ ?>
+                                                        <div role="tabpanel" class="tab-pane active" id="taba">
+                                                            <div class="media contenido_media">
+                                                                <div class="media-body">
+                                                                    <div class="row">
+                                                                        <div class_="col-md-6">
+                                                                            <img src="/cms/assets/img/servicios/<?php echo $xImagenx; ?>" alt="<?php echo $xTitulo; ?>">
+                                                                        </div>
+                                                                        <div class_="col-md-6"> 
+                                                                            <h5><?php echo $titulo_a; ?></h5>
+                                                                            <?php echo $contenidos_a; ?>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <?php } ?>
+                                                        <?php if($contenidos_b==""){ }else{ ?>
+                                                        <div role="tabpanel" class="tab-pane" id="tabb">
+                                                            <div class="media contenido_media">
+                                                                <div class="media-body">
+                                                                    <div class="row">
+                                                                        <div class_="col-md-6">
+                                                                            <img src="/cms/assets/img/servicios/<?php echo $xImagenx; ?>" alt="<?php echo $xTitulo; ?>">
+                                                                        </div>
+                                                                        <div class_="col-md-6">
+                                                                            <h5><?php echo $titulo_b; ?></h5>
+                                                                            <?php echo $contenidos_b; ?>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <?php } ?>
+                                                        <?php if($contenidos_c==""){ }else{ ?>
+                                                        <div role="tabpanel" class="tab-pane" id="tabc">
+                                                            <div class="media contenido_media">
+                                                                <div class="media-body">
+                                                                    <div class="row">
+                                                                        <div class_="col-md-6">
+                                                                            <img src="/cms/assets/img/servicios/<?php echo $xImagenx; ?>" alt="<?php echo $xTitulo; ?>">
+                                                                        </div>
+                                                                        <div class_="col-md-6">
+                                                                            <h5><?php echo $titulo_c; ?></h5>
+                                                                            <?php echo $contenidos_c; ?>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+                                                </div>
+                                                <?php } ?>
+                                                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                                                <div class="addthis_inline_share_toolbox"></div>
+                                                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                                                <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ae1e6fc57e4c84d"></script>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

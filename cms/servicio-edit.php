@@ -43,16 +43,22 @@ if($proceso=="Actualizar"){
   $descripcion      = mysqli_real_escape_string($enlaces, $_POST['descripcion']);
   if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
+  if(isset($_POST['tab_a'])){$tab_a = $_POST['tab_a'];}else{$tab_a = "";}
   if(isset($_POST['subtitulo'])){$subtitulo = $_POST['subtitulo'];}else{$subtitulo = "";}
   if(isset($_POST['titulo_a'])){$titulo_a = $_POST['titulo_a'];}else{$titulo_a = "";}
+  if(isset($_POST['img_a'])){$img_a = $_POST['img_a'];}else{$img_a = "";}
   if(isset($_POST['contenido_a'])){$contenido_a = $_POST['contenido_a'];}else{$contenido_a = "";}
+  if(isset($_POST['tab_b'])){$tab_b = $_POST['tab_b'];}else{$tab_b = "";}
   if(isset($_POST['titulo_b'])){$titulo_b = $_POST['titulo_b'];}else{$titulo_b = "";}
+  if(isset($_POST['img_b'])){$img_b = $_POST['img_b'];}else{$img_b = "";}
   if(isset($_POST['contenido_b'])){$contenido_b = $_POST['contenido_b'];}else{$contenido_b = "";}
+  if(isset($_POST['tab_c'])){$tab_c = $_POST['tab_c'];}else{$tab_c = "";}
   if(isset($_POST['titulo_c'])){$titulo_c = $_POST['titulo_c'];}else{$titulo_c = "";}
+  if(isset($_POST['img_c'])){$img_c = $_POST['img_c'];}else{$img_c = "";}
   if(isset($_POST['contenido_c'])){$contenido_c = $_POST['contenido_c'];}else{$contenido_c = "";}
   if(isset($_POST['estado_tab'])){$estado_tab = $_POST['estado_tab'];}else{$estado_tab = 0;}
 
-  $actualizarServicios  = "UPDATE servicios SET cod_servicio='$cod_servicio', slug='$slug', titulo='$titulo', imagen='$imagen', descripcion='$descripcion', orden='$orden', estado='$estado', subtitulo='$subtitulo', titulo_a='$titulo_a', contenido_a='$contenido_a', titulo_b='$titulo_b', contenido_b='$contenido_b', titulo_c='$titulo_c', contenido_c='$contenido_c', estado_tab='$estado_tab' WHERE cod_servicio='$cod_servicio'";
+  $actualizarServicios  = "UPDATE servicios SET cod_servicio='$cod_servicio', slug='$slug', titulo='$titulo', imagen='$imagen', descripcion='$descripcion', orden='$orden', estado='$estado', subtitulo='$subtitulo', tab_a='$tab_a', titulo_a='$titulo_a', img_a='$img_a', contenido_a='$contenido_a', tab_b='$tab_b', titulo_b='$titulo_b', img_b='$img_b', contenido_b='$contenido_b', tab_c='$tab_c', titulo_c='$titulo_c', img_c='$img_c', contenido_c='$contenido_c', estado_tab='$estado_tab' WHERE cod_servicio='$cod_servicio'";
   $resultadoActualizar = mysqli_query($enlaces,$actualizarServicios) or die('Consulta fallida: ' . mysqli_error($enlaces));
   header("Location:servicios.php");
 }
@@ -182,11 +188,32 @@ if($proceso=="Actualizar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="tab_a">Tab 1:</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <input class="form-control" id="tab_a" name="tab_a" type="text" value="<?php echo $tab_a; ?>" />
+                              <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
                               <label class="col-form-label" for="titulo_a">T&iacute;tulo (Tab 1):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="titulo_a" name="titulo_a" type="text" value="<?php echo $titulo_a; ?>" />
                               <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="img_a">Imagen:</label><br>
+                              <small>(385px x 400px)</small>
+                            </div>
+                            <div class="col-4 col-lg-8">
+                              <input class="form-control" id="img_a" name="img_a" type="text" value="<?php echo $img_a; ?>">
+                            </div>
+                            <div class="col-4 col-lg-2">
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERT');" /><i class="fa fa-save"></i> Examinar</button>
                             </div>
                           </div>
                           <div class="form-group row">
@@ -200,11 +227,32 @@ if($proceso=="Actualizar"){
                           <hr>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="titulo_b">T&iacute;tulo (Tab 2):</label>
+                              <label class="col-form-label" for="tab_b">Tab 2:</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <input class="form-control" id="tab_b" name="tab_b" type="text" value="<?php echo $tab_b; ?>" />
+                              <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="titulo_b">T&iacute;tulo 2 (Tab 2):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="titulo_b" name="titulo_b" type="text" value="<?php echo $titulo_b; ?>" />
                               <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="img_b">Imagen:</label><br>
+                              <small>(385px x 400px)</small>
+                            </div>
+                            <div class="col-4 col-lg-8">
+                              <input class="form-control" id="img_b" name="img_b" type="text" value="<?php echo $img_b; ?>">
+                            </div>
+                            <div class="col-4 col-lg-2">
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERT');" /><i class="fa fa-save"></i> Examinar</button>
                             </div>
                           </div>
                           <div class="form-group row">
@@ -218,11 +266,32 @@ if($proceso=="Actualizar"){
                           <hr>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="tab_c">Tab 3:</label>
+                            </div>
+                            <div class="col-8 col-lg-10">
+                              <input class="form-control" id="tab_c" name="tab_c" type="text" value="<?php echo $tab_c; ?>" />
+                              <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
                               <label class="col-form-label" for="titulo_c">T&iacute;tulo (Tab 3):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="titulo_c" name="titulo_c" type="text" value="<?php echo $titulo_c; ?>" />
                               <div class="invalid-feedback"></div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-4 col-lg-2">
+                              <label class="col-form-label" for="img_c">Imagen:</label><br>
+                              <small>(385px x 400px)</small>
+                            </div>
+                            <div class="col-4 col-lg-8">
+                              <input class="form-control" id="img_c" name="img_c" type="text" value="<?php echo $img_c; ?>">
+                            </div>
+                            <div class="col-4 col-lg-2">
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERT');" /><i class="fa fa-save"></i> Examinar</button>
                             </div>
                           </div>
                           <div class="form-group row">
