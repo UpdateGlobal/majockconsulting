@@ -145,20 +145,31 @@ $cod_servicio = $filaSer['cod_servicio'];
                                     <div class="single-service">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <h2><?php echo $xTitulo; ?></h2>
+
+                                                <h2 class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".3s"><?php echo $xTitulo; ?></h2>
+
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <img src="/cms/assets/img/servicios/<?php echo $xImagenx; ?>" alt="<?php echo $xTitulo; ?>">
+                                                <div class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".3s">
+                                                    <img src="/cms/assets/img/servicios/<?php echo $xImagenx; ?>" alt="<?php echo $xTitulo; ?>">
+                                                </div>
+                                                
                                             </div>
                                             <div class="col-md-6">
-                                                <?php echo $xDescripcion; ?>
+                                                <div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">
+                                                    <?php echo $xDescripcion; ?>
+                                                </div>
+                                                
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <?php echo $xDescripcion_b; ?>
+                                                <div class="wow fadeInUp" data-wow-duration="3s" data-wow-delay=".3s">
+                                                    <?php echo $xDescripcion_b; ?>
+                                                </div>
+                                                
                                             </div>
                                         </div>
                                         <div class="row">
