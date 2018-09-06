@@ -127,10 +127,20 @@ if($proceso == "Registrar"){
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
-                  <label class="col-form-label" for="texto">Texto:</label>
+                  <label class="col-form-label" for="descripcion">Descripci&oacute;n:</label>
                 </div>
                 <div class="col-8 col-lg-10">
-                  <textarea data-provide="summernote" id="descripcion" name="descripcion" data-min-height="150"></textarea>
+                  <textarea data-provide="summernote" id="descripcion" name="descripcion" data-toolbar="full" data-min-height="150"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="descripcion_b">Descripci&oacute;n 2:</label>
+                  <small>(Descripci&oacute;n Larga)</small>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <textarea data-provide="summernote" id="descripcion_b" name="descripcion_b" data-toolbar="full" data-min-height="150"></textarea>
                 </div>
               </div>
 
@@ -197,7 +207,7 @@ if($proceso == "Registrar"){
                               <input class="form-control" id="img_a" name="img_a" type="text" value="">
                             </div>
                             <div class="col-4 col-lg-2">
-                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERT');" /><i class="fa fa-save"></i> Examinar</button>
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERGAL');" /><i class="fa fa-save"></i> Examinar</button>
                             </div>
                           </div>
                           <div class="form-group row">
@@ -205,7 +215,7 @@ if($proceso == "Registrar"){
                               <label class="col-form-label" for="contenido_a">Descripci&oacute;n (Tab 1):</label>
                             </div>
                             <div class="col-8 col-lg-10">
-                              <textarea class="form-control" name="contenido_a" id="contenido_a" data-provide="summernote" data-min-height="150"></textarea>
+                              <textarea class="form-control" name="contenido_a" id="contenido_a" data-provide="summernote" data-toolbar="full" data-min-height="150"></textarea>
                             </div>
                           </div>
                           <hr>
@@ -236,7 +246,7 @@ if($proceso == "Registrar"){
                               <input class="form-control" id="img_b" name="img_b" type="text" value="">
                             </div>
                             <div class="col-4 col-lg-2">
-                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERT');" /><i class="fa fa-save"></i> Examinar</button>
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERGAL');" /><i class="fa fa-save"></i> Examinar</button>
                             </div>
                           </div>
                           <div class="form-group row">
@@ -244,7 +254,7 @@ if($proceso == "Registrar"){
                               <label class="col-form-label" for="contenido_b">Descripci&oacute;n (Tab 2):</label>
                             </div>
                             <div class="col-8 col-lg-10">
-                              <textarea class="form-control" name="contenido_b" id="contenido_b" data-provide="summernote" data-min-height="150"></textarea>
+                              <textarea class="form-control" name="contenido_b" id="contenido_b" data-provide="summernote" data-toolbar="full" data-min-height="150"></textarea>
                             </div>
                           </div>
                           <hr>
@@ -275,7 +285,7 @@ if($proceso == "Registrar"){
                               <input class="form-control" id="img_c" name="img_c" type="text" value="">
                             </div>
                             <div class="col-4 col-lg-2">
-                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERT');" /><i class="fa fa-save"></i> Examinar</button>
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERGAL');" /><i class="fa fa-save"></i> Examinar</button>
                             </div>
                           </div>
                           <div class="form-group row">
@@ -283,7 +293,7 @@ if($proceso == "Registrar"){
                               <label class="col-form-label" for="contenido_c">Descripci&oacute;n (Tab 3):</label>
                             </div>
                             <div class="col-8 col-lg-10">
-                              <textarea class="form-control" name="contenido_c" id="contenido_c" data-provide="summernote" data-min-height="150"></textarea>
+                              <textarea class="form-control" name="contenido_c" id="contenido_c" data-provide="summernote" data-toolbar="full" data-min-height="150"></textarea>
                             </div>
                           </div>
                           <div class="form-group row">

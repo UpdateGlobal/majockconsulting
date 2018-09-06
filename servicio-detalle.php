@@ -93,7 +93,7 @@ $cod_servicio = $filaSer['cod_servicio'];
             $xTitulo        = htmlspecialchars($filaSer['titulo']);
             $xImagenx       = $filaSer['imagen'];
             $xDescripcion   = $filaSer['descripcion'];
-            $xDescripcion2  = $filaSer['descripcion_b'];
+            $xDescripcion_b  = $filaSer['descripcion_b'];
             // Tabs
             $subtitulo      = $filaSer['subtitulo'];
             $titulo_a       = $filaSer['titulo_a'];
@@ -163,19 +163,19 @@ $cod_servicio = $filaSer['cod_servicio'];
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <?php if($estado_tab==1){ ?>
+                                                <?php if($estado_tab=='1'){ ?>
                                                 <h4><?php echo $subtitulo; ?></h4>
                                                 <div class="about-inner-page">
                                                     <!-- Nav tabs -->
                                                     <ul class="nav nav-tabs" role="tablist">
-                                                        <?php if($titulo_a==""){ }else{ ?>
-                                                        <li role="presentation" class="active"><a href="#taba" aria-controls="taba" role="tab" data-toggle="tab"><?php echo $titulo_a; ?></a></li>
+                                                        <?php if($tab_a==""){ }else{ ?>
+                                                        <li role="presentation" class="active"><a href="#taba" aria-controls="taba" role="tab" data-toggle="tab"><?php echo $tab_a; ?></a></li>
                                                         <?php } ?>
-                                                        <?php if($titulo_b==""){ }else{ ?>
-                                                        <li role="presentation"><a href="#tabb" aria-controls="tabb" role="tab" data-toggle="tab"><?php echo $titulo_b; ?></a></li>
+                                                        <?php if($tab_b==""){ }else{ ?>
+                                                        <li role="presentation"><a href="#tabb" aria-controls="tabb" role="tab" data-toggle="tab"><?php echo $tab_b; ?></a></li>
                                                         <?php } ?>
-                                                        <?php if($titulo_c==""){ }else{ ?>
-                                                        <li role="presentation"><a href="#tabc" aria-controls="tabc" role="tab" data-toggle="tab"><?php echo $titulo_c; ?></a></li>
+                                                        <?php if($tab_c==""){ }else{ ?>
+                                                        <li role="presentation"><a href="#tabc" aria-controls="tabc" role="tab" data-toggle="tab"><?php echo $tab_c; ?></a></li>
                                                         <?php } ?>
                                                     </ul>
                                                     <!-- Tab panes -->
@@ -185,13 +185,20 @@ $cod_servicio = $filaSer['cod_servicio'];
                                                             <div class="media contenido_media">
                                                                 <div class="media-body">
                                                                     <div class="row">
-                                                                        <div class_="col-md-6">
-                                                                            <img src="/cms/assets/img/servicios/<?php echo $xImagenx; ?>" alt="<?php echo $xTitulo; ?>">
+                                                                        <?php if($img_a!=""){ ?>
+                                                                        <div class="col-md-6">
+                                                                            <img src="/cms/assets/img/servicios/fotos/<?php echo $img_a; ?>" alt="<?php echo $titulo_a; ?>">
                                                                         </div>
-                                                                        <div class_="col-md-6"> 
+                                                                        <div class="col-md-6">
                                                                             <h5><?php echo $titulo_a; ?></h5>
                                                                             <?php echo $contenidos_a; ?>
                                                                         </div>
+                                                                        <?php }else{ ?>
+                                                                        <div class="col-md-12">
+                                                                            <h5><?php echo $titulo_a; ?></h5>
+                                                                            <?php echo $contenidos_a; ?>
+                                                                        </div>
+                                                                        <?php } ?>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -202,13 +209,20 @@ $cod_servicio = $filaSer['cod_servicio'];
                                                             <div class="media contenido_media">
                                                                 <div class="media-body">
                                                                     <div class="row">
-                                                                        <div class_="col-md-6">
-                                                                            <img src="/cms/assets/img/servicios/<?php echo $xImagenx; ?>" alt="<?php echo $xTitulo; ?>">
+                                                                        <?php if($img_b!=""){ ?>
+                                                                        <div class="col-md-6">
+                                                                            <img src="/cms/assets/img/servicios/fotos/<?php echo $img_b; ?>" alt="<?php echo $titulo_b; ?>">
                                                                         </div>
-                                                                        <div class_="col-md-6">
+                                                                        <div class="col-md-6">
                                                                             <h5><?php echo $titulo_b; ?></h5>
                                                                             <?php echo $contenidos_b; ?>
                                                                         </div>
+                                                                        <?php }else{ ?>
+                                                                        <div class="col-md-12">
+                                                                            <h5><?php echo $titulo_b; ?></h5>
+                                                                            <?php echo $contenidos_b; ?>
+                                                                        </div>
+                                                                        <?php } ?>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -219,13 +233,20 @@ $cod_servicio = $filaSer['cod_servicio'];
                                                             <div class="media contenido_media">
                                                                 <div class="media-body">
                                                                     <div class="row">
-                                                                        <div class_="col-md-6">
-                                                                            <img src="/cms/assets/img/servicios/<?php echo $xImagenx; ?>" alt="<?php echo $xTitulo; ?>">
+                                                                        <?php if($img_c!=""){ ?>
+                                                                        <div class="col-md-6">
+                                                                            <img src="/cms/assets/img/servicios/fotos/<?php echo $img_c; ?>" alt="<?php echo $titulo_c; ?>">
                                                                         </div>
-                                                                        <div class_="col-md-6">
+                                                                        <div class="col-md-6">
                                                                             <h5><?php echo $titulo_c; ?></h5>
                                                                             <?php echo $contenidos_c; ?>
                                                                         </div>
+                                                                        <?php }else{ ?>
+                                                                        <div class="col-md-12">
+                                                                            <h5><?php echo $titulo_c; ?></h5>
+                                                                            <?php echo $contenidos_c; ?>
+                                                                        </div>
+                                                                        <?php } ?>
                                                                     </div>
                                                                 </div>
                                                             </div>

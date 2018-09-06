@@ -15,6 +15,7 @@ if($proceso == ""){
   $titulo      = $filaSer['titulo'];
   $imagen      = $filaSer['imagen'];
   $descripcion = $filaSer['descripcion'];
+  $descripcion_b = $filaSer['descripcion_b'];
   $orden       = $filaSer['orden'];
   $estado      = $filaSer['estado'];
   $subtitulo      = $filaSer['subtitulo'];
@@ -41,6 +42,7 @@ if($proceso=="Actualizar"){
   }
   $imagen           = $_POST['imagen'];
   $descripcion      = mysqli_real_escape_string($enlaces, $_POST['descripcion']);
+  $descripcion_b    = mysqli_real_escape_string($enlaces, $_POST['descripcion_b']);
   if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
   if(isset($_POST['tab_a'])){$tab_a = $_POST['tab_a'];}else{$tab_a = "";}
@@ -58,7 +60,7 @@ if($proceso=="Actualizar"){
   if(isset($_POST['contenido_c'])){$contenido_c = $_POST['contenido_c'];}else{$contenido_c = "";}
   if(isset($_POST['estado_tab'])){$estado_tab = $_POST['estado_tab'];}else{$estado_tab = 0;}
 
-  $actualizarServicios  = "UPDATE servicios SET cod_servicio='$cod_servicio', slug='$slug', titulo='$titulo', imagen='$imagen', descripcion='$descripcion', orden='$orden', estado='$estado', subtitulo='$subtitulo', tab_a='$tab_a', titulo_a='$titulo_a', img_a='$img_a', contenido_a='$contenido_a', tab_b='$tab_b', titulo_b='$titulo_b', img_b='$img_b', contenido_b='$contenido_b', tab_c='$tab_c', titulo_c='$titulo_c', img_c='$img_c', contenido_c='$contenido_c', estado_tab='$estado_tab' WHERE cod_servicio='$cod_servicio'";
+  $actualizarServicios  = "UPDATE servicios SET cod_servicio='$cod_servicio', slug='$slug', titulo='$titulo', imagen='$imagen', descripcion='$descripcion', descripcion_b='$descripcion_b', orden='$orden', estado='$estado', subtitulo='$subtitulo', tab_a='$tab_a', titulo_a='$titulo_a', img_a='$img_a', contenido_a='$contenido_a', tab_b='$tab_b', titulo_b='$titulo_b', img_b='$img_b', contenido_b='$contenido_b', tab_c='$tab_c', titulo_c='$titulo_c', img_c='$img_c', contenido_c='$contenido_c', estado_tab='$estado_tab' WHERE cod_servicio='$cod_servicio'";
   $resultadoActualizar = mysqli_query($enlaces,$actualizarServicios) or die('Consulta fallida: ' . mysqli_error($enlaces));
   header("Location:servicios.php");
 }
@@ -143,10 +145,20 @@ if($proceso=="Actualizar"){
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
-                  <label class="col-form-label" for="descripcion">Texto:</label>
+                  <label class="col-form-label" for="descripcion">Descripci&oacute;n:</label>
                 </div>
                 <div class="col-8 col-lg-10">
-                  <textarea data-provide="summernote" id="descripcion" name="descripcion" data-min-height="150"><?php echo $descripcion; ?></textarea>
+                  <textarea data-provide="summernote" id="descripcion" name="descripcion" data-toolbar="full" data-min-height="150"><?php echo $descripcion; ?></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="descripcion_b">Descripci&oacute;n 2:</label>
+                  <small>(Descripci&oacute;n Larga)</small>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <textarea data-provide="summernote" id="descripcion_b" name="descripcion_b" data-toolbar="full" data-min-height="150"><?php echo $descripcion_b; ?></textarea>
                 </div>
               </div>
 
@@ -213,7 +225,7 @@ if($proceso=="Actualizar"){
                               <input class="form-control" id="img_a" name="img_a" type="text" value="<?php echo $img_a; ?>">
                             </div>
                             <div class="col-4 col-lg-2">
-                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERT');" /><i class="fa fa-save"></i> Examinar</button>
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERGAL');" /><i class="fa fa-save"></i> Examinar</button>
                             </div>
                           </div>
                           <div class="form-group row">
@@ -221,7 +233,7 @@ if($proceso=="Actualizar"){
                               <label class="col-form-label" for="contenido_a">Descripci&oacute;n (Tab 1):</label>
                             </div>
                             <div class="col-8 col-lg-10">
-                              <textarea class="form-control" name="contenido_a" id="contenido_a" data-provide="summernote" data-min-height="150"><?php echo $contenido_a; ?></textarea>
+                              <textarea class="form-control" name="contenido_a" id="contenido_a" data-provide="summernote" data-toolbar="full" data-min-height="150"><?php echo $contenido_a; ?></textarea>
                             </div>
                           </div>
                           <hr>
@@ -252,7 +264,7 @@ if($proceso=="Actualizar"){
                               <input class="form-control" id="img_b" name="img_b" type="text" value="<?php echo $img_b; ?>">
                             </div>
                             <div class="col-4 col-lg-2">
-                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERT');" /><i class="fa fa-save"></i> Examinar</button>
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERGAL');" /><i class="fa fa-save"></i> Examinar</button>
                             </div>
                           </div>
                           <div class="form-group row">
@@ -260,7 +272,7 @@ if($proceso=="Actualizar"){
                               <label class="col-form-label" for="contenido_b">Descripci&oacute;n (Tab 2):</label>
                             </div>
                             <div class="col-8 col-lg-10">
-                              <textarea class="form-control" name="contenido_b" id="contenido_b" data-provide="summernote" data-min-height="150"><?php echo $contenido_b; ?></textarea>
+                              <textarea class="form-control" name="contenido_b" id="contenido_b" data-provide="summernote" data-toolbar="full" data-min-height="150"><?php echo $contenido_b; ?></textarea>
                             </div>
                           </div>
                           <hr>
@@ -291,7 +303,7 @@ if($proceso=="Actualizar"){
                               <input class="form-control" id="img_c" name="img_c" type="text" value="<?php echo $img_c; ?>">
                             </div>
                             <div class="col-4 col-lg-2">
-                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERT');" /><i class="fa fa-save"></i> Examinar</button>
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERGAL');" /><i class="fa fa-save"></i> Examinar</button>
                             </div>
                           </div>
                           <div class="form-group row">
@@ -299,7 +311,7 @@ if($proceso=="Actualizar"){
                               <label class="col-form-label" for="contenido_c">Descripci&oacute;n (Tab 3):</label>
                             </div>
                             <div class="col-8 col-lg-10">
-                              <textarea class="form-control" name="contenido_c" id="contenido_c" data-provide="summernote" data-min-height="150"><?php echo $contenido_c; ?></textarea>
+                              <textarea class="form-control" name="contenido_c" id="contenido_c" data-provide="summernote" data-toolbar="full" data-min-height="150"><?php echo $contenido_c; ?></textarea>
                             </div>
                           </div>
                           <div class="form-group row">
