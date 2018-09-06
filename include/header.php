@@ -25,10 +25,7 @@
                                     <li><a href="/index.php">INICIO</a></li>
                                     <li>
                                         <a href="/nosotros.php">NOSOTROS</a>
-                                        <!-- <ul>
-                                            <li><a href="/nosotros.php">Majock Consulting</a></li>
-                                            <li><a href="/equipo.php">Equipo</a></li>
-                                        </ul> -->
+
                                     </li>
                                     <li>
                                         <a href="#productos">PRODUCTOS</a>
@@ -84,11 +81,13 @@
                             <nav id="dropdown">
                                 <ul>
                                     <li><a href="/index.php">INICIO</a></li>
-                                    <li><a href="#">NOSOTROS</a>
+                                    <li><a href="/nosotros.php">NOSOTROS</a>
+                                        <!--
                                         <ul>
                                             <li><a href="/nosotros.php">Majock Consulting</a></li>
                                             <li><a href="/equipo.php">Equipo</a></li>
                                         </ul>
+                                        -->
                                     </li>
                                     <li><a href="#">PRODUCTO</a>
                                         <ul>

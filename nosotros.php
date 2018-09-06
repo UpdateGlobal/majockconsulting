@@ -45,6 +45,7 @@
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content">
+
                         <div role="tabpanel" class="tab-pane" id="home">
                             <?php
                                 $consultarCon = "SELECT * FROM contenidos WHERE cod_contenido='2' AND estado='1'";
@@ -55,20 +56,35 @@
                                     $xImagen      = $filaCon['img_contenido'];
                                     $xContenido   = $filaCon['contenido'];
                             ?>
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img src="/cms/assets/img/nosotros/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
-                                </a>
-                                <div class="media-body">
-                                    <h2 class="media-heading"><?php echo $xTitulo; ?></h2>
-                                    <?php echo $xContenido; ?>
+                            <!--<div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">-->
+                                <div class="media">
+                                                
+                                            <a class="pull-left" href="#">
+                                                <div class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".3s">
+                                                    <img src="/cms/assets/img/nosotros/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
+                                                </div>
+                                
+                                            </a>
+                                    <div class="media-body">
+                                                <div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">
+                                                    <h2 class="media-heading"><?php echo $xTitulo; ?></h2>
+                                                    <?php echo $xContenido;?>
+                                                </div>
+                                            
+
+
+
+                                    </div>
                                 </div>
-                            </div>
+                            <!--</div>-->
+
                             <?php
                                 }
                                 mysqli_free_result($resultadoCon);
                             ?>
                         </div>
+
+
                         <div role="tabpanel" class="tab-pane active" id="profile">
                             <?php
                                 $consultarCon = "SELECT * FROM contenidos WHERE cod_contenido='3' AND estado='1'";
@@ -79,15 +95,25 @@
                                     $xImagen      = $filaCon['img_contenido'];
                                     $xContenido   = $filaCon['contenido'];
                             ?>
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img src="/cms/assets/img/nosotros/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
-                                </a>
-                                <div class="media-body">
-                                    <h2 class="media-heading"><?php echo $xTitulo; ?></h2>
-                                    <?php echo $xContenido; ?>
+
+                            <!--<div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">-->
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <div class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".3s">
+                                            <img src="/cms/assets/img/nosotros/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
+                                        </div>
+                                        
+                                    </a>
+                                    <div class="media-body">
+                                        <div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">
+                                            <h2 class="media-heading"><?php echo $xTitulo; ?></h2>
+                                            <?php echo $xContenido; ?>
+                                        </div>
+                                        
+                                    </div>
                                 </div>
-                            </div>
+                            <!--</div>-->
+
                             <?php
                                 }
                                 mysqli_free_result($resultadoCon);
@@ -103,15 +129,32 @@
                                     $xImagen      = $filaCon['img_contenido'];
                                     $xContenido   = $filaCon['contenido'];
                             ?>
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img src="/cms/assets/img/nosotros/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
-                                </a>
-                                <div class="media-body">
-                                    <h2 class="media-heading"><?php echo $xTitulo; ?></h2>
-                                    <?php echo $xContenido; ?>
+
+                            <!--<div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">-->
+                                <div class="media">
+
+                            
+                                    <a class="pull-left" href="#">
+                                        <div class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".3s">
+                                            <img src="/cms/assets/img/nosotros/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
+                                        </div>
+                                        
+                                    </a>
+
+                                
+                                    <div class="media-body">
+                                        <div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">
+                                            <h2 class="media-heading"><?php echo $xTitulo; ?></h2>
+                                            <?php echo $xContenido; ?>
+                                        </div>
+
+                                    </div>
+
+
                                 </div>
-                            </div>
+                            <!--</div>-->
+
+
                             <?php
                                 }
                                 mysqli_free_result($resultadoCon);
