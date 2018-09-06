@@ -144,20 +144,24 @@
                                     <div class="single-service">
                                         <div class="row">
                                             <div class_="col-md-12">
-                                                <h2><?php echo $xTitulo; ?></h2>
+                                                <h2 class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s"><?php echo $xTitulo; ?></h2>
                                             </div><!--fin de div class col-md-12-->
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <img src="/cms/assets/img/productos/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <?php echo $xDescripcion; ?>
+                                            <div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">
+                                                <div class="col-md-6">
+                                                    <img src="/cms/assets/img/productos/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <?php echo $xDescripcion; ?>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <?php echo $xDescripcion2; ?>
+                                                <div class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".3s">
+                                                    <?php echo $xDescripcion2; ?>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row">
