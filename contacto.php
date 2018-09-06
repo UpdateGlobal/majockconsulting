@@ -99,89 +99,99 @@
         <div class="container">
             <div class="page-sidebar-area">
                 <div class="single-sidebar">
-                    <h3>Contactanos</h3>
-                    <p>Brindanos tus datos y te contactaremos</p>
+                    <div class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".3s">
+                        <h3>Contactanos</h3>
+                        <p>Brindanos tus datos y te contactaremos</p>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
     <!-- Contact Form Page start Here -->
     <div class="main-conatct-form-area" style="padding:15px 0 80px;">
+        <div class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".3s">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                    <div class="row">
-                        <div class="main-contact-form contact-form">
-                            <div id='contact-form' role="form">
-                                <fieldset>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" placeholder="Nombres y Apellidos *" class="form-control" name="nombres" id="nombres" required>
+                
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                        <div class="row">
+                            <div class="main-contact-form contact-form">
+                                <div id='contact-form' role="form">
+                                    <fieldset>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <input type="text" placeholder="Nombres y Apellidos *" class="form-control" name="nombres" id="nombres" required>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" placeholder="Razón Social" class="form-control" id="razon_social" name="razon_social" />
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <input type="text" placeholder="Razón Social" class="form-control" id="razon_social" name="razon_social" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" placeholder="Celular *" class="form-control" id="telefono" name="telefono" required>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <input type="text" placeholder="Celular *" class="form-control" id="telefono" name="telefono" required>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="email" placeholder="Email *" class="form-control" id="email" name="email" required />
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <input type="email" placeholder="Email *" class="form-control" id="email" name="email" required />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <div class="form-group">
-                                            <textarea placeholder="¿Cómo podemos ayudarte? *" class="textarea form-control" id="mensaje" name="mensaje" rows="8" cols="20" required></textarea>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <textarea placeholder="¿Cómo podemos ayudarte? *" class="textarea form-control" id="mensaje" name="mensaje" rows="8" cols="20" required></textarea>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                            <?php 
-                                                $fecha = date("Y-m-d");
-                                            ?>
-                                            <input type="hidden" id="fecha_ingreso" name="fecha_ingreso" value="<?php echo $fecha ?>">
-                                            <button name="submit" class="btn-read-more-fill btn-send" onClick="sendContact();">Contactarme</button>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <?php 
+                                                    $fecha = date("Y-m-d");
+                                                ?>
+                                                <input type="hidden" id="fecha_ingreso" name="fecha_ingreso" value="<?php echo $fecha ?>">
+                                                <button name="submit" class="btn-read-more-fill btn-send" onClick="sendContact();">Contactarme</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-8">
-                                        <div id="mail-status"></div>
-                                    </div>
-                                </fieldset>
+                                        <div class="col-sm-8">
+                                            <div id="mail-status"></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                               
+
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="page-sidebar-area">
-                        <div class="single-sidebar">
-                            <h3>Nuestros Datos</h3>
-                            <nav>
-                                <ul>
-                                    <?php 
-                                        $consultarCot = "SELECT * FROM contacto";
-                                        $resultadoCot = mysqli_query($enlaces,$consultarCot) or die('Consulta fallida: ' . mysqli_error($enlaces));
-                                        $filaCot  = mysqli_fetch_array($resultadoCot);
-                                            $xDirection   = $filaCot['direction'];
-                                            $xPhone       = $filaCot['phone'];
-                                            $xEmail       = $filaCot['email'];
-                                    ?>
-                                    <li><i class="fa fa-paper-plane-o" aria-hidden="true"></i> <?php echo $xDirection; ?></li>
-                                    <li><i class="fa fa-phone" aria-hidden="true"></i> <?php echo $xPhone; ?></li>
-                                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <?php echo $xEmail; ?></li>
-                                    <?php
+                    
+                        <div class="page-sidebar-area">
+                            <div class="single-sidebar">
+                                <h3>Nuestros Datos</h3>
+                                <nav>
+                                    <ul>
+                                        <?php 
+                                            $consultarCot = "SELECT * FROM contacto";
+                                            $resultadoCot = mysqli_query($enlaces,$consultarCot) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                                            $filaCot  = mysqli_fetch_array($resultadoCot);
+                                                $xDirection   = $filaCot['direction'];
+                                                $xPhone       = $filaCot['phone'];
+                                                $xEmail       = $filaCot['email'];
+                                        ?>
+                                        <li><i class="fa fa-paper-plane-o" aria-hidden="true"></i> <?php echo $xDirection; ?></li>
+                                        <li><i class="fa fa-phone" aria-hidden="true"></i> <?php echo $xPhone; ?></li>
+                                        <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <?php echo $xEmail; ?></li>
+                                        <?php
                                         mysqli_free_result($resultadoCot);
-                                    ?>
-                                </ul>
-                            </nav>
+                                        ?>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
-                    </div>
+                    
                 </div>
             </div>
+        </div>
         </div>
     </div>
     <!-- Contact Form Page start Here -->
