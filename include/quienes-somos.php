@@ -10,8 +10,10 @@
                                 $xTitulo      = $filaGen['campo_1'];
                                 $xDescripcion = $filaGen['campo_2'];
                         ?>
-                        <div class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".3s">
+                        <div class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".3s">
+
                             <h2><?php echo $xTitulo; ?></h2>
+
                             <p><?php echo $xDescripcion; ?></p>
                         </div>
                     </div>
@@ -31,7 +33,9 @@
                             $xValor_6     = $filaGen['campo_7'];
                     ?>
                     <div class="home3-our-sucess-area">
-                        <h2><?php echo $xTitulo; ?></h2>
+                        <div class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".3s">
+                            <h2><?php echo $xTitulo; ?></h2>
+                        </div>
                     </div>
                     <div class="our-skill-area fix">
                         <div class="container">
