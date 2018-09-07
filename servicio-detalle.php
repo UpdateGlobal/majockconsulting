@@ -148,37 +148,26 @@ $cod_servicio = $filaSer['cod_servicio'];
                                     <div class="single-service">
                                         <div class="row">
                                             <div class="col-md-12">
-
-                                                <h2 class="wow fadeInDown" data-wow-duration="3s" data-wow-delay=".3s"><?php echo $xTitulo; ?></h2>
-
+                                                <h2><?php echo $xTitulo; ?></h2>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <div class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".3s">
-                                                    <img src="/cms/assets/img/servicios/<?php echo $xImagenx; ?>" alt="<?php echo $xTitulo; ?>">
-                                                </div>
-                                                
+                                                <img src="/cms/assets/img/servicios/<?php echo $xImagenx; ?>" alt="<?php echo $xTitulo; ?>">
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">
-                                                    <?php echo $xDescripcion; ?>
-                                                </div>
-                                                
+                                                <?php echo $xDescripcion; ?>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <div class="wow fadeInUp" data-wow-duration="3s" data-wow-delay=".3s">
-                                                    <?php echo $xDescripcion_b; ?>
-                                                </div>
-                                                
+                                                <?php echo $xDescripcion_b; ?>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <div class="row about-inner-page-area" style="padding-top: 10px;">
+                                            <?php if($estado_tab==1){ ?>
                                             <div class="col-md-12">
-                                                <?php if($estado_tab=='1'){ ?>
-                                                <h4><?php echo $subtitulo; ?></h4>
+                                                <h4 style="text-align: center;"><?php echo $subtitulo; ?></h4>
                                                 <div class="about-inner-page">
                                                     <!-- Nav tabs -->
                                                     <ul class="nav nav-tabs" role="tablist">
@@ -204,12 +193,12 @@ $cod_servicio = $filaSer['cod_servicio'];
                                                                             <img src="/cms/assets/img/servicios/fotos/<?php echo $img_a; ?>" alt="<?php echo $titulo_a; ?>">
                                                                         </div>
                                                                         <div class="col-md-6">
-                                                                            <h5><?php echo $titulo_a; ?></h5>
+                                                                            <h2 class="media-heading"><?php echo $titulo_a; ?></h2>
                                                                             <?php echo $contenidos_a; ?>
                                                                         </div>
                                                                         <?php }else{ ?>
                                                                         <div class="col-md-12">
-                                                                            <h5><?php echo $titulo_a; ?></h5>
+                                                                            <h2 class="media-heading"><?php echo $titulo_a; ?></h2>
                                                                             <?php echo $contenidos_a; ?>
                                                                         </div>
                                                                         <?php } ?>
@@ -228,12 +217,12 @@ $cod_servicio = $filaSer['cod_servicio'];
                                                                             <img src="/cms/assets/img/servicios/fotos/<?php echo $img_b; ?>" alt="<?php echo $titulo_b; ?>">
                                                                         </div>
                                                                         <div class="col-md-6">
-                                                                            <h5><?php echo $titulo_b; ?></h5>
+                                                                            <h2 class="media-heading"><?php echo $titulo_b; ?></h2>
                                                                             <?php echo $contenidos_b; ?>
                                                                         </div>
                                                                         <?php }else{ ?>
                                                                         <div class="col-md-12">
-                                                                            <h5><?php echo $titulo_b; ?></h5>
+                                                                            <h2 class="media-heading"><?php echo $titulo_b; ?></h2>
                                                                             <?php echo $contenidos_b; ?>
                                                                         </div>
                                                                         <?php } ?>
@@ -252,12 +241,12 @@ $cod_servicio = $filaSer['cod_servicio'];
                                                                             <img src="/cms/assets/img/servicios/fotos/<?php echo $img_c; ?>" alt="<?php echo $titulo_c; ?>">
                                                                         </div>
                                                                         <div class="col-md-6">
-                                                                            <h5><?php echo $titulo_c; ?></h5>
+                                                                            <h2 class="media-heading"><?php echo $titulo_c; ?></h2>
                                                                             <?php echo $contenidos_c; ?>
                                                                         </div>
                                                                         <?php }else{ ?>
                                                                         <div class="col-md-12">
-                                                                            <h5><?php echo $titulo_c; ?></h5>
+                                                                            <h2 class="media-heading"><?php echo $titulo_c; ?></h2>
                                                                             <?php echo $contenidos_c; ?>
                                                                         </div>
                                                                         <?php } ?>
