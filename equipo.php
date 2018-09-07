@@ -4,6 +4,13 @@
 <!-- head -->
 <?php include 'include/head.php' ?>
 <!-- end head -->
+
+<style>
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+        font-family:helvetica !important;
+        }
+</style>
+
 <body>
     <!--  Header Area Here -->
     <?php include 'include/header.php' ?>
