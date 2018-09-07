@@ -98,6 +98,9 @@
         $xDescripcion2  = $filaPro['descripcion_b'];
         // Tabs
         $subtitulo      = $filaPro['subtitulo'];
+        $tab_a          = $filaPro['tab_a'];
+        $tab_b          = $filaPro['tab_b'];
+        $tab_c          = $filaPro['tab_c'];
         $titulo_a       = $filaPro['titulo_a'];
         $titulo_b       = $filaPro['titulo_b'];
         $titulo_c       = $filaPro['titulo_c'];
@@ -174,14 +177,14 @@
                                                 <div class="about-inner-page">
                                                     <!-- Nav tabs -->
                                                     <ul class="nav nav-tabs" role="tablist">
-                                                        <?php if($titulo_a==""){ }else{ ?>
-                                                        <li role="presentation" class="active"><a href="#taba" aria-controls="taba" role="tab" data-toggle="tab"><?php echo $titulo_a; ?></a></li>
+                                                        <?php if($tab_a==""){ }else{ ?>
+                                                        <li role="presentation" class="active"><a href="#taba" aria-controls="taba" role="tab" data-toggle="tab"><?php echo $tab_a; ?></a></li>
                                                         <?php } ?>
-                                                        <?php if($titulo_b==""){ }else{ ?>
-                                                        <li role="presentation"><a href="#tabb" aria-controls="tabb" role="tab" data-toggle="tab"><?php echo $titulo_b; ?></a></li>
+                                                        <?php if($tab_b==""){ }else{ ?>
+                                                        <li role="presentation"><a href="#tabb" aria-controls="tabb" role="tab" data-toggle="tab"><?php echo $tab_b; ?></a></li>
                                                         <?php } ?>
-                                                        <?php if($titulo_c==""){ }else{ ?>
-                                                        <li role="presentation"><a href="#tabc" aria-controls="tabc" role="tab" data-toggle="tab"><?php echo $titulo_c; ?></a></li>
+                                                        <?php if($tab_c==""){ }else{ ?>
+                                                        <li role="presentation"><a href="#tabc" aria-controls="tabc" role="tab" data-toggle="tab"><?php echo $tab_c; ?></a></li>
                                                         <?php } ?>
                                                     </ul>
                                                     <!-- Tab panes -->
@@ -190,8 +193,22 @@
                                                         <div role="tabpanel" class="tab-pane active" id="taba" onclick="myFunction()">
                                                             <div class="media contenido_media">
                                                                 <div class="media-body" id="titulo_a">
-                                                                    <h2 class="media-heading"><?php echo $titulo_a; ?></h2>
-                                                                    <?php echo $contenidos_a; ?>
+                                                                    <div class="row">
+                                                                    <?php if($img_a!=""){ ?>
+                                                                        <div class="col-md-6">
+                                                                            <img src="/cms/assets/img/servicios/fotos/<?php echo $img_a; ?>" alt="<?php echo $titulo_a; ?>">
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <h2 class="media-heading"><?php echo $titulo_a; ?></h2>
+                                                                            <?php echo $contenidos_a; ?>
+                                                                        </div>
+                                                                        <?php }else{ ?>
+                                                                        <div class="col-md-12">
+                                                                            <h2 class="media-heading"><?php echo $titulo_a; ?></h2>
+                                                                            <?php echo $contenidos_a; ?>
+                                                                        </div>
+                                                                    <?php } ?>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -200,8 +217,22 @@
                                                         <div role="tabpanel" class="tab-pane" id="tabb" onclick="myFunction2()">
                                                             <div class="media contenido_media">
                                                                 <div class="media-body" id="titulo_b">
-                                                                    <h2 class="media-heading"><?php echo $titulo_b; ?></h2>
-                                                                    <?php echo $contenidos_b; ?>
+                                                                    <div class="row">
+                                                                    <?php if($img_b!=""){ ?>
+                                                                        <div class="col-md-6">
+                                                                            <img src="/cms/assets/img/servicios/fotos/<?php echo $img_b; ?>" alt="<?php echo $titulo_b; ?>">
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <h2 class="media-heading"><?php echo $titulo_b; ?></h2>
+                                                                            <?php echo $contenidos_b; ?>
+                                                                        </div>
+                                                                        <?php }else{ ?>
+                                                                        <div class="col-md-12">
+                                                                            <h2 class="media-heading"><?php echo $titulo_b; ?></h2>
+                                                                            <?php echo $contenidos_b; ?>
+                                                                        </div>
+                                                                    <?php } ?>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -210,8 +241,22 @@
                                                         <div role="tabpanel" class="tab-pane" id="tabc">
                                                             <div class="media contenido_media" id="titulo_c">
                                                                 <div class="media-body">
-                                                                    <h2 class="media-heading"><?php echo $titulo_c; ?></h2>
-                                                                    <?php echo $contenidos_c; ?>
+                                                                    <div class="row">
+                                                                    <?php if($img_c!=""){ ?>
+                                                                        <div class="col-md-6">
+                                                                            <img src="/cms/assets/img/servicios/fotos/<?php echo $img_c; ?>" alt="<?php echo $titulo_c; ?>">
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <h2 class="media-heading"><?php echo $titulo_c; ?></h2>
+                                                                            <?php echo $contenidos_c; ?>
+                                                                        </div>
+                                                                        <?php }else{ ?>
+                                                                        <div class="col-md-12">
+                                                                            <h2 class="media-heading"><?php echo $titulo_c; ?></h2>
+                                                                            <?php echo $contenidos_c; ?>
+                                                                        </div>
+                                                                    <?php } ?>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>

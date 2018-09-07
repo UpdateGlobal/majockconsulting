@@ -12,12 +12,12 @@ if($proceso == ""){
   $ejecutarServicios = mysqli_query($enlaces,$consultaServicios) or die('Consulta fallida: ' . mysqli_error($enlaces));
   $filaSer = mysqli_fetch_array($ejecutarServicios);
   $cod_servicio = $filaSer['cod_servicio'];
-  $titulo      = $filaSer['titulo'];
-  $imagen      = $filaSer['imagen'];
-  $descripcion = $filaSer['descripcion'];
-  $descripcion_b = $filaSer['descripcion_b'];
-  $orden       = $filaSer['orden'];
-  $estado      = $filaSer['estado'];
+  $titulo         = $filaSer['titulo'];
+  $imagen         = $filaSer['imagen'];
+  $descripcion    = $filaSer['descripcion'];
+  $descripcion_b  = $filaSer['descripcion_b'];
+  $orden          = $filaSer['orden'];
+  $estado         = $filaSer['estado'];
   $subtitulo      = $filaSer['subtitulo'];
   $tab_a          = $filaSer['tab_a'];
   $titulo_a       = $filaSer['titulo_a'];
@@ -34,21 +34,21 @@ if($proceso == ""){
   $estado_tab     = $filaSer['estado_tab'];
 }
 if($proceso=="Actualizar"){
-  $cod_servicio     = $_POST['cod_servicio'];
-  $titulo           = mysqli_real_escape_string($enlaces, $_POST['titulo']);
-  $slug             = $titulo;
-  $slug             = preg_replace('~[^\pL\d]+~u', '-', $slug);
-  $slug             = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
-  $slug             = preg_replace('~[^-\w]+~', '', $slug);
-  $slug             = trim($slug, '-');
-  $slug             = preg_replace('~-+~', '-', $slug);
-  $slug             = strtolower($slug);
+  $cod_servicio   = $_POST['cod_servicio'];
+  $titulo         = mysqli_real_escape_string($enlaces, $_POST['titulo']);
+  $slug           = $titulo;
+  $slug           = preg_replace('~[^\pL\d]+~u', '-', $slug);
+  $slug           = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
+  $slug           = preg_replace('~[^-\w]+~', '', $slug);
+  $slug           = trim($slug, '-');
+  $slug           = preg_replace('~-+~', '-', $slug);
+  $slug           = strtolower($slug);
   if (empty($slug)){
       return 'n-a';
   }
-  $imagen           = $_POST['imagen'];
-  $descripcion      = mysqli_real_escape_string($enlaces, $_POST['descripcion']);
-  $descripcion_b    = mysqli_real_escape_string($enlaces, $_POST['descripcion_b']);
+  $imagen         = $_POST['imagen'];
+  $descripcion    = mysqli_real_escape_string($enlaces, $_POST['descripcion']);
+  $descripcion_b  = mysqli_real_escape_string($enlaces, $_POST['descripcion_b']);
   if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
   if(isset($_POST['tab_a'])){$tab_a = $_POST['tab_a'];}else{$tab_a = "";}
@@ -160,7 +160,7 @@ if($proceso=="Actualizar"){
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
-                  <label class="col-form-label" for="descripcion_b">Descripci&oacute;n 2:</label>
+                  <label class="col-form-label" for="descripcion_b">Descripci&oacute;n 2:</label><br>
                   <small>(Descripci&oacute;n Larga)</small>
                 </div>
                 <div class="col-8 col-lg-10">
@@ -197,7 +197,7 @@ if($proceso=="Actualizar"){
                         <div class="card-body">
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="subtitulo">Subt&iacute;tulo:</label>
+                              <label class="col-form-label" for="subtitulo">Titular para Pesta&ntilde;as:</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="subtitulo" name="subtitulo" type="text" value="<?php echo $subtitulo; ?>" />
@@ -206,7 +206,8 @@ if($proceso=="Actualizar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="tab_a">Tab 1:</label>
+                              <label class="col-form-label" for="tab_a">Pesta&ntilde;a 1:</label><br>
+                              <small>(Debe estar lleno para visualizarse)</small>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="tab_a" name="tab_a" type="text" value="<?php echo $tab_a; ?>" />
@@ -215,7 +216,7 @@ if($proceso=="Actualizar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="titulo_a">T&iacute;tulo (Tab 1):</label>
+                              <label class="col-form-label" for="titulo_a">T&iacute;tulo (Pesta&ntilde;a 1):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="titulo_a" name="titulo_a" type="text" value="<?php echo $titulo_a; ?>" />
@@ -236,7 +237,7 @@ if($proceso=="Actualizar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="contenido_a">Descripci&oacute;n (Tab 1):</label>
+                              <label class="col-form-label" for="contenido_a">Descripci&oacute;n (Pesta&ntilde;a 1):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <textarea class="form-control" name="contenido_a" id="contenido_a" data-provide="summernote" data-toolbar="full" data-min-height="150"><?php echo $contenido_a; ?></textarea>
@@ -245,7 +246,8 @@ if($proceso=="Actualizar"){
                           <hr>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="tab_b">Tab 2:</label>
+                              <label class="col-form-label" for="tab_b">Pesta&ntilde;a 2:</label><br>
+                              <small>(Debe estar lleno para visualizarse)</small>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="tab_b" name="tab_b" type="text" value="<?php echo $tab_b; ?>" />
@@ -254,7 +256,7 @@ if($proceso=="Actualizar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="titulo_b">T&iacute;tulo 2 (Tab 2):</label>
+                              <label class="col-form-label" for="titulo_b">T&iacute;tulo 2 (Pesta&ntilde;a 2):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="titulo_b" name="titulo_b" type="text" value="<?php echo $titulo_b; ?>" />
@@ -275,7 +277,7 @@ if($proceso=="Actualizar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="contenido_b">Descripci&oacute;n (Tab 2):</label>
+                              <label class="col-form-label" for="contenido_b">Descripci&oacute;n (Pesta&ntilde;a 2):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <textarea class="form-control" name="contenido_b" id="contenido_b" data-provide="summernote" data-toolbar="full" data-min-height="150"><?php echo $contenido_b; ?></textarea>
@@ -284,7 +286,8 @@ if($proceso=="Actualizar"){
                           <hr>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="tab_c">Tab 3:</label>
+                              <label class="col-form-label" for="tab_c">Pesta&ntilde;a 3:</label><br>
+                              <small>(Debe estar lleno para visualizarse)</small>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="tab_c" name="tab_c" type="text" value="<?php echo $tab_c; ?>" />
@@ -293,7 +296,7 @@ if($proceso=="Actualizar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="titulo_c">T&iacute;tulo (Tab 3):</label>
+                              <label class="col-form-label" for="titulo_c">T&iacute;tulo (Pesta&ntilde;a 3):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="titulo_c" name="titulo_c" type="text" value="<?php echo $titulo_c; ?>" />
@@ -314,7 +317,7 @@ if($proceso=="Actualizar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="contenido_c">Descripci&oacute;n (Tab 3):</label>
+                              <label class="col-form-label" for="contenido_c">Descripci&oacute;n (Pesta&ntilde;a 3):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <textarea class="form-control" name="contenido_c" id="contenido_c" data-provide="summernote" data-toolbar="full" data-min-height="150"><?php echo $contenido_c; ?></textarea>
@@ -322,7 +325,7 @@ if($proceso=="Actualizar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="estado_tab">Estado (Mostrar tabs):</label>
+                              <label class="col-form-label" for="estado_tab">Estado (Mostrar pesta&ntilde;as):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input type="checkbox" name="estado_tab" data-size="small" data-provide="switchery" value="1" <?php if($estado=="1"){echo "checked";} ?>>

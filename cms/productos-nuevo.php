@@ -145,7 +145,7 @@ if($proceso == "Registrar"){
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
-                  <label class="col-form-label" for="descripcion_b">Descripci&oacute;n 2:</label>
+                  <label class="col-form-label" for="descripcion_b">Descripci&oacute;n 2:</label><br>
                   <small>(Descripci&oacute;n Larga)</small>
                 </div>
                 <div class="col-8 col-lg-10">
@@ -182,7 +182,7 @@ if($proceso == "Registrar"){
                         <div class="card-body">
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="subtitulo">Subt&iacute;tulo:</label>
+                              <label class="col-form-label" for="subtitulo">Titular para Pesta&ntilde;as:</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="subtitulo" name="subtitulo" type="text" />
@@ -191,7 +191,8 @@ if($proceso == "Registrar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="tab_a">Tab 1:</label>
+                              <label class="col-form-label" for="tab_a">Pesta&ntilde;a 1:</label><br>
+                              <small>(Debe estar lleno para visualizarse)</small>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="tab_a" name="tab_a" type="text" />
@@ -200,7 +201,7 @@ if($proceso == "Registrar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="titulo_a">T&iacute;tulo (Tab 1):</label>
+                              <label class="col-form-label" for="titulo_a">T&iacute;tulo (Pesta&ntilde;a 1):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="titulo_a" name="titulo_a" type="text" />
@@ -221,7 +222,7 @@ if($proceso == "Registrar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="contenido_a">Descripci&oacute;n (Tab 1):</label>
+                              <label class="col-form-label" for="contenido_a">Descripci&oacute;n (Pesta&ntilde;a 1):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <textarea class="form-control" name="contenido_a" id="contenido_a" data-provide="summernote" data-toolbar="full" data-min-height="150"></textarea>
@@ -230,7 +231,8 @@ if($proceso == "Registrar"){
                           <hr>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="tab_b">Tab 2:</label>
+                              <label class="col-form-label" for="tab_b">Pesta&ntilde;a 2:</label><br>
+                              <small>(Debe estar lleno para visualizarse)</small>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="tab_b" name="tab_b" type="text" />
@@ -239,7 +241,7 @@ if($proceso == "Registrar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="titulo_b">T&iacute;tulo (Tab 2):</label>
+                              <label class="col-form-label" for="titulo_b">T&iacute;tulo (Pesta&ntilde;a 2):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="titulo_b" name="titulo_b" type="text" />
@@ -260,7 +262,7 @@ if($proceso == "Registrar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="contenido_b">Descripci&oacute;n (Tab 2):</label>
+                              <label class="col-form-label" for="contenido_b">Descripci&oacute;n (Pesta&ntilde;a 2):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <textarea class="form-control" name="contenido_b" id="contenido_b" data-provide="summernote" data-toolbar="full" data-min-height="150"></textarea>
@@ -269,7 +271,8 @@ if($proceso == "Registrar"){
                           <hr>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="tab_c">Tab 3:</label>
+                              <label class="col-form-label" for="tab_c">Pesta&ntilde;a 3:</label><br>
+                              <small>(Debe estar lleno para visualizarse)</small>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="tab_c" name="tab_c" type="text" />
@@ -278,7 +281,7 @@ if($proceso == "Registrar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="titulo_c">T&iacute;tulo (Tab 3):</label>
+                              <label class="col-form-label" for="titulo_c">T&iacute;tulo (Pesta&ntilde;a 3):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input class="form-control" id="titulo_c" name="titulo_c" type="text" />
@@ -299,7 +302,7 @@ if($proceso == "Registrar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="contenido_c">Descripci&oacute;n (Tab 3):</label>
+                              <label class="col-form-label" for="contenido_c">Descripci&oacute;n (Pesta&ntilde;a 3):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <textarea class="form-control" name="contenido_c" id="contenido_c" data-provide="summernote" data-toolbar="full" data-min-height="150"></textarea>
@@ -307,7 +310,7 @@ if($proceso == "Registrar"){
                           </div>
                           <div class="form-group row">
                             <div class="col-4 col-lg-2">
-                              <label class="col-form-label" for="estado_tab">Estado (Mostrar tabs):</label>
+                              <label class="col-form-label" for="estado_tab">Estado (Mostrar pesta&ntilde;as):</label>
                             </div>
                             <div class="col-8 col-lg-10">
                               <input type="checkbox" name="estado_tab" data-size="small" data-provide="switchery" value="1">
