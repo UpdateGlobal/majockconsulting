@@ -93,9 +93,12 @@ $cod_servicio = $filaSer['cod_servicio'];
             $xTitulo        = htmlspecialchars($filaSer['titulo']);
             $xImagenx       = $filaSer['imagen'];
             $xDescripcion   = $filaSer['descripcion'];
-            $xDescripcion_b  = $filaSer['descripcion_b'];
+            $xDescripcion_b = $filaSer['descripcion_b'];
             // Tabs
             $subtitulo      = $filaSer['subtitulo'];
+            $tab_a          = $filaSer['tab_a'];
+            $tab_b          = $filaSer['tab_b'];
+            $tab_c          = $filaSer['tab_c'];
             $titulo_a       = $filaSer['titulo_a'];
             $titulo_b       = $filaSer['titulo_b'];
             $titulo_c       = $filaSer['titulo_c'];

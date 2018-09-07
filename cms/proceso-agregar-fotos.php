@@ -112,6 +112,37 @@ if($id=='IGP'){
 	}
 }
 
+// Subir Galeria de productos
+if($id=='IGPA'){
+	$uploaddir = 'assets/img/productos/galeria/'.$uploadname;
+	if(move_uploaded_file($uploadtempname, $uploaddir)){
+		$mensaje = "El archivo subi&oacute; correctamente";
+	}else{
+		$mensaje = "El archivo no se subi&oacute;";  
+	}
+}
+
+
+// Subir Galeria de productos
+if($id=='IGPB'){
+	$uploaddir = 'assets/img/productos/galeria/'.$uploadname;
+	if(move_uploaded_file($uploadtempname, $uploaddir)){
+		$mensaje = "El archivo subi&oacute; correctamente";
+	}else{
+		$mensaje = "El archivo no se subi&oacute;";  
+	}
+}
+
+// Subir Galeria de productos
+if($id=='IGPC'){
+	$uploaddir = 'assets/img/productos/galeria/'.$uploadname;
+	if(move_uploaded_file($uploadtempname, $uploaddir)){
+		$mensaje = "El archivo subi&oacute; correctamente";
+	}else{
+		$mensaje = "El archivo no se subi&oacute;";  
+	}
+}
+
 // Subir Facebook Logo
 if($id=='LOGO'){
 	$uploaddir = 'assets/img/meta/'.$uploadname;
@@ -262,6 +293,38 @@ if($id=='SERGAL'){
 	}
 }
 
+// Imagenes servicios
+if($id=='SERGALA'){
+	$uploaddir = 'assets/img/servicios/fotos/'.$uploadname;
+	if(move_uploaded_file($uploadtempname, $uploaddir)){
+		$mensaje = "El archivo subi&oacute; correctamente";
+	}else{
+		$mensaje = "El archivo no se subi&oacute;"; 
+	}
+}
+
+// Imagenes servicios
+if($id=='SERGALB'){
+	$uploaddir = 'assets/img/servicios/fotos/'.$uploadname;
+	if(move_uploaded_file($uploadtempname, $uploaddir)){
+		$mensaje = "El archivo subi&oacute; correctamente";
+	}else{
+		$mensaje = "El archivo no se subi&oacute;"; 
+	}
+}
+
+
+// Imagenes servicios
+if($id=='SERGALC'){
+	$uploaddir = 'assets/img/servicios/fotos/'.$uploadname;
+	if(move_uploaded_file($uploadtempname, $uploaddir)){
+		$mensaje = "El archivo subi&oacute; correctamente";
+	}else{
+		$mensaje = "El archivo no se subi&oacute;"; 
+	}
+}
+
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -306,6 +369,15 @@ if($id=='SERGAL'){
 			}
 			if(valor=="IGP") {
 				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+			}
+			if(valor=="IGPA") {
+				opener.window.fcms.img_a.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+			}
+			if(valor=="IGPB") {
+				opener.window.fcms.img_b.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+			}
+			if(valor=="IGPC") {
+				opener.window.fcms.img_c.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="LOGO") {
 				opener.window.fcms.logo.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
@@ -352,6 +424,15 @@ if($id=='SERGAL'){
 			if(valor=="SERGAL") {
 				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
+			if(valor=="SERGALA") {
+				opener.window.fcms.img_a.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+			}
+			if(valor=="SERGALB") {
+				opener.window.fcms.img_b.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+			}
+			if(valor=="SERGALC") {
+				opener.window.fcms.img_c.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+			}
 		}
 		/* --- Validar formulario para chrone, firefox, opera, safari ---*/
 		if(tNavegador=="Netscape"){
@@ -387,6 +468,15 @@ if($id=='SERGAL'){
 			}
 			if(valor=="IGP") {
 				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+			}
+			if(valor=="IGPA") {
+				window.opener.fcms.img_a.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+			}
+			if(valor=="IGPB") {
+				window.opener.fcms.img_b.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+			}
+			if(valor=="IGPC") {
+				window.opener.fcms.img_c.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="LOGO") {
 				window.opener.fcms.logo.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
@@ -432,6 +522,15 @@ if($id=='SERGAL'){
 			}
 			if(valor=="SERGAL") {
 				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+			}
+			if(valor=="SERGALA") {
+				window.opener.fcms.img_a.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+			}
+			if(valor=="SERGALB") {
+				window.opener.fcms.img_b.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+			}
+			if(valor=="SERGALC") {
+				window.opener.fcms.img_c.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 		}
 		window.close();
