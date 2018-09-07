@@ -81,6 +81,13 @@ $cod_servicio = $filaSer['cod_servicio'];
     <!-- modernizr css -->
     <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
+
+<style>
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+font-family:helvetica !important;
+}
+</style>
+
 <body>
 <?php include 'include/header.php' ?>
     <!--  Header Area End Here -->

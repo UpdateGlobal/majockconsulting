@@ -42,19 +42,27 @@
                                     $nump++;
                             ?>
                             
+                        
                             <div class="single-item productos all" <?php if($nump>3){?> style="display: none;" <?php } ?>>
 
-                                <div class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".3s">
-                                    <img src="/cms/assets/img/productos/<?php echo $xImagen; ?>" alt="<?php echo $xProducto; ?>">
+                                <div id="productos" class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".3s">
+                                   
+                                        <img class="img" src="/cms/assets/img/productos/<?php echo $xImagen; ?>" alt="<?php echo $xProducto; ?>">
+                                
                                 </div>
 
                                 <div class="portfolio1-overley">
                                     <div class="item-content">
-                                        <h2><a href="/producto/<?php echo $xSlug; ?>"><?php echo $xProducto; ?></a></h2>
-                                        <p>Majock Consulting || Productos</p>
+                                       
+                                            <h2><a href="/producto/<?php echo $xSlug; ?>"><?php echo $xProducto; ?></a></h2>
+                                            <p>Majock Consulting || Productos</p>
+
+
                                     </div>
                                 </div>
                             </div>
+                        
+
                             <?php
                                 }
                                 mysqli_free_result($resultadoProducto);
@@ -69,10 +77,14 @@
                                     $xImagen    = $filaSer['imagen'];
                                     $nums++;
                             ?>
+
+                        
                             <div class="single-item servicios all" <?php if($nums>3){?> style="display: none;" <?php } ?>>
 
                                 <div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">
-                                    <img src="/cms/assets/img/servicios/<?php echo $xImagen; ?>" alt="<?php echo $xServicio; ?>">
+                                   
+                                        <img src="/cms/assets/img/servicios/<?php echo $xImagen; ?>" alt="<?php echo $xServicio; ?>">
+                               
                                 </div>
 
                                 <div class="portfolio1-overley">
@@ -82,6 +94,8 @@
                                     </div>
                                 </div>
                             </div>
+
+
                             <?php
                                 }
                                 mysqli_free_result($resultadoServicio);

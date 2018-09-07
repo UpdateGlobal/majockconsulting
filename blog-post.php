@@ -80,6 +80,13 @@
     <link rel="stylesheet" href="/css/responsive.css">
     <!-- modernizr css -->
     <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <style>
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+        font-family:helvetica !important;
+        }
+    </style>
+
 </head>
 <body>
     <?php include 'include/header.php' ?>

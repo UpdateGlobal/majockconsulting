@@ -10,6 +10,20 @@
   gtag('js', new Date());
   gtag('config', 'UA-123882503-1');
 </script>
+
+<style>
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+font-family:helvetica !important;
+
+</style>
+
+<style>
+    .portFolioContainer .single-item #productos .img{
+width:380px !important;
+height:250px !important;
+
+}
+</style>
 <!-- HEAD END -->
 <?php
     $num=0;

@@ -4,6 +4,13 @@
 <!-- head -->
 <?php include 'include/head.php' ?>
 <!-- end head -->
+
+<style>
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+font-family:helvetica !important;
+}
+</style>
+
 <body>
     <!--  Header Area Here -->
     <?php include 'include/header.php' ?>
@@ -60,16 +67,16 @@
                                 <div class="media">
                                                 
                                             <a class="pull-left" href="#">
-                                                <div class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".3s">
+                                                <!--<div class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".3s">-->
                                                     <img src="/cms/assets/img/nosotros/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
-                                                </div>
+                                                <!--</div>-->
                                 
                                             </a>
                                     <div class="media-body">
-                                                <div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">
+                                                <!--<div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">-->
                                                     <h2 class="media-heading"><?php echo $xTitulo; ?></h2>
                                                     <?php echo $xContenido;?>
-                                                </div>
+                                                <!--</div>-->
                                             
 
 
@@ -99,16 +106,16 @@
                             <!--<div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">-->
                                 <div class="media">
                                     <a class="pull-left" href="#">
-                                        <div class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".3s">
+                                        <!--<div class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".3s">-->
                                             <img src="/cms/assets/img/nosotros/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
-                                        </div>
+                                        <!--</div>-->
                                         
                                     </a>
                                     <div class="media-body">
-                                        <div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">
+                                        <!--<div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">-->
                                             <h2 class="media-heading"><?php echo $xTitulo; ?></h2>
                                             <?php echo $xContenido; ?>
-                                        </div>
+                                        <!--</div>-->
                                         
                                     </div>
                                 </div>
@@ -135,18 +142,18 @@
 
                             
                                     <a class="pull-left" href="#">
-                                        <div class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".3s">
+                                        <!--<div class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".3s">-->
                                             <img src="/cms/assets/img/nosotros/<?php echo $xImagen; ?>" alt="<?php echo $xTitulo; ?>">
-                                        </div>
+                                        <!--</div>-->
                                         
                                     </a>
 
                                 
                                     <div class="media-body">
-                                        <div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">
+                                        <!--<div class="wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">-->
                                             <h2 class="media-heading"><?php echo $xTitulo; ?></h2>
                                             <?php echo $xContenido; ?>
-                                        </div>
+                                        <!--</div>-->
 
                                     </div>
 
