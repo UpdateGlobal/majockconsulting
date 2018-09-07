@@ -98,7 +98,7 @@ if($proceso == "Actualizar"){
                 </div>
                 <div class="col-8 col-lg-10">
                   <?php if($xVisitante=="1"){ ?><p><?php echo $contenido; ?></p><?php } ?>
-                  <textarea name="contenido" data-provide="summernote" data-min-height="150" <?php if($xVisitante=="1"){ ?> style="display:none;" <?php }else{ ?> <?php } ?> ><?php echo $contenido; ?></textarea>
+                  <textarea name="contenido" data-provide="summernote" data-toolbar="full" data-min-height="150" <?php if($xVisitante=="1"){ ?> style="display:none;" <?php }else{ ?> <?php } ?> ><?php echo $contenido; ?></textarea>
                 </div>
               </div>
               

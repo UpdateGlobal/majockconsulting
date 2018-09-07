@@ -216,7 +216,7 @@ if($proceso == "Registrar"){
                               <input class="form-control" id="img_a" name="img_a" type="text" value="">
                             </div>
                             <div class="col-4 col-lg-2">
-                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('PROGAL');" /><i class="fa fa-save"></i> Examinar</button>
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('IGPA');" /><i class="fa fa-save"></i> Examinar</button>
                             </div>
                           </div>
                           <div class="form-group row">
@@ -255,7 +255,7 @@ if($proceso == "Registrar"){
                               <input class="form-control" id="img_b" name="img_b" type="text" value="">
                             </div>
                             <div class="col-4 col-lg-2">
-                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('PROGAL');" /><i class="fa fa-save"></i> Examinar</button>
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('IGPB');" /><i class="fa fa-save"></i> Examinar</button>
                             </div>
                           </div>
                           <div class="form-group row">
@@ -294,7 +294,7 @@ if($proceso == "Registrar"){
                               <input class="form-control" id="img_c" name="img_c" type="text" value="">
                             </div>
                             <div class="col-4 col-lg-2">
-                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('PROGAL');" /><i class="fa fa-save"></i> Examinar</button>
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('IGPC');" /><i class="fa fa-save"></i> Examinar</button>
                             </div>
                           </div>
                           <div class="form-group row">

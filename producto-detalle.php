@@ -174,10 +174,10 @@ font-family:helvetica !important;
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <div class="row about-inner-page-area" style="padding-top: 10px;">
                                             <?php if($estado_tab==1){ ?>
                                             <div class="col-md-12">
-                                                <h4><?php echo $subtitulo; ?></h4>
+                                                <h4 style="text-align: center;"><?php echo $subtitulo; ?></h4>
                                                 <div class="about-inner-page">
                                                     <!-- Nav tabs -->
                                                     <ul class="nav nav-tabs" role="tablist">
@@ -197,7 +197,7 @@ font-family:helvetica !important;
                                                         <div role="tabpanel" class="tab-pane active" id="taba" onclick="myFunction()">
                                                             <div class="media contenido_media">
                                                                 <div class="media-body" id="titulo_a">
-                                                                    <?php echo $titulo_a; ?>
+                                                                    <h2 class="media-heading"><?php echo $titulo_a; ?></h2>
                                                                     <?php echo $contenidos_a; ?>
                                                                 </div>
                                                             </div>
@@ -207,7 +207,7 @@ font-family:helvetica !important;
                                                         <div role="tabpanel" class="tab-pane" id="tabb" onclick="myFunction2()">
                                                             <div class="media contenido_media">
                                                                 <div class="media-body" id="titulo_b">
-                                                                    <?php echo $titulo_b; ?>
+                                                                    <h2 class="media-heading"><?php echo $titulo_b; ?></h2>
                                                                     <?php echo $contenidos_b; ?>
                                                                 </div>
                                                             </div>
@@ -217,7 +217,7 @@ font-family:helvetica !important;
                                                         <div role="tabpanel" class="tab-pane" id="tabc">
                                                             <div class="media contenido_media" id="titulo_c">
                                                                 <div class="media-body">
-                                                                    <?php echo $titulo_c; ?>
+                                                                    <h2 class="media-heading"><?php echo $titulo_c; ?></h2>
                                                                     <?php echo $contenidos_c; ?>
                                                                 </div>
                                                             </div>

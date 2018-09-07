@@ -19,12 +19,18 @@ if($proceso == ""){
   $orden       = $filaSer['orden'];
   $estado      = $filaSer['estado'];
   $subtitulo      = $filaSer['subtitulo'];
+  $tab_a          = $filaSer['tab_a'];
   $titulo_a       = $filaSer['titulo_a'];
   $contenido_a    = $filaSer['contenido_a'];
+  $img_a          = $filaSer['img_a'];
+  $tab_b          = $filaSer['tab_b'];
   $titulo_b       = $filaSer['titulo_b'];
   $contenido_b    = $filaSer['contenido_b'];
+  $img_b          = $filaSer['img_b'];
+  $tab_c          = $filaSer['tab_c'];
   $titulo_c       = $filaSer['titulo_c'];
   $contenido_c    = $filaSer['contenido_c'];
+  $img_c          = $filaSer['img_c'];
   $estado_tab     = $filaSer['estado_tab'];
 }
 if($proceso=="Actualizar"){
@@ -225,7 +231,7 @@ if($proceso=="Actualizar"){
                               <input class="form-control" id="img_a" name="img_a" type="text" value="<?php echo $img_a; ?>">
                             </div>
                             <div class="col-4 col-lg-2">
-                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERGAL');" /><i class="fa fa-save"></i> Examinar</button>
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERGALA');" /><i class="fa fa-save"></i> Examinar</button>
                             </div>
                           </div>
                           <div class="form-group row">
@@ -264,7 +270,7 @@ if($proceso=="Actualizar"){
                               <input class="form-control" id="img_b" name="img_b" type="text" value="<?php echo $img_b; ?>">
                             </div>
                             <div class="col-4 col-lg-2">
-                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERGAL');" /><i class="fa fa-save"></i> Examinar</button>
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERGALB');" /><i class="fa fa-save"></i> Examinar</button>
                             </div>
                           </div>
                           <div class="form-group row">
@@ -303,7 +309,7 @@ if($proceso=="Actualizar"){
                               <input class="form-control" id="img_c" name="img_c" type="text" value="<?php echo $img_c; ?>">
                             </div>
                             <div class="col-4 col-lg-2">
-                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERGAL');" /><i class="fa fa-save"></i> Examinar</button>
+                              <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('SERGALC');" /><i class="fa fa-save"></i> Examinar</button>
                             </div>
                           </div>
                           <div class="form-group row">
